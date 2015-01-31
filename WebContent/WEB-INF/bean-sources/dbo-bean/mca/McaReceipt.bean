@@ -1,0 +1,5 @@
+package mca;
+
+=McaReceipt,mca_receipt
+String #pkey
+int costpayId

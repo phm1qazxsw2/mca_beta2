@@ -1,0 +1,43 @@
+
+	.imageBox,.imageBoxHighlighted{
+		width:150px;	/* Total width of each image box */
+		height:170px;	/* Total height of each image box */
+		float:left;
+	}
+	.imageBox_theImage{
+		width:110px;	/* Width of image */
+		height:125px;	/* Height of image */
+		
+		/* 
+		Don't change these values *
+		*/
+		background-position: center center;
+		background-repeat: no-repeat;		
+		margin: 0 auto;
+		margin-bottom:2px;
+	}
+	
+	.imageBox .imageBox_theImage{
+		border:1px solid #DDD;	/* Border color for not selected images */
+		padding:2px;
+	}
+	.imageBoxHighlighted .imageBox_theImage{
+		border:3px solid #316AC5;	/* Border color for selected image */
+		padding:0px;
+
+	}
+	.imageBoxHighlighted span{	/* Title of selected image */
+		background-color: #316AC5;
+		color:#FFFFFF;
+		padding:2px;
+	}
+	
+	.imageBox_label{	/* Title of images - both selected and not selected */
+		text-align:center;
+		font-family: arial;
+		font-size:10px;		
+		padding-top:1px;
+		margin: 0 auto;
+	}
+	
+

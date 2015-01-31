@@ -1,0 +1,15 @@
+package mca;
+
+=Area,area
+int #level
+String #code
+String cName
+String eName
+String parentCode
+
+=
+
+    public String getMyKey()
+    {
+        return getLevel() + "#" + getCode();
+    }

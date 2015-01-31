@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=CardCheckdate,cardcheckdate
+int *#id
+Date checkdate
+int checkUser

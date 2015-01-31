@@ -1,0 +1,7 @@
+package jsf;
+
+=tag
+int id
+Date created
+Date modified
+String name

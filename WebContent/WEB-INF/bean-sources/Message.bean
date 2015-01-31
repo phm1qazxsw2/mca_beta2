@@ -1,0 +1,22 @@
+package jsf;
+
+=Message
+int id
+Date created
+Date modified
+Date messageFromDate
+int messageFrom
+int messageFromStatus
+int messageTo
+int messageToStatus
+String messageTitle
+String messageText
+int messageType
+int messageActive
+int messagePersonType
+int messagePersonId
+String messageHandleContent
+Date messageHandleDate
+int messageEmailStatus
+int messageHandleId
+int bunitId

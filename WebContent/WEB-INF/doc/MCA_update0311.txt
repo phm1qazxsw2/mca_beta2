@@ -1,0 +1,188 @@
+1. drop old tables
+2. mysql -uroot -padmin < 090412f_mca.structure
+3. mysql -uroot -padmin < 090412f_mca.sql
+4. mysql -uroot -padmin 
+5. use phm_db
+
+
+
+
+
+
+alter table userlog add userConfirm TINYINT DEFAULT 0;
+alter table userlog add INDEX IX_4 (userConfirm);
+alter table user add userConfirmUpdate TINYINT DEFAULT 0;
+CREATE TABLE mca_deferred
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ticketId VARCHAR(10),
+    type TINYINT, /* standard, monthly */
+    bunitId INTEGER,
+    INDEX IX_BUID(bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_prorate
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    mcaFeeId INTEGER,
+    membrId INTEGER,
+    prorateDate DATETIME,
+    bunitId INTEGER,
+    INDEX IX_BUID(bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_exrate
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    rate DOUBLE,
+    start DATETIME,
+    INDEX IX_1 (start)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_export
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    exportTime DATETIME
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_receipt
+(
+    pkey VARCHAR(8) PRIMARY KEY,
+    costpayId INTEGER DEFAULT 0,
+    INDEX IX_1 (costpayId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+alter table bunit change id id INTEGER AUTO_INCREMENT;
+alter table membr change bunitId bunitId INTEGER DEFAULT 0;
+alter table vchr_item change bunitId bunitId INTEGER DEFAULT 0;
+alter table session add bunitId INTEGER DEFAULT 0;
+alter table bill add bunitId INTEGER DEFAULT 0;
+alter table vchr_holder add buId INTEGER DEFAULT 0;
+alter table billpay add bunitId INTEGER DEFAULT 0;
+CREATE TABLE userbunit
+(    
+    userId INTEGER,
+    bunitId INTEGER,
+    UNIQUE KEY userbunitKey (userId, bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+alter table billpaid add bunitId INTEGER DEFAULT 0;
+alter table insidetrade add bunitId INTEGER DEFAULT 0;
+alter table vitem add bunitId INTEGER DEFAULT 0;
+alter table vpaid add bunitId INTEGER DEFAULT 0;
+alter table costpay add bunitId INTEGER DEFAULT 0;
+alter table cheque add bunitId INTEGER DEFAULT 0;
+alter table owner add bunitId INTEGER DEFAULT 0;
+alter table ownertrade add bunitId INTEGER DEFAULT 0;
+alter table tradeaccount add bunitId INTEGER DEFAULT 0;
+alter table bankaccount add bunitId INTEGER DEFAULT 0;
+alter table acode add bunitId INTEGER DEFAULT 0;
+alter table student add bunitId INTEGER DEFAULT 0;
+alter table teacher add bunitId INTEGER DEFAULT 0;
+alter table userlog add bunitId INTEGER DEFAULT 0;
+alter table discounttype add bunitId INTEGER DEFAULT 0;
+alter table itemalias add bunitId INTEGER DEFAULT 0;
+alter table tagtype add bunitId INTEGER DEFAULT 0;
+alter table tag add bunitId INTEGER DEFAULT 0;
+alter table degree add bunitId INTEGER DEFAULT 0;
+alter table relation add bunitId INTEGER DEFAULT 0;
+alter table leavereason add bunitId INTEGER DEFAULT 0;
+alter table leavestudent add bunitId INTEGER DEFAULT 0;
+alter table message add bunitId INTEGER DEFAULT 0;
+alter table messagetype add bunitId INTEGER DEFAULT 0;
+alter table bunit add buId INTEGER DEFAULT 0;
+alter table freeze add bunitId INTEGER DEFAULT 0;
+alter table pitem add bunitId INTEGER DEFAULT 0;
+alter table inventory add bunitId INTEGER DEFAULT 0;
+alter table costtrade add bunitId INTEGER DEFAULT 0;
+alter table clientaccount add bunitId INTEGER DEFAULT 0;
+
+
+alter table costpay add INDEX IX_BUID (bunitId);
+alter table billpay add INDEX IX_BUID (bunitId);
+alter table billpaid add INDEX IX_BUID (bunitId);
+alter table bill add INDEX IX_BUID (bunitId);
+alter table tradeaccount add INDEX IX_BUID (bunitId);
+alter table bankaccount add INDEX IX_BUID (bunitId);
+alter table owner add INDEX IX_BUID (bunitId);
+alter table ownertrade add INDEX IX_BUID (bunitId);
+alter table insidetrade add INDEX IX_BUID (bunitId);
+alter table vitem add INDEX IX_BUID (bunitId);
+alter table vpaid add INDEX IX_BUID (bunitId);
+alter table cheque add INDEX IX_BUID (bunitId);
+alter table acode add INDEX IX_BUID (bunitId);
+alter table vchr_holder add INDEX IX_BUSERIAL (buId, serial);
+alter table student add INDEX IX_BUID (bunitId);
+alter table teacher add INDEX IX_BUID (bunitId);
+alter table userlog add INDEX IX_BUID (bunitId);
+alter table discounttype add INDEX IX_BUID (bunitId);
+alter table itemalias add INDEX IX_BUID (bunitId);
+alter table tagtype add INDEX IX_BUID (bunitId);
+alter table tag add INDEX IX_BUID (bunitId);
+alter table degree add INDEX IX_BUID (bunitId);
+alter table relation add INDEX IX_BUID (bunitId);
+alter table leavereason add INDEX IX_BUID (bunitId);
+alter table leavestudent add INDEX IX_BUID (bunitId);
+alter table message add INDEX IX_BUID (bunitId);
+alter table messagetype add INDEX IX_BUID (bunitId);
+alter table bunit add INDEX IX_BUID (buId);
+alter table freeze add INDEX IX_BUID (bunitId);
+alter table pitem add INDEX IX_BUID (bunitId);
+alter table inventory add INDEX IX_BUID (bunitId);
+alter table costtrade add INDEX IX_BUID (bunitId);
+alter table clientaccount add INDEX IX_BUID (bunitId);
+
+CREATE TABLE bunit_info
+(    
+    bunitId INTEGER,
+    /* 代收資訊 */
+    bankId INTEGER DEFAULT 0,
+    virtualID VARCHAR(6),  /* 95481, .. */
+    storeID VARCHAR(8),    /* PHM001, JSM..*/
+    serviceID VARCHAR(3),  /* 669 */
+    studentBunitId INTEGER DEFAULT 0,
+    acodeBunitId INTEGER DEFAULT 0,
+    metaBunitId INTEGER DEFAULT 0,
+    unpaidBunitId INTEGER DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+alter table bunit_info add fullname MEDIUMTEXT;
+alter table bunit_info add address MEDIUMTEXT;
+alter table bunit_info add phone MEDIUMTEXT;
+alter table bunit_info add web MEDIUMTEXT;
+alter table bunit_info add billNote MEDIUMTEXT;
+alter table bunit_info add smsText MEDIUMTEXT;
+
+alter table student add bloodType VARCHAR(100);
+alter table freeze add INDEX IX_1 (created);
+
+
+
+alter table mca_fee add status TINYINT DEFAULT 0;
+alter table mca_fee change DormRoomDeposit feeType TINYINT;
+alter table mca_fee add checkFeeId INTEGER;
+alter table mca_fee add checkFallFeeId INTEGER;
+alter table mca_fee add regPrepayDeadline DATETIME;
+alter table mca_fee add regPenalty INTEGER;
+alter table mca_fee add startDay DATETIME;
+alter table mca_fee add endDay DATETIME;
+alter table mca_fee add prorateDay DATETIME;
+alter table mca_fee add excludeDays MEDIUMTEXT;
+alter table mca_fee add includeDays MEDIUMTEXT;
+alter table mca_fee add lateFee INTEGER;
+alter table mca_exrate add INDEX IX_1 (start);
+
+
+

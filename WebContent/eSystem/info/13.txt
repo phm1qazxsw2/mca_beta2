@@ -1,0 +1,4 @@
+﻿1 此開徵名稱<font color=blue>會顯示</font>於帳單.<br><br>
+
+2 加入成功後,可至<font color=blue>開單管理</font> -> <font color=blue>依開徵項目</font>  -><font color=blue>詳細資料</font>編輯修改.
+

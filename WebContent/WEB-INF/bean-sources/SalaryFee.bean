@@ -1,0 +1,23 @@
+package jsf;
+
+=SalaryFee
+int id
+Date created
+Date modified
+int salaryFeeSanumberId
+Date salaryFeeMonth
+int salaryFeeTeacherId
+int salaryFeeDeportId
+int salaryFeePositionId
+int salaryFeeClassesId
+int salaryFeeType
+int salaryFeeTypeId
+int salaryFeeNumber
+int salaryFeePrintNeed
+int salaryFeeLogId
+String salaryFeeLogPs
+int salaryFeeVNeed
+int salaryFeeVUserId
+Date salaryFeeVDate
+String salaryFeeVPs
+int salaryFeeStatus

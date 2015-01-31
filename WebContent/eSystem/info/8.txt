@@ -1,0 +1,3 @@
+1 就讀生名單僅包含入學狀態為<font color=blue>試讀</font>以及<font color=blue>在學</font>的學生.<br><br>
+
+2 就讀生為可<font color=blue>開繳費單</font>的學生.

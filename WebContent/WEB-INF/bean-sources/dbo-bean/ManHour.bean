@@ -1,0 +1,12 @@
+package phm.ezcounting;
+
+=ManHour,manhour
+int *#id
+int clientMembrId
+int executeMembrId
+Date recordTime
+Date modifyTime
+Date occurDate
+int billfdId
+int salaryfdId
+int userId

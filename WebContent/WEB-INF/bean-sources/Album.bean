@@ -1,0 +1,16 @@
+package web;
+
+=Album
+int id
+Date created
+Date modified
+String albumName
+String albumWord
+int albumPhotos
+int albumStatus
+int albumActive
+int albumClasstype
+int albumClassId
+int albumXid
+int albumTypeId
+int albumCatelogId

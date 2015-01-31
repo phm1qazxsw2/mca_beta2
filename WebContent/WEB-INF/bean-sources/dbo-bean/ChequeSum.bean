@@ -1,0 +1,5 @@
+package phm.ezcounting;
+
+=ChequeSum,cheque,,,SUM(inAmount) as s1-SUM(outAmount) as s2
+int receivable<s1
+int payable<s2

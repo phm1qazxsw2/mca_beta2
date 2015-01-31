@@ -1,0 +1,23 @@
+package jsf;
+
+=ClassesFee
+int id
+Date created 
+Date modified 
+int classesFeeCMId
+int classesFeeStudentId
+int classesFeeStuClassId
+int classesFeeStuGroupId
+int classesFeeStuLevelId
+Date classesFeeMonth
+int classesFeeFeenumberId
+int classesFeeShouldNumber
+int classesFeeTotalDiscount
+int classesFeeLogId
+String classesFeeLogPs
+int classesFeeVNeed
+int classesFeeVUserId
+Date classesFeeVDate
+String classesFeeVPs
+int classesFeeStatus
+int classesFeeChargeId

@@ -1,0 +1,16 @@
+package jsf;
+
+=Talentdate
+int id
+Date created
+Date modified
+int talentdateTalentId
+Date talentdateStartDate
+Date talentdateEndDate
+String talentdatePlan
+String talentdatePicFile
+int talentdateStatus
+int talentdateNotice
+int talentdatePresent
+int talentdateUserId
+String talentdatePrepare

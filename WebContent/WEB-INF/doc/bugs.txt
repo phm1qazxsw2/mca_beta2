@@ -1,0 +1,7 @@
+修改開徵對象時一新加是停用狀態, 應該要是啟用狀態 (2008-2-1, peter)
+
+新增折扣減免(從收費名單ajax過去的) 的畫面在 Firefox 裡面有問題 (2008-2-1, peter)
+
+已鎖住的帳單在家入開徵項目時要有 warning
+
+student upload 的程式在 windows 上吃 big5, 在 linux 上吃 utf-8

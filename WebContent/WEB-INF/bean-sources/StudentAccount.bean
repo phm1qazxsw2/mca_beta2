@@ -1,0 +1,18 @@
+package jsf;
+
+=StudentAccount
+int id
+Date created
+Date modified
+int studentAccountStuId
+int studentAccountIncomeType
+int studentAccountMoney
+int studentAccountSourceType
+int studentAccountSourceId
+int studentAccountLogId
+Date studentAccountLogDate
+String studentAccountNumber
+int studentAccountPayFeeId
+int studentAccountRootSAId
+int studentAccountCostpayID
+String studentAccountPs

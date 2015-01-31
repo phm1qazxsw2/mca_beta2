@@ -1,0 +1,8 @@
+package phm.ezcounting;
+
+=VPaid,vpaid
+int #vitemId
+int #costpayId
+int amount
+int bunitId
+

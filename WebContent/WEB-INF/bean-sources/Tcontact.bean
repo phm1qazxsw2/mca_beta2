@@ -1,0 +1,13 @@
+package jsf;
+
+=Tcontact
+int id
+Date created
+Date modified
+int tcontactStuId
+String tcontactName
+int tcontactReleationId
+String tcontactPhone1
+String tcontactPhone2
+String tcontactMobile
+String tcontactPs

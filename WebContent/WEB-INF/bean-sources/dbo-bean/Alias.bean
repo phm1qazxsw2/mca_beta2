@@ -1,0 +1,12 @@
+package phm.ezcounting;
+
+=Alias,itemalias
+int *#id
+String name
+int status
+int bunitId
+
+=
+
+   public final static int STATUS_NONE_ACTIVE = 0;
+   public final static int STATUS_ACTIVE = 1;

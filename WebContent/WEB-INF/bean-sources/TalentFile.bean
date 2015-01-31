@@ -1,0 +1,13 @@
+package jsf;
+
+=TalentFile
+int id
+Date created
+Date modified
+int talentFileStudentId
+int talentFileTalentdateId
+int talentFileTalentId
+int talentFilePresent
+String talentFileContent
+int talentFileUserId
+int talentFileSendStatus

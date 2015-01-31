@@ -1,0 +1,10 @@
+package phm.ezcounting;
+
+=Bookmark,bookmark
+int *#id
+int userId
+String name
+String url
+Date created
+
+

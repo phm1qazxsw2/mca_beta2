@@ -1,0 +1,8 @@
+package mca;
+
+=McaExRate,mca_exrate
+int *#id
+double rate
+Date start
+
+

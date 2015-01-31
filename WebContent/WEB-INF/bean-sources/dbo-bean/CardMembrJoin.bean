@@ -1,0 +1,10 @@
+package phm.ezcounting;
+
+=CardMembrInfo,cardmembr-membr,membrId=membr.id
+int *#id
+int cardId
+int membrId
+int active
+int type
+int surrogateId
+Date birth

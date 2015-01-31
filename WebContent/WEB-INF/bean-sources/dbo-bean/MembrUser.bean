@@ -1,0 +1,5 @@
+package phm.ezcounting;
+
+=MembrUser,membruser
+int #membrId
+int userId

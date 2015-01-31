@@ -1,0 +1,10 @@
+package jsf;
+
+=AuthSystem
+int id
+Date created
+Date modified
+String authSystemCode
+int authSystemType
+int authSystemStatus
+String authSystemPs

@@ -1,0 +1,14 @@
+package jsf;
+
+=TalentSalary
+int id
+Date created
+Date modified
+Date talentSalaryMonth
+Date talentSalaryAccountdate
+int talentSalaryTalentId
+int talentSalaryTeacherId
+int talentSalaryCostbookId
+int talentSalaryCostId
+int talentSalaryMoney
+int talentSalaryLogId

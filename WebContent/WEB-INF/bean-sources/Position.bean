@@ -1,0 +1,9 @@
+package jsf;
+
+=Position
+int id
+Date created 
+Date modified 
+String PositionName
+int PositionActive
+int PositionPriority

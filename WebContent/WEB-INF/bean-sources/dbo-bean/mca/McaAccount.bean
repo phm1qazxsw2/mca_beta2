@@ -1,0 +1,7 @@
+package mca;
+
+=McaAccount,PaymentAccounts
+String Account
+String Location
+String Currency
+String Payment_Type

@@ -1,0 +1,11 @@
+package phm.ezcounting;
+
+=BillRecord,billrecord
+int *#id
+int billId
+String name
+int confirmed
+Date month
+Date billDate
+
+

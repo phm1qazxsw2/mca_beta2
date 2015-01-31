@@ -1,0 +1,19 @@
+package phm.ezcounting;
+
+=MembrTeacher,membr-teacher,membr.type=2 and membr.surrogateId=teacher.id,,membr.id-teacher.id-teacherIdNumber-teacherBank1-teacherAccountNumber1-teacherAccountName1-teacherAccountDefaut-teacherBank2-teacherAccountNumber2-teacherAccountName2-teacherAccountPayWay-membr.name-teacherStatus-teacherLevel-teacherBunitId-teacherEmail
+int membrId<membr.id
+int teacherId<teacher.id
+String name<membr.name
+String teacherIdNumber
+String teacherBank1
+String teacherAccountNumber1
+String teacherAccountName1
+int teacherAccountDefaut
+String teacherBank2
+String teacherAccountNumber2
+String teacherAccountName2
+int teacherAccountPayWay
+int status<teacherStatus
+int teacherLevel
+int teacherBunitId
+String teacherEmail

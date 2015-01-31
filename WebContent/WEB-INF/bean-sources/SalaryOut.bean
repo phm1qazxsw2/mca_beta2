@@ -1,0 +1,14 @@
+package jsf;
+
+=SalaryOut
+int id
+Date created
+Date modified
+Date salaryOutMonth
+int salaryOutBanknumber
+int salaryOutBankAccountId
+int salaryOutStatus
+String salaryOutPs
+Date salaryOutPayDate
+int salaryOutPayUser
+String salaryOutPayPs

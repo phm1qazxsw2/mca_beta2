@@ -1,0 +1,11 @@
+package mca;
+
+=McaAuthorizer,Authorizers
+int Account_Number
+int Sub_Account
+String Account_Name
+String Description1
+String Description2
+int Primary_Authorizer
+int Secondary_Authorizer
+int Budget

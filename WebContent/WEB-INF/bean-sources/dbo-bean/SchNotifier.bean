@@ -1,0 +1,5 @@
+package cardreader;
+
+=SchNotifier,sch_notifier
+int #*id
+int lastId

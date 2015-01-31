@@ -1,0 +1,15 @@
+package phm.ezcounting;
+
+=Bunit,bunit
+int *#id
+String label
+int status
+int flag
+int buId
+
+=
+
+    public final static int STATUS_ACTIVE   = 1;
+    public final static int STATUS_INACTIVE = 0;
+    public final static int FLAG_BIZ        = 1;
+    public final static int FLAG_SCH        = 0;

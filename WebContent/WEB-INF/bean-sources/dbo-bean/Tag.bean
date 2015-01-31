@@ -1,0 +1,41 @@
+package phm.ezcounting;
+
+=Tag,tag
+int *#id
+Date created
+Date modified
+int typeId
+String name
+int status
+int branchTag
+Date branchTime
+int rootTag
+int branchVer
+int bunitId
+int progId
+
+=
+
+    public final static int STATUS_CURRENT = 0;
+    public final static int STATUS_HISTORY = 1;
+    public final static int STATUS_DELETED = -1;
+
+    public Tag copy()
+    {
+        Tag t = new Tag();
+	t.setTypeId(this.typeId);
+	t.setName(this.name);
+	t.setStatus(this.status);
+	t.setBranchTag(this.branchTag);
+	t.setBranchTime(this.branchTime);
+	t.setRootTag(this.rootTag);
+	t.setBunitId(this.bunitId);
+	t.setProgId(this.progId);
+	return t;
+    }
+
+    public String getBunitProgKey()
+    {
+        return getBunitId()+"#"+getProgId();
+    }
+

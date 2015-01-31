@@ -1,0 +1,5 @@
+package phm.ezcounting;
+
+=Voucher,voucher
+int *#id
+String costbookId

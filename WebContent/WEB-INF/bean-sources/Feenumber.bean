@@ -1,0 +1,8 @@
+package jsf;
+
+=Feenumber
+int id
+Date created
+Date modified
+Date feenumberDate
+int feenumberTotal

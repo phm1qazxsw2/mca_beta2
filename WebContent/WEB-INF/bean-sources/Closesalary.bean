@@ -1,0 +1,12 @@
+package jsf;
+
+=Closesalary
+int id
+Date created
+Date modified
+Date closesalaryMonth
+int closesalaryType
+int closesalaryStatus
+int closesalarySalaryId
+int closesalarySalaryNum
+int closesalaryNum

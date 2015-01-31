@@ -1,0 +1,12 @@
+package jsf;
+
+=Closeincome
+int id
+Date created
+Date modified
+Date closeincomeMonth
+int closeincomeType
+int closeincomeStatus
+int closeincomeCbId
+int closeincomeCbCheckId
+int closeincomeNum

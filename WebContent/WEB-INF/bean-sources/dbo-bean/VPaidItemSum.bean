@@ -1,0 +1,4 @@
+package phm.ezcounting;
+
+=VPaidItemSum,vpaid-vitem-costpay,vitemId=vitem.id and costpayId=costpay.id,,SUM(vpaid.amount) as s
+int sum<s

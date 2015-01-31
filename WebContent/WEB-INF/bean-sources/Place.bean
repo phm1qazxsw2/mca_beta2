@@ -1,0 +1,8 @@
+package jsf;
+
+=Place
+int id
+Date created
+Date modified
+String placeName
+int placeActive

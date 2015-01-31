@@ -1,0 +1,10 @@
+package jsf;
+
+=SalarybankAuth
+int id
+Date created
+Date modified
+int salarybankAuthId
+int salarybankAuthUserID
+int salarybankAuthActive
+int salarybankLoginId

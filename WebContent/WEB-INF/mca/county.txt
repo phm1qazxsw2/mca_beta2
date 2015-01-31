@@ -1,0 +1,82 @@
+1001			1001
+1002	台北縣	Taipei County	1001
+1003	桃園縣	Taoyuan County	1001
+1004	新竹縣	Xinzhu County	1001
+1005	苗栗縣	Miaoli County	1001
+1006	台中縣	Taichung County	1001
+1007	彰化縣	Zhanghua County	1001
+1008	南投縣	Nantou County	1001
+1009	雲林縣	Yunlin County	1001
+1010	嘉義縣	Jiayi County	1001
+1011	台南縣	Tainan County	1001
+1012	高雄縣	Kaohsiung County	1001
+1013	屏東縣	Pingdong County	1001
+1014	台東縣	Taidong County	1001
+1015	花蓮縣	Hualian County	1001
+1016	宜蘭縣	Yilan County	1001
+1017	澎湖縣	Penghu County	1001
+1018	金門縣	Jinmen County	1001
+1019	連江縣	Lianjiang County	1001
+1020		Alabama	1002
+1021		Alaska	1002
+1022		Arizona	1002
+1023		Arkansas	1002
+1024		California	1002
+1025		Colorado	1002
+1026		Connecticut	1002
+1027		Delaware	1002
+1028		Florida	1002
+1029		Georgia	1002
+1030		Hawaii	1002
+1031		Idaho	1002
+1032		Illinois	1002
+1033		Indiana	1002
+1034		Iowa	1002
+1035		Kansas	1002
+1036		Kentucky	1002
+1037		Louisiana	1002
+1038		Maine	1002
+1039		Maryland	1002
+1040		Massachusetts	1002
+1041		Michigan	1002
+1042		Minnesota	1002
+1043		Mississippi	1002
+1044		Missouri	1002
+1045		Montana	1002
+1046		Nebraska	1002
+1047		Nevada	1002
+1048		New Hampshire	1002
+1049		New Jersey	1002
+1050		New Mexico	1002
+1051		New York	1002
+1052		North Carolina	1002
+1053		North Dakota	1002
+1054		Ohio	1002
+1055		Oklahoma	1002
+1056		Oregon	1002
+1057		Pennsylvania	1002
+1058		Rhode Island	1002
+1059		South Carolina	1002
+1060		South Dakota	1002
+1061		Tennessee	1002
+1062		Texas	1002
+1063		Utah	1002
+1064		Vermont	1002
+1065		Virginia	1002
+1066		Washington	1002
+1067		West Virginia	1002
+1068		Wisconsin	1002
+1069		Wyoming	1002
+1070		Alberta	1003
+1071		British Columbia	1003
+1072		Manitoba	1003
+1073		New Brunswick	1003
+1074		Newfoundland and Labrador	1003
+1075		Northwest Territories	1003
+1076		Nova Scotia	1003
+1077		Nunavut	1003
+1078		Ontario	1003
+1079		Prince Edward Island	1003
+1080		Quebec	1003
+1081		Saskatchewan	1003
+1082		Yukon	1003

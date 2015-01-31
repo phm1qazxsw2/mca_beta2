@@ -1,0 +1,15 @@
+package phm.ezcounting;
+
+=Membr,membr
+int *#id
+String name
+int active
+int type
+int surrogateId
+Date birth
+int bunitId
+
+=
+
+     public final static int TYPE_STUDENT = 1;
+     public final static int TYPE_TEACHER = 2;

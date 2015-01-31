@@ -1,0 +1,128 @@
+package mca;
+
+=McaFee,mca_fee
+int #*id
+int status
+String title
+Date month
+Date billDate
+int feeType
+int checkFeeId
+int checkFallFeeId
+Date regPrepayDeadline
+int regPenalty
+int lateFee
+int RegA
+int RegB
+int RegC
+int RegD
+int TuitionK5A
+int TuitionK5B
+int TuitionK5C
+int TuitionK5D
+int Tuition69A
+int Tuition69B
+int Tuition69C
+int Tuition69D
+int Tuition1012A
+int Tuition1012B
+int Tuition1012C
+int Tuition1012D
+int TP_TuitionK5A
+int TP_TuitionK5B
+int TP_TuitionK5C
+int TP_TuitionK5D
+int TP_Tuition69A
+int TP_Tuition69B
+int TP_Tuition69C
+int TP_Tuition69D
+int TP_Tuition1012A
+int TP_Tuition1012B
+int TP_Tuition1012C
+int TP_Tuition1012D
+int K_TuitionK5A
+int K_TuitionK5B
+int K_TuitionK5C
+int K_TuitionK5D
+int K_Tuition69A
+int K_Tuition69B
+int K_Tuition69C
+int K_Tuition69D
+int K_Tuition1012A
+int K_Tuition1012B
+int K_Tuition1012C
+int K_Tuition1012D
+int BuildingA
+int BuildingB
+int BuildingC
+int BuildingD
+int DormProgramA
+int DormProgramB
+int DormProgramC
+int DormProgramD
+int DormFacilityA
+int DormFacilityB
+int DormFacilityC
+int DormFacilityD
+int DormFoodA
+int DormFoodB
+int DormFoodC
+int DormFoodD
+int ELLModerateA
+int ELLModerateB
+int ELLModerateC
+int ELLModerateD
+int ELLSignificantA
+int ELLSignificantB
+int ELLSignificantC
+int ELLSignificantD
+int MusicPrivateA
+int MusicPrivateB
+int MusicPrivateC
+int MusicPrivateD
+int MusicSemiPrivateA
+int MusicSemiPrivateB
+int MusicSemiPrivateC
+int MusicSemiPrivateD
+int MusicSemiGroupA
+int MusicSemiGroupB
+int MusicSemiGroupC
+int MusicSemiGroupD
+int TestingA
+int TestingB
+int TestingC
+int TestingD
+int Milk
+int TchLunch1
+int TchLunch2
+int TchLunch3
+int TchLunch4
+int TchLunch5
+int TchLunch6
+int TchLunch7
+int KaoLunch1
+int KaoLunch2
+int Instrument
+int MusicRoom
+int FamilyDiscountA
+int FamilyDiscountB
+int Bus
+Date startDay
+Date endDay
+Date prorateDay
+String excludeDays
+String includeDays
+int EntranceA
+int EntranceB
+int EntranceC
+int EntranceD
+
+
+=
+    public static final int FALL		= 1;
+    public static final int SPRING		= 2;
+    public static final int REGISTRATION_ONLY	= 3;
+
+    public static final int STATUS_ACTIVE = 0;
+    public static final int STATUS_DELETED = -1;
+

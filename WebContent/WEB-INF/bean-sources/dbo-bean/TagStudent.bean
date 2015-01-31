@@ -1,0 +1,17 @@
+package phm.ezcounting;
+
+=TagStudent,tagmembr-membr-student,tagmembr.membrId=membr.id and membr.type=1 and membr.surrogateId=student.id,,tagId-membr.name-tag.name-membr.id-student.id-typeId
+@tag,tagId=tag.id
+int #membrId<membr.id
+int tagId
+String tagName<tag.name
+String membrName<membr.name
+int studentId<student.id
+int typeId
+
+=
+
+    public String getStudentTagKey()
+    {
+        return studentId + "#" + typeId;
+    }

@@ -1,0 +1,6 @@
+package mca;
+
+=McaRecord,mca_record
+int *#id
+int mcaFeeId
+int billRecordId

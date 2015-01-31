@@ -1,0 +1,24 @@
+package phm.ezcounting;
+
+=Cheque,cheque
+int *#id
+int inAmount
+int outAmount
+String chequeId
+Date recordTime
+Date cashDate
+int type
+Date cashed
+String title
+int billpayId
+int costpayId
+String issueBank
+int threadId
+int bunitId
+
+=
+    public final static int TYPE_INCOME_TUITION = 1;
+    public final static int TYPE_SPENDING_INCOME = 2;
+    public final static int TYPE_SPENDING_PAY = 3;
+    public final static int TYPE_COST_OF_GOODS = 4;
+

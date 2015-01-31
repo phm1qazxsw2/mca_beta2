@@ -1,0 +1,74 @@
+package phm.ezcounting;
+
+=Costpay2,costpay
+int *#id
+Date created
+Date modified
+Date costpayDate
+int costpaySide
+int costpaySideID
+int costpayFeeticketID
+int costpayFeePayFeeID
+int costpayOwnertradeStatus
+int costpayOwnertradeId
+int costpaySalaryTicketId
+int costpaySalaryBankId
+int costpayNumberInOut
+int costpayPayway
+int costpayAccountType
+int costpayAccountId
+int costpayCostNumber
+int costpayIncomeNumber
+int costpayLogWay
+Date costpayLogDate
+int costpayLogId
+String costpayLogPs
+int costpayBanklog
+int costpayChequeId
+int costpayCostbookId
+int costpayCostCheckId
+int costpayVerifyStatus
+Date costpayVerifyDate
+int costpayVerifyId
+String costpayVerifyPs
+int costpayStudentAccountId
+int exRateId
+double exrate
+double orgAmount
+String checkInfo
+String receiptNo
+String payerName
+int threadId
+int bunitId
+
+=
+
+    public static final int COSPAY_TYPE_TUITION = -9999;
+    public static final int COSPAY_TYPE_SALARY = -10000;
+    public static final int COSPAY_TYPE_REFUND = -10001;
+    public static final int COSPAY_TYPE_SPENDING = -10002;
+    public static final int COSPAY_TYPE_INCOME = -10003;
+    public static final int COSPAY_TYPE_COST_OF_GOODS = -10006;
+    public static final int COSPAY_TYPE_CHEQUE_TUITION = -10004;
+    public static final int COSPAY_TYPE_INITIALIZE = -10005;
+    public static final int COSPAY_TYPE_MANUAL_VOUCHER = -10007;
+
+    public static final int VERIFIED_NO = 0;
+    public static final int VERIFIED_WARN = 1;
+    public static final int VERIFIED_YES = 2;
+
+    public static final int ACCOUNT_TYPE_CASH = 1;
+    public static final int ACCOUNT_TYPE_BANK = 2;
+    public static final int ACCOUNT_TYPE_CHEQUE = 3;
+    public static final int ACCOUNT_TYPE_USD_CASH = 4; // 美金
+    public static final int ACCOUNT_TYPE_USD_CHECK = 5; // 美金
+
+
+    //payway: 0:現金，1：支票，2：匯款：3：其他
+    public static final int PAYWAY_CASH = 0;
+    public static final int PAYWAY_CHEQUE = 1;
+    public static final int PAYWAY_WIRE = 2;
+    public static final int PAYWAY_OTHER = 3;
+    public static final int PAYWAY_USD_CASH = 4;
+    public static final int PAYWAY_USD_CHECK = 5;
+

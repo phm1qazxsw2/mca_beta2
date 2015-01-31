@@ -1,0 +1,12 @@
+package jsf;
+
+=Tradeaccount
+int id
+Date created
+Date modified
+String TradeaccountName
+int TradeaccountActive
+int TradeaccountUserId
+int TradeaccountAuth
+int tradeAccountOrder
+int bunitId

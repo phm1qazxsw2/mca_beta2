@@ -1,0 +1,3 @@
+1 就讀學生可開學費帳單,加入後可以在 <font color=blue>學生集合設定</font> 進行編輯. <BR><BR>
+
+2 就讀學生可<font color=blue>編輯學費帳單</font>.

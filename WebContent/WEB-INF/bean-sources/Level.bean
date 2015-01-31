@@ -1,0 +1,8 @@
+package jsf;
+
+=Level
+int id
+Date created 
+Date modified 
+String levelName
+int levelActive

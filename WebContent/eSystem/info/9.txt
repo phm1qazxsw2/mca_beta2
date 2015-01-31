@@ -1,0 +1,1 @@
+1 填入關鍵字,系統將為你自動對比學生的<font color=blue>[姓名]</font>,<font color=blue>[英文名稱]</font>,<font color=blue>[身份證]</font>,<font color=blue>[電話]</font>,<font color=blue>[地址]</font>,<font color=blue>[Email]</font>等欄位,便捷有效的找到你想要的資料.<BR><BR>

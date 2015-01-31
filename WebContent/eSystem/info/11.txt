@@ -1,0 +1,3 @@
+1 潛在學生名單僅包含入學狀態為<font color=blue>參觀登記/上網登入</font>以及<font color=blue>報名/等待入學</font>的學生.<br><br>
+
+2 潛在學生可由<font color=blue>詳細資料</font>-><font color=blue>就學狀態</font>來修改為就讀學生.

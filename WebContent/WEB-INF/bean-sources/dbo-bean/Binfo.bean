@@ -1,0 +1,18 @@
+package phm.ezcounting;
+
+=Binfo,bunit_info
+int #bunitId
+int bankId
+String virtualID
+String storeID
+String serviceID
+int studentBunitId
+int acodeBunitId
+int metaBunitId
+int unpaidBunitId
+String fullname
+String address
+String phone
+String web
+String billNote
+String smsText

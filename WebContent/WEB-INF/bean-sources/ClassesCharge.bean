@@ -1,0 +1,14 @@
+package jsf;
+
+=ClassesCharge
+int id
+Date created
+Date modified
+int classesChargeCMId
+Date classesChargeMonth
+int classesChargeCategory
+int classesChargexId
+int classesChargeYId
+int classesChargeActive
+int classesChargeMoneyNumber
+String classesChargePs

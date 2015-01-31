@@ -1,0 +1,3 @@
+1 設為離校可於<font color=blue>學生管理 ->離校學生</font> 進行管理. <BR><BR>
+
+2 如選擇中途離校,可進階編輯<font color=blue>離校原因</font>.

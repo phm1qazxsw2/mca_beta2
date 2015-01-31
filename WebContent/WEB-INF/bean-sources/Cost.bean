@@ -1,0 +1,16 @@
+package jsf;
+
+=Cost
+int id
+Date created 
+Date modified
+Date costAccountDate
+int costOutIn 
+String costName
+int costMoney
+int costLogId
+int costBigItem
+int costSmallItem
+int costCostbookId
+int costCostCheckId
+String costPs

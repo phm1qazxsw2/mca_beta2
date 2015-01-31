@@ -1,0 +1,18 @@
+package phm.ezcounting;
+
+=BillItemInfo,billitem-bill,billId=bill.id,BillItem
+int -*#id
+int -billId
+String -name
+int -aliasId
+int -smallItemId
+int -pitemId
+int -status
+String -description
+int -defaultAmount
+int -copyStatus
+int -mainBillItemId
+int -pos
+String -color
+int -templateVchrId
+

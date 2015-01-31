@@ -1,0 +1,9 @@
+package jsf;
+
+=InModify
+int id
+Date created
+Date modified
+int inModifyIncomeId
+String inModifyNotice
+int inModifyUser

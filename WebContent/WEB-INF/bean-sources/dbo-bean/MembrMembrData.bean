@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=MembrMembrData,membrmembr-membr,membrmembr.m2Id=membr.id
+int m1Id
+int m2Id
+String name

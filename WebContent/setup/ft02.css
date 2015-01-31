@@ -1,0 +1,52 @@
+
+
+BODY {
+scrollbar-track-color: #e3c3c3;
+buttonface: #e3c3c3;
+scrollbar-arrow-color:#a48f7c;
+scrollbar-base-color:#e3c3c3;
+scrollbar-face-color:#e3c3c3;
+scrollbar-highlight-color:#a48f7c;
+scrollbar-shadow-color:#a48f7c;
+scrollbar-darkshadow-color:#e3c3c3;
+scrollbar-3dlight-color:#e3c3c3;
+
+}
+a:link { text-decoration: none; color: #bc0000}
+a:visited { text-decoration: none; color: #bc0000}
+a:hover { text-decoration: underline; color: #800000} 
+
+
+.an01:link { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: none; color: #3c3c3c}
+.an01:visited { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: none; color: #3c3c3c}
+.an01:hover { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: underline; color: #3c3c3c} 
+
+
+.an02:link { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: none; color: #3c3c3c}
+.an02:visited { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: none; color: #3c3c3c}
+.an02:hover { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: underline; color: #3c3c3c} 
+
+
+.an03:link { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: none; color: #ffffff}
+.an03:visited { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: none; color: #ffffff}}
+.an03:hover { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:220% ; text-decoration: underline; color: #ffffff}} 
+
+
+.es01 { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 9px; line-height:150% ; color: #8e8e8e } 
+.es01h { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 9px; line-height:200% ; color: #8e8e8e } 
+.es01r { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 9px; line-height:150% ; color: #ffffff } 
+.es01rh { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 9px; line-height:200% ; color: #ffffff } 
+.es02r { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:150% ; color: #ffffff } 
+.es02rh { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:200% ; color: #ffffff } 
+.es02 { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:120% ; color: #3c3c3c } 
+.es02c { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:130% ; color: #CC7575 } 
+.es02h { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:200% ; color: #d30000 } 
+.es02b { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 12px; line-height:180% ; color: #00000 } 
+.es03 { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 13px; bold; line-height:150% ; color: #8e8e8e } 
+.es04 { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 15px; line-height:150% ; color: #0303AE } 
+.es04c { font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei; font-size: 15px; line-height:150% ; color: #980000 } 
+
+.menulinks{
+text-decoration:none;
+}
+

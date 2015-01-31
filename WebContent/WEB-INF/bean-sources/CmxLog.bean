@@ -1,0 +1,11 @@
+package jsf;
+
+=CmxLog
+int id
+Date created
+Date modified
+int cmxLogCategory
+int cmxLogCMid
+int cmxLogXId
+int cmxLogYId
+int cmxLogActive

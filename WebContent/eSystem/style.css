@@ -1,0 +1,136 @@
+BODY, TABLE, INPUT {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+}
+
+A {
+	text-decoration : none;
+	color : Blue;
+}
+
+A:VISITED {
+	text-decoration : none;
+	color : Blue;
+}
+
+A:HOVER {
+	text-decoration : underline;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.htable{
+	border-width: 1px;
+	border-spacing:4 px;
+	border-style: solid;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+
+TH {
+	font-style : normal;
+	text-decoration : none;
+	text-align : center;
+	background : #f0f0f0;
+	color : #000000;
+	font-size : 10pt;
+	font-weight : normal;
+	font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei;
+	line-height:120% ;
+}
+.normal {
+	background : #f6f6f6;
+	color : Black;
+	font-size : 10pt;
+}
+
+.normal2 {
+	background : #ffffff;
+	color : Black;
+	font-size : 10pt;
+}
+
+.normal3 {
+	background : #f0f0f0;
+	color : Black;
+	font-size : 10pt;
+}
+
+.faqcat {
+	background : #FBECFF;
+	color : Black;
+	font-size : 10pt;
+}
+
+.faqsubcat {
+	background : #EDF9D5;
+	color : Black;
+	font-size : 10pt;
+}
+
+.faq {
+	background : #FFF8D9;
+	color : Black;
+	font-size : 10pt;
+}
+
+.title {
+	background : #C1DAFF;
+	text-align : center;
+	color : Black;
+	font-size : 12pt;
+	font-weight : bold;
+	font-family: Verdana, Arial, Helvetica, Geneva, 新細明體, mingliu, taipei;
+	line-height:120% ;
+}
+
+.footer {
+	background : #E3E3E3;
+	text-align : right;
+	font-size : 10pt;
+	font-weight : bold;
+}
+
+.gray {
+	background : #E3E3E3;
+	font-size : 8pt;
+}
+
+.q_content{
+        background : #C0C0C0;
+	color : #CC0000;
+	font-size : 10pt;
+}
+
+.e_style{
+        background : #CCFF99;
+	color : Black;
+	font-size : 10pt;
+}
+
+.s_style{
+        background : #99CCFF;
+	color : Black;
+	font-size : 10pt;
+}
+
+
+.tdback {
+        background : #9999CC;
+        text-align : center;
+
+}
+.highlight {
+	background : #FFC8C8;
+	color : Black;
+	font-size : 10pt;
+}
+
+.highlight2 {
+	background : #B4C6F1;
+	color : Black;
+	font-size : 10pt;
+}

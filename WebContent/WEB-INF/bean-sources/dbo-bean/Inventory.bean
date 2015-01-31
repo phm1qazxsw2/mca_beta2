@@ -1,0 +1,10 @@
+package phm.ezcounting;
+
+=Inventory,inventory
+int *#id
+int pitemId
+Date orderDate
+int quantity
+int totalPrice
+int traderId
+int bunitId

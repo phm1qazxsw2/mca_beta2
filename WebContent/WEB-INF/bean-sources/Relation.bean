@@ -1,0 +1,9 @@
+package jsf;
+
+=Relation
+int id
+Date created
+Date modified
+String relationName
+int relationActive
+int bunitId

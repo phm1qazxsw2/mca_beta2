@@ -1,0 +1,8 @@
+package jsf;
+
+=Costcheck
+int id
+Date created
+Date modified
+Date CostcheckDate
+int CostcheckTotal

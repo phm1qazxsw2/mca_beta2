@@ -1,0 +1,9 @@
+package jsf;
+
+=Degree
+int id
+Date created
+Date modified
+String degreeName
+int degreeActive
+int bunitId

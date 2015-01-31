@@ -1,0 +1,12 @@
+package jsf;
+
+=Closecost
+int id
+Date created
+Date modified
+Date closecostMonth
+int closecostType
+int closecostStatus
+int closecostCbId
+int closecostCbCheckId
+int closecostNum

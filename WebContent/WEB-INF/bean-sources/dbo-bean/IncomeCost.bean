@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=IncomeCost,costpay,,,SUM(costpayCostNumber) as s1-SUM(costpayIncomeNumber) as s2-SUM(orgAmount) as s3
+int cost<s1
+int income<s2
+double orgAmount<s3

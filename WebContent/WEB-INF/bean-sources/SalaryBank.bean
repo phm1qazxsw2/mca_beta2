@@ -1,0 +1,27 @@
+package jsf;
+
+=SalaryBank
+int id
+Date created
+Date modified
+Date salaryBankMonth
+int salaryBankTeacherId
+int salaryBankSanumber
+int salaryBankDeportId
+int salaryBankPositionId
+int salaryBankClassesId
+int salaryBankMoney
+int salaryBankBankNumberId
+int salaryBankStatus
+Date salaryBankPayDate
+int salaryBankPayWay
+int salaryBankPayAccountType
+int salaryBankPayAccountId
+int salaryBankToId
+String salaryBankToAccount
+int salaryBankLogId
+String salaryBankLogPs
+int salaryBankVerifyStatus
+int salaryBankVerifyId
+Date salaryBankVerifyDate
+String salaryBankVerifyPs

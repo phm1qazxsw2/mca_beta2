@@ -1,0 +1,17 @@
+package phm.ezcounting;
+
+=DiscountInfo,discount-membr-discounttype,discount.type=discounttype.id and discount.membrId=membr.id,Discount
+@user,discount.userId=user.id
+int -*#id<discount.id
+int -chargeItemId
+int -membrId
+int -userId
+int -amount
+int -type
+String -note
+int -copy
+String membrName<membr.name
+String discountTypeName
+String userLoginId
+
+

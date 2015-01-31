@@ -1,0 +1,16 @@
+package jsf;
+
+=Tadent
+int id
+Date created
+Date modified
+int tadentTalentId
+int tadentStudentId
+int tadentActive
+Date tadentComeDate
+String tadentPs
+int tadentTime
+int tadentActualTime
+int talentLog
+int talentLogId
+Date talentLogDate

@@ -1,0 +1,42 @@
+package phm.ezcounting;
+
+=BillPay,billpay
+int *#id
+int via
+Date recordTime
+Date createTime
+int amount
+int remain
+int membrId
+int userId
+int billSourceId
+int chequeId
+int pending
+int refundCostPayId
+long exportDate
+int exportUserId
+int verifyStatus
+int verifyId
+Date verifyDate
+String note
+int threadId
+int bunitId
+
+=
+   // via
+   /* 0: cash, 1: atm, 2:store, 3:check, 4:wire, 5:credit card, 
+      100: cash salary, 101: wire salary, 102: check salary */
+
+    public static final int VIA_INPERSON = 0; 
+    public static final int VIA_ATM = 1;
+    public static final int VIA_STORE = 2;
+    public static final int VIA_CHECK = 3;
+    public static final int VIA_WIRE = 4;
+    public static final int VIA_CREDITCARD = 5;
+
+    public static final int SALARY_CASH = 100;
+    public static final int SALARY_WIRE = 101;
+    public static final int SALARY_CHECK = 102;
+
+    public static final int STATUS_NOT_VERIFIED = 0;
+    public static final int STATUS_VERIFIED = 1;

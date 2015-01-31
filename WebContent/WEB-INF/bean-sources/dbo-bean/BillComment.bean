@@ -1,0 +1,13 @@
+package phm.ezcounting;
+
+=BillComment,billcomment
+int #membrId
+int #billRecordId
+String comment
+
+=
+
+   public String getBillKey()
+   {
+        return getMembrId()+"#"+getBillRecordId();
+   }

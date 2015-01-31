@@ -1,0 +1,5 @@
+1 離校學生名單僅包含入學狀態為<font color=blue>畢業校友</font>,<font color=blue>中途離校</font>及<font color=blue>未入學</font>的學生名單.<br><br>
+
+2 離校學生可由<font color=blue>詳細資料</font>-><font color=blue>就學狀態</font>來修改為就學狀態.<BR><BR>
+
+3 離校學生可由<font color=blue>離校學生統計</font>來獲得離校統計資料.

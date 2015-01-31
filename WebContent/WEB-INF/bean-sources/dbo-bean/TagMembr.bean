@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=TagMembr,tagmembr
+int #tagId
+int #membrId
+Date bindTime

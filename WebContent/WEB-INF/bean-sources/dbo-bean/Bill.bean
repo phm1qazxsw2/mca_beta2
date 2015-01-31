@@ -1,0 +1,35 @@
+package phm.ezcounting;
+
+=Bill,bill
+int *#id
+String name
+String prettyName
+int status
+int balanceWay
+int billType
+int privLevel
+int bunitId
+String comName
+String comAddr
+String payNote
+String regInfo
+
+=
+    // static
+    public final static int STATUS_ACTIVE = 1;
+    public final static int STATUS_NOTUSE = 0;
+
+    // balanceWay
+    public final static int MANUAL = 0; // 獨立銷單
+    public final static int FIFO = 1;  // 先進先銷
+
+    // type
+    public final static int TYPE_BILLING = 0; // 帳單
+    public final static int TYPE_SALARY = 1;  // 薪資
+
+    // priLevel
+    public final static int PRIV_ADMIN = 1;	// 1: 管理者 only
+    public final static int PRIV_OFFICER = 2;	// 2: 經營者以上
+    public final static int PRIV_FINANCE = 3;	// 3: 會計以上
+    public final static int PRIV_MANAGER = 4;	// 4: 行政以上
+    public final static int PRIV_STAFF = 5;	// 5: 老師以上

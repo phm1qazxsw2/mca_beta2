@@ -1,0 +1,12 @@
+package jsf;
+
+=SalaryNumber
+int id
+Date created
+Date modified
+int salaryNumberTypeId
+int salaryNumberTeacherId
+int salaryNumberMoneyNumber
+int salaryNumberLogId
+Date salaryNumberLogDate
+String salaryNumberPs

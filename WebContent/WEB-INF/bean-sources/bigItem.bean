@@ -1,0 +1,9 @@
+package jsf;
+
+=BigItem
+int id
+Date created
+Date modified
+String acctCode
+String bigItemName
+int bigItemActive

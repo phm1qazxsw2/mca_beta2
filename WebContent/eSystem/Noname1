@@ -1,0 +1,13 @@
+1. 資料搜集 module
+2. 報告 module (input and output)
+3. search module
+
+3. 輸入 SWOT 的語句和條件 (各領域)
+4. 輸入 package (各領域)
+         -- 敘述
+	 -- 關聯課程
+5. 輸入課程資訊 (各領域)
+         -- Careers
+	 -- Tuition
+	 -- 學校和 City Living Fee
+6. 編輯排名資訊 (各領域)

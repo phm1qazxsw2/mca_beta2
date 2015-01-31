@@ -1,0 +1,25 @@
+package jsf;
+
+=BankAccount
+int id
+Date created
+Date modified
+String bankAccountName
+String bankAccountId
+String bankAccountAccount
+String bankAccountAccountName
+int bankAccountLogUseId
+Date bankAccountLogDate
+String bankAccountLogPs
+int bankAccountNumber
+int bankAccountActive
+String bankAccount2client
+String bankAccountPayDate
+String bankAccountWebAddress
+String bankAccountWeb1
+String bankAccountWeb2
+String bankAccountWeb3
+int bankAccountATMActive
+String bankAccountRealName
+String bankAccountBranchName
+int bunitId

@@ -1,0 +1,8 @@
+package phm.ezcounting;
+
+=TagType,tagtype
+int *#id
+String name
+int num
+int main
+int bunitId

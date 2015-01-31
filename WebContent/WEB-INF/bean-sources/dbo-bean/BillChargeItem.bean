@@ -1,0 +1,42 @@
+package phm.ezcounting;
+
+// need to specify billitem.id=xx and billrecord.id=yy in the query
+
+=BillChargeItem,billrecord-bill,billrecord.billId=bill.id,ChargeItem
+@billitem,billitem.billId=bill.id
+@chargeitem,chargeitem.billItemId=billitem.id and chargeitem.billRecordId=billrecord.id 
+int -#id<chargeitem.id
+int -billItemId<billitem.id
+int -billRecordId<billrecord.id
+int -chargeAmount
+int billId
+String name<billitem.name
+int aliasId
+int pitemId
+int mySmallItemId<chargeitem.smallItemId
+int parentSmallItemId<billitem.smallItemId
+int status<billitem.status
+String description
+String billName<bill.name
+String billRecordName<billrecord.name
+int defaultAmount
+Date month
+String color
+Date billDate
+
+=
+
+    public int getSmallItemId()
+    {
+        return (mySmallItemId>0)?mySmallItemId:parentSmallItemId;
+    }
+
+    public int getMyAmount()
+    {
+        if (this.getChargeAmount()==0)
+	    return this.getDefaultAmount();
+	return this.getChargeAmount();
+    }
+
+
+

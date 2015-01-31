@@ -1,0 +1,56 @@
+package phm.ezcounting;
+
+=Overtime,overtime
+int *#id
+Date created
+int membrId
+Date startDate
+Date endDate
+int mins
+String ps
+int editUser
+int status
+int times
+int confirmType
+int confirmMins
+String confirmPs
+int userId
+=
+
+    public final static int STATUS_ONLINE    = 0;
+    public final static int STATUS_USER     = 1;
+   
+    public String getMembrSatus(){
+	
+	return String.valueOf(this.membrId)+"#"+String.valueOf(this.status);
+    }    
+
+    public static int getOvertimeMins(int membrId,Date rundate){
+
+	int avalibleDate=0;
+	java.text.SimpleDateFormat sdf=new java.text.SimpleDateFormat("yyyy/MM/dd");		
+
+	YearHolidayJoinMgr ym=YearHolidayJoinMgr.getInstance();
+	String query="startDate <='"+sdf.format(rundate)+"' and '"+sdf.format(rundate)+"' <= endDate and membrId='"+membrId+"'";
+					
+	ArrayList<YearHolidayJoin> yh=ym.retrieveList(query,"");
+	if(yh==null || yh.size()<=0){
+		return avalibleDate;
+	}
+	
+	YearHolidayJoin yhj=yh.get(0);
+	SchEventMgr sem=SchEventMgr.getInstance();
+	String seQuery="'"+sdf.format(yhj.getStartDate())+"' <= startTime and endTime <='"+sdf.format(yhj.getEndDate())+"' and type='"+SchEvent.TYPE_OVERTIME+"' and membrId='"+membrId+"'";	
+	ArrayList<SchEvent> ase=sem.retrieveList(seQuery,"");
+	
+	if(ase==null || ase.size()<=0){	
+		return yhj.getOvertime();
+	}
+	int eventLong=0;
+	for(int i=0;i<ase.size();i++){
+		SchEvent se=ase.get(i);
+		eventLong+=(se.getLastingHours()*60)+se.getLastingMins();
+	}
+	avalibleDate=yhj.getOvertime()-eventLong;
+	return avalibleDate;
+    }

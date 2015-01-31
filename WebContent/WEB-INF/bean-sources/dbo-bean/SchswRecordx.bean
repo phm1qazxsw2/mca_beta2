@@ -1,0 +1,17 @@
+package phm.ezcounting;
+
+=SchswRecordx,schswrecord-schdef,schdefId=schdef.id,SchswRecord
+@membr,membrId=membr.id
+@schsw,schswId=schsw.id
+int -id<schswrecord.id
+int -schswId
+Date -occurDate
+int -membrId
+int -schdefId
+int -type
+Date startDate
+Date endDate
+int reqMembrId
+String schdefName<schdef.name
+String membrName<membr.name
+

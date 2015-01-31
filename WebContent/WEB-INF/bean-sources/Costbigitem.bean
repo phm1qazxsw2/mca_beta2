@@ -1,0 +1,8 @@
+package jsf;
+
+=Costbigitem
+int id
+Date created
+Date modified
+int costtradeId
+int bigitemId

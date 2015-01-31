@@ -1,0 +1,8 @@
+package jsf;
+
+=Sanumber
+int id
+Date created
+Date modified
+Date sanumberDate
+int sanumberTotal

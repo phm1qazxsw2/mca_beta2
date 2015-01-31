@@ -1,0 +1,11 @@
+package mca;
+
+=McaFeeRecord,mca_record-mca_fee-billrecord-bill,mca_record.mcaFeeId=mca_fee.id and mca_record.billRecordId=billrecord.id and billrecord.billId=bill.id,phm.ezcounting.BillRecord
+int -*#id<billrecord.id
+int -billId
+String -name
+int -confirmed
+Date -month
+Date -billDate
+int feeId<mca_fee.id
+int bunitId<bill.bunitId

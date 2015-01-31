@@ -1,0 +1,8 @@
+package phm.ezcounting;
+
+=TagMembrInfo,tagmembr
+@tag,tagmembr.tagId=tag.id
+int tagId
+int membrId
+String tagName<tag.name
+int progId

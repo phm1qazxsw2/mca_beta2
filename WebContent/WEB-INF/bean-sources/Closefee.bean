@@ -1,0 +1,12 @@
+package jsf;
+
+=Closefee
+int id
+Date created
+Date modified
+Date closefeeMonth
+int closefeeType
+int closefeeStatus
+int closefeeFtId
+int closefeeFeenumberId
+int closefeeNum

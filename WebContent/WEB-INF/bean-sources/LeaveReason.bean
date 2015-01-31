@@ -1,0 +1,9 @@
+package jsf;
+
+=LeaveReason
+int id
+Date created
+Date modified
+String leaveReasonName
+int leaveReasonActive
+int bunitId

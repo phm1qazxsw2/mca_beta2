@@ -1,0 +1,5 @@
+package phm.ezcounting;
+
+=BillSum,membrbillrecord-billrecord-bill,billRecordId=billrecord.id and billId=bill.id,,SUM(receivable) as s1-SUM(received) as s2
+int receivable<s1
+int received<s2

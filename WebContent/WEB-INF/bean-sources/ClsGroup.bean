@@ -1,0 +1,9 @@
+package jsf;
+
+=ClsGroup
+int id
+Date created
+Date modified
+int classId
+String name
+int active

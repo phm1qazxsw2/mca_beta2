@@ -1,0 +1,16 @@
+package jsf;
+
+=Costtrade
+int id
+Date created
+Date modified
+String costtradeName
+int costtradeActive
+String costtradeContacter
+String costtradeUnitnumber
+String costtradePhone1
+String costtradePhone2
+String costtradeMobile
+String costtradeAddress
+String costtradePs
+int bunitId

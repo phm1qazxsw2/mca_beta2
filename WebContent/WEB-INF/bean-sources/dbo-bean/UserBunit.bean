@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=UserBunit,userbunit
+int userId
+int bunitId
+

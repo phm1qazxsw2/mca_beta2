@@ -1,0 +1,35 @@
+package jsf;
+
+=Closemonth
+int id
+Date created
+Date modified
+Date closemonthMonth
+int closemonthStatus
+int closemonthUserId
+String closemonthPs
+int closemonthFeesNum
+int closemonthFeesNotNum
+int closemonthFeestatus
+Date closemonthFeeDate
+int closemonthFeeUserId
+String closemonthFeePs
+int closemonthIncomestatus
+int closemonthIncomeNum
+int closemonthIncomeNotNum
+Date closemonthIncomeDate
+int closemonthIncomeUserId
+String closemonthIncomePs
+int closemonthSalarystatus
+int closemonthSalaryNum
+int closemonthSalaryNotNum
+Date closemonthSalaryDate
+int closemonthSalaryUserId
+String closemonthSalaryPs
+int closemonthCoststatus
+int closemonthCostNum
+int closemonthCostNotNum
+Date closemonthCostDate
+int closemonthCostUserId
+String closemonthCostPs
+int closemonthFeePrepay

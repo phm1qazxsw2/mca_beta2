@@ -1,0 +1,13 @@
+package jsf;
+
+=FixCost
+int id
+Date created
+Date modified
+int fixCostCostId
+int fixCostUserid
+int fixCostActive
+int fixCostLastUserid
+Date fixCostLastDate
+String fixCostLastTitle
+int fixCostLastId

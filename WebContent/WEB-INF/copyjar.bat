@@ -1,0 +1,1 @@
+copy ..\..\ezcounting.jar \\10.0.0.31\mca\WEB-INF\lib

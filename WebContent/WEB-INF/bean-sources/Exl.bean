@@ -1,0 +1,10 @@
+package jsf;
+
+=Exl
+int id
+Date created
+Date modified
+String exlFileName
+String exlTitle
+int exlType
+String exlPs

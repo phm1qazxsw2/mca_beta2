@@ -1,0 +1,5 @@
+package phm.ezcounting;
+
+=VitemSum,vitem,,,SUM(total) as s1-SUM(realized) as s2
+int total<s1
+int realized<s2

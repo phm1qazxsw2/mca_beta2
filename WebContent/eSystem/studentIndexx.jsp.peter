@@ -1,0 +1,180 @@
+﻿<%@ page language="java"  import="web.*,jsf.*,java.util.*,java.text.*" contentType="text/html;charset=UTF-8"%>
+<link rel="stylesheet" href="style.css" type="text/css">
+<%@ include file="topMenuAdvanced.jsp"%>
+<%@ include file="leftMenu4.jsp"%>
+<%
+	JsfAdmin ja=JsfAdmin.getInstance();
+	JsfPay jp=JsfPay.getInstance(); 
+	
+	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	
+	Userlog[] uls=ja.getUserlogById(ud2.getId()); 
+	DecimalFormat nf = new DecimalFormat("###.##");
+
+	Date beforeDate=null;
+	
+	if(uls.length<2) 
+	{
+		beforeDate = uls[0].getUserlogDate() ;
+	}
+else{
+		beforeDate = uls[1].getUserlogDate() ;
+	} 
+ 
+%>
+ 
+<br>
+
+<%
+
+	Classes[] cl=ja.getAllClasses2();
+	int totalNum=0;
+	if(cl !=null) 
+	{ 
+%>
+	<b>&nbsp;&nbsp;&nbsp;就讀生人數</b> 
+
+<table width="100%" border=0 cellpadding=0 cellspacing=0><tr align=left valign=top><td background=pic/h01.gif><img src="pic/h01.gif" height=1 border=0 alt=""></td></tr></table>  
+
+<blockquote>	
+<table width="60%" height="" border="0" cellpadding="0" cellspacing="0">
+<tr align=left valign=top>
+<td bgcolor="#e9e3de">
+
+<table width="100%" border=0 cellpadding=4 cellspacing=1>
+		<tr bgcolor=#f0f0f0 class=es02 align=left valign=middle>
+			<td nowrap>班級</tD> 
+			<td nowrap>英文名稱</tD> 
+			<td nowrap>滿額數</tD>	
+			
+            <td nowrap>全班人數</tD> 
+            <td nowrap>組別</tD> 
+			<td nowrap>達成率</tD>
+			<td></tD>
+		</tr>
+	<% 
+		int shouldTotal=0;
+		
+        for(int j=0;j<cl.length;j++) 
+		{   
+            int stuNum = 0;
+            String detail = "";
+            ClsGroup[] groups = ja.getClsGroups(cl[j].getId(), true);
+            if (groups!=null) {
+                for (int k=0; k<groups.length; k++) {
+                    Student[] st=ja.getStudyStudents(cl[j].getId(), groups[k].getId(),0,0,1);
+                    if (st!=null) {
+                        stuNum += st.length;
+                        totalNum += st.length;
+                        if (detail.length()>0)
+                            detail += ",";
+                        detail += groups[k].getName() + ":" + st.length;
+                    }
+                }
+            }
+           
+            Student[] st=ja.getStudyStudents(cl[j].getId(),0,0,0,1); 
+            if (st!=null) {
+                if (detail.length()>0)
+                    detail += ",";
+                detail += "未定:" + st.length;
+                stuNum += st.length;
+                totalNum += stuNum;
+            }
+        %>
+		<tr bgcolor=#ffffff align=left  onmouseover="this.className='highlight'"  onmouseout="this.className='normal2'" valign=middle>
+			
+            <td class=es02 nowrap><%=cl[j].getClassesName()%></tD>
+			<td class=es02 nowrap><%=cl[j].getClassesEnglishName()%></tD>
+			<td class=es02 align=right><%=cl[j].getClassesAllPeople()%></tD>
+			<td class=es02 align=right><%=stuNum%></tD>  
+			<td class=es02 align=right><%=detail%></tD>
+			<td class=es02 align=right nowrap>
+			<% 	
+				shouldTotal += cl[j].getClassesAllPeople();
+				float xPercent=((float)stuNum/(float)cl[j].getClassesAllPeople())*100;
+				 
+				out.println(nf.format(xPercent)+"%");
+			%>
+			
+			</tD>
+			
+            <td class=es02 align=middle nowrap>
+				<a href="listStudent.jsp?depart=0&classx=<%=cl[j].getId()%>&level=0&orderNum=0">詳細名單</a> |
+				<a href="#" onClick="javascript:openwindow64('3','<%=cl[j].getId()%>','1')"><img src="pic/mobile2.gif" border=0>發送全班簡訊</a>		
+			</td>
+		</tr>
+			
+	<%
+		}
+	%>   
+		<tr bgcolor=#ffffff align=left  onmouseover="this.className='highlight'"  onmouseout="this.className='normal2'" valign=middle>
+			
+            <td class=es02>未定</tD>
+			<td class=es02></tD>  
+			<td class=es02></tD>
+			<td  class=es02 align=right><%
+			Student[] st2=ja.getStudyStudents(999,0,0,1);
+			
+			int numNotsure=0;
+			if(st2 !=null) 
+				numNotsure=st2.length ; 
+				
+			totalNum+=numNotsure;	
+			out.println(numNotsure);
+			%></tD>
+  			<td class=es02></tD>
+			<td align=middle class=es02>
+				<a href="listStudent.jsp?depart=0&classx=999&level=0&orderNum=0">詳細名單</a> | 
+				<a href="#" onClick="javascript:openwindow64('3','999','1')"><img src="pic/mobile2.gif" border=0>發送全班簡訊</a>		
+			
+			
+			</td>
+		</tr>
+		
+		<tr>
+			<td>合計</td>
+			<td></tD>  
+			<td align=right><%=shouldTotal%></tD>
+			<tD align=right><b><%=totalNum%></b></tD>
+			<td align=right>
+			<% 	
+				
+				float xPercent=((float)totalNum/(float)shouldTotal)*100;
+				 
+				out.println(nf.format(xPercent)+"%");
+			%>
+			</td>
+	
+		</table>
+	   	
+	   	</td>
+	   	</tr>
+	   	</table>
+<%
+	} 
+	
+%>  
+<a href="#" onClick="javascript:openwindow64('3','0','1')"><img src="pic/mobile.gif" border=0><font color=blue>發送全校學生簡訊</font></a> |
+<a href="addStudent.jsp"><img src="pic/add.gif" border=0><font color=blue>直接入學模式</font></a>  |
+<a href="listClass.jsp"><img src="pic/fix.gif" border=0><font color=blue>編輯班級</font></a>
+</blockquote>
+
+<br>  
+<br>
+
+學生首頁</b><font color=blue><b><%=sdf.format(beforeDate)%></b></font>至<font color=blue><b><%=sdf.format(new Date())%></b></font> 變動記錄<br> 
+<table width="100%" border=0 cellpadding=0 cellspacing=0><tr align=left valign=top><td background=pic/h01.gif><img src="pic/h01.gif" height=1 border=0 alt=""></td></tr></table>
+<blockquote>
+
+<%@ include file="studentBeforeDate.jsp"%>
+
+
+
+
+
+
+</blockquote>
+
+
+<%@ include file="bottom.jsp"%>

@@ -1,0 +1,38 @@
+package phm.ezcounting;
+
+=SchswRecord,schswrecord
+int *#id
+int schswId
+Date occurDate
+int membrId
+int schdefId
+int type
+
+=
+
+    public static final int TYPE_OFF = 1;
+    public static final int TYPE_ON = 2;
+
+    public static java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+    public String getKey()
+    {
+        return sdf.format(this.getOccurDate()) + "#" + this.getSchdefId() + "#" + this.getSchswId();
+    }
+
+    // 用來找哪天哪個班有調的
+    public String getDateSchdefId()
+    {
+        return sdf.format(this.getOccurDate()) + "#" + this.getSchdefId();
+    }
+
+    // 比如說要找統一調班記錄里 TYPE_OFF 的是誰
+    public String getCounterPartKey()
+    {
+        return this.getSchswId() + "#" + this.getType();
+    }
+
+    // 比如說要找我的某個調班記錄有哪些內容
+    public String getMyKey()
+    {
+        return this.getSchswId() + "#" + this.getMembrId();
+    }

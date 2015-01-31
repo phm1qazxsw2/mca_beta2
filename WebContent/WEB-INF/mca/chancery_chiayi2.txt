@@ -1,0 +1,18 @@
+Student ID	Last Name	First Name	Chinese Name	Grade	Birthday	C-Sex	Passport	C-Citizen	Parent	Home Tel	Homest	Homedist	Homecity	Homecity-zip	C-ADD	C-DIST	C-CITY
+3519	CHEN	ANDY	陳冠任	3	1999/12/21	男	710501978	澳洲	"CHEN, WEN-SHENG & SHU-WEN"	05-225-6789	#33 Chueiyang Rd.		Chiayi City	600	垂楊路33號		嘉義市
+3521	CHEN	EUNICE		4	1999/10/3 	女	M2056796	美國	"CHEN, WAYNE & ANGELA"	05-223-5492	P.O. Box 231		Chiayi City	600	嘉義郵政信箱231號		嘉義市
+3433	CHIU	CLEO YU		2	2001/10/30	女	120829577	美國	"CHIU, CHUI-CHEN & AMY"	05-221-3328	#142-21 Chenguo Rd. 2nd Sec.	Minghsiung	"Minghsiung, Chiayi County"	621	建國路二段 142-21 號	民雄鄉	嘉義縣 民雄鄉
+3524	DODD	ELIZABETH		5	1997/9 /20	女	710159735	美國	"DODD, PETER & DEBBIE"	05-362-8495	#6 Renho 2nd Rd.	Putzi City	Chiayi County	613	?子市仁和二路6號		嘉義縣
+3522	DODD	SARAH		4	1999/5 /16	女	710497789	美國	"DODD, PETER & DEBBIE"	05-362-8495	#6 Renho 2nd Rd.	Putzi City	Chiayi County	613	?子市仁和二路6號		嘉義縣
+3526	GIBSON 	SAFFRON		6	1997/2 /4 	女	120896983	美國	"GIBSON, SEANN & AMY"	05-225-9019	#12F #304 Yongan St.		Chiayi City	600	永安街304號12樓		嘉義市 
+3434	HUANG	TERESA		2	2001/9 /7 	女	713196729	美國	"HUANG, STEPHEN & JULLIE"	05-275-3170	3F #33-118 Shueiyuan Rd.	East Dist.	Chiayi City	600	水源地33-118號3F	東區	嘉義市
+3683	NG	DANIEL	吳梓銘	3	1998/11/3 	男	HA1517482	香港	"NG, KWOK-ON & YIN-CHIH"	05-277-9086				600	盧厝里盧厝36-31號		嘉義市
+3516	NG	TRACY	吳梓淇	2	2000/7 /25	女	HA1517481	香港	"NG, KWOK-ON & YIN-CHIH"	05-277-9086	"36-31 Lutsuo, Lu-Tsuo village"		Chiayi City	600	盧厝里盧厝36-31號		嘉義市
+3515	TANG	EUGENE	鄧祐濬	3	2000/10/30	男	713187071	美國	"TANG, TSENG-CHUNG & LI-CHIU"	05-221-3005	#259 Chenggong Rd.		Doliou City	640	斗六市成功路259號		雲林縣
+3525	TANG	MONICA	鄧安婷	6	1997/3 /2 	女	120850298	美國	"TANG, TSENG-CHUNG & LI-CHIU"	05-221-3005	#259 Chenggong Rd.		Doliou City	640	斗六市成功路259號		雲林縣
+3738	YANG	ROBERT		3	2001/1 /1 	男	713183090	美國	"YANG, MAO-TING & HSIU-YEN"	05-278-7686				600	大雅路2段439 號13F-4		嘉義市 
+
+
+
+
+

@@ -1,0 +1,11 @@
+package jsf;
+
+=LeaveStudent
+int id
+Date created
+Date modified
+int leaveStudentStudentId
+int leaveStudentReasonId
+String leaveStudentPs
+int leaveStudentLogId
+int bunitId

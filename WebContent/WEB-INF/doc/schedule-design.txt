@@ -1,0 +1,21 @@
+有關的 table 和 bean
+SchDef, schdef
+   班表的定義
+Schsw, schsw
+   換班記錄的包裝
+SchswRecord, schswrecord
+   換班記錄的明細
+SchMembr, schmembr
+   班表和membr的連結
+SchEvent, schevent
+   請假和出缺勤記錄
+
+其他相關的java class
+
+SchInfo
+   某個 membr 某段時間內原班表和換班后的資料
+
+schedule_daily.jsp 有比對班表和卡鐘資料
+schedule_switch.jsp 
+
+

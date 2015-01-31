@@ -1,0 +1,150 @@
+package mca;
+
+=McaStudentInfo,mca_student-student,studId=student.id,McaStudent
+int -#*id
+Date -ExportDate
+Date -ImportDate
+int -StudentID
+String -Campus
+String -StudentFirstName
+String -StudentSurname
+String -StudentChineseName
+String -BirthDate
+String -PassportNumber
+String -PassportCountry
+String -Sex
+String -HomePhone
+String -FatherFirstName
+String -FatherSurname
+String -FatherChineseName
+String -FatherPhone
+String -FatherCell
+String -FatherEmail
+String -FatherSendEmail
+String -MotherFirstName
+String -MotherSurname
+String -MotherChineseName
+String -MotherPhone
+String -MotherCell
+String -MotherEmail
+String -MotherSendEmail
+String -CountryID
+String -CountyID
+String -CityID
+String -DistrictID
+String -ChineseStreetAddress
+String -EnglishStreetAddress
+String -PostalCode
+String -FreeHandAddress
+String -SensitiveAddress
+String -ApplyForYear
+String -ApplyForGrade
+String -CoopID
+String -Parents
+String -Grade
+String -Category
+String -ArcID
+String -Dorm
+int -Identity
+double -TDisc
+double -MDisc
+String -Emergency
+String -BillTo
+String -BillAttention
+String -BillCountryID
+String -BillCountyID
+String -BillCityID
+String -BillDistrictID
+String -BillChineseStreetAddress
+String -BillEnglishStreetAddress
+String -BillPostalCode
+String -Fax
+String -OfficePhone
+String -StudentCommonName
+String -TmpEll
+String -TmpMilktype
+String -TmpMusic
+String -TmpInstr
+String -TmpMusicRoom
+String -TmpDorm
+String -TmpDormFood
+String -TmpKitchen
+String -TmpLunch
+String -TmpBus
+
+int membrId
+int studId
+
+=
+
+    public String getFullName() {
+        String f = this.getStudentFirstName();
+        String l = this.getStudentSurname();
+        StringBuffer sb = new StringBuffer();
+        if (l!=null && l.length()>0) {
+            sb.append(l.substring(0,1).toUpperCase());
+            sb.append(l.substring(1));
+        }
+        if (f!=null && f.length()>0) {
+            if (sb.length()>0)
+                sb.append(",");
+            sb.append(f.substring(0,1).toUpperCase());
+            sb.append(f.substring(1));
+        }
+        return sb.toString();
+    }
+
+    public String getFatherName()
+    {
+        String f = this.getFatherFirstName();
+        String l = this.getFatherSurname();
+        StringBuffer sb = new StringBuffer();
+        if (l!=null && l.length()>0) {
+            sb.append(l.substring(0,1).toUpperCase());
+            sb.append(l.substring(1));
+        }
+        if (f!=null && f.length()>0) {
+            if (sb.length()>0)
+                sb.append(",");
+            sb.append(f.substring(0,1).toUpperCase());
+            sb.append(f.substring(1));
+        }
+        return sb.toString();
+    }
+
+    public String getMotherName()
+    {
+        String f = this.getMotherFirstName();
+        String l = this.getMotherSurname();
+        StringBuffer sb = new StringBuffer();
+        if (l!=null && l.length()>0) {
+            sb.append(l.substring(0,1).toUpperCase());
+            sb.append(l.substring(1));
+        }
+        if (f!=null && f.length()>0) {
+            if (sb.length()>0)
+                sb.append(",");
+            sb.append(f.substring(0,1).toUpperCase());
+            sb.append(f.substring(1));
+        }
+        return sb.toString();
+    }
+
+    private static java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy/MM/dd");
+    public Date getMyBirthday()
+    {
+        try {
+            return sdf.parse(getBirthDate());
+        }
+        catch (Exception e) {        
+        }
+        return null;
+    }
+
+
+    public final static int IDENTITY_BK = 0;
+    public final static int IDENTITY_M0 = 1;
+    public final static int IDENTITY_M1 = 2;
+    public final static int IDENTITY_M2 = 3;
+    public final static int IDENTITY_CW = 4;
+

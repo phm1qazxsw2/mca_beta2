@@ -1,0 +1,36 @@
+package mca;
+
+=ChanceryStudent,ExportFromBilling
+int *#id
+Date ExportDate
+Date ImportDate
+int StudentID
+String StudentFirstName
+String StudentSurname
+String StudentChineseName
+String BirthDate
+String PassportNumber
+String PassportCountry
+String Sex
+String HomePhone
+String FatherFirstName
+String FatherSurname
+String FatherChineseName
+String FatherPhone
+String FatherCell
+String FatherEmail
+String FatherSendEmail
+String MotherFirstName
+String MotherSurname
+String MotherChineseName
+String MotherPhone
+String MotherCell
+String MotherEmail
+String MotherSendEmail
+String CountryID
+String CountyID
+String CityID
+String DistrictID
+String ChineseStreetAddress
+String EnglishStreetAddress
+String PostalCode

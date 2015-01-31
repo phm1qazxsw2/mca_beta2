@@ -1,0 +1,25 @@
+package phm.ezcounting;
+
+=BillPayInfo,billpay,,BillPay,billpay.id-via-recordTime-createTime-amount-remain-membrId-userId-billSourceId-membr.name-chequeId-pending-refundCostPayId-exportDate-exportUserId-verifyStatus-verifyId-verifyDate-note-threadId-bunitId
+@membr,membrId=membr.id
+int -id<billpay.id
+int -via
+Date -recordTime
+Date -createTime
+int -amount
+int -remain
+int -membrId
+int -userId
+int -billSourceId
+String membrName<membr.name
+int -chequeId
+int -pending
+int -refundCostPayId
+long -exportDate
+int -exportUserId
+int -verifyStatus
+int -verifyId
+Date -verifyDate
+String -note
+int -threadId
+int -bunitId

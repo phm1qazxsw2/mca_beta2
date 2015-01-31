@@ -1,0 +1,129 @@
+
+#menubar{
+	position: absolute;
+	/* width declared by using uiMenubar.setWidth("auto",i); */
+	right: 20px;
+	top: 10px;
+	background-color: #6B696B;
+	padding: 0;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #6B696B #6B696B #6B696B #6B696B ;
+	clear: both;
+	z-index: 1;
+	white-space: nowrap;
+}
+.buttons{
+	font-size: 12 px;
+	font-family: verdana, arial, helvetica;
+	color: #ffffff;
+	cursor: default;
+	border-width: 1px;
+	border-style: solid;
+	background-color: #6B696B;
+	border-color:  #ffffff;
+	float: left;
+	display: block;
+	padding: 1px 6px 1px 6px;
+	margin: 1px 1px 1px 1px;
+	text-decoration: none;
+	z-index: 300;
+	font-weight: 200;
+	height: 12px;
+}
+.buttonsOver{
+	font-size: 12px;
+	font-family: verdana, arial, helvetica;
+	color: #ffffff;
+	border-width: 1px;
+	border-style: solid;
+	float: left;
+	display: block;
+	text-decoration: none;
+	z-index: 300;
+	color: #ffffff;
+	background-color: #6B696B;
+	padding: 1px 6px 1px 6px;
+	margin: 1px;
+	border-color: #6B696B #6B696B #6B696B #6B696B ;
+	cursor: default;
+	font-weight: 200;
+}
+.buttonsDown{
+	font-size: 12 px;
+	font-family: verdana, arial, helvetica;
+	color: #ffffff;
+	cursor: default;
+	border-width: 0px;
+	border-style: solid;
+	background-color: #6B696B;
+	border-color:  #ffffff;
+	float: left;
+	display: block;
+	padding: 1px 6px 1px 6px;
+	margin: 1px 1px 1px 1px;
+	text-decoration: none;
+	z-index: 300;
+	font-weight: 200;
+	height: 12px;
+}
+
+.menuItem, .label{
+	font-size: 12px;
+	display: block;
+	margin: 0;
+	color: #ffffff;
+	background-color: #ffffff;
+	padding: 3px 10px 3px 10px;
+	text-decoration: none;
+	white-space: nowrap;
+	cursor: default;
+	z-index: 900;
+	width: 100%;
+}
+.label{
+	background-position: center right;
+	background-repeat: no-repeat;
+	width: auto;
+	/* mac ie needs a height for labels */
+	height: 15px;
+}
+a.menuItem:hover {
+	font-size: 12px;
+	color: #ffffff;
+	background-color: #FF0000;
+	cursor:auto;
+}
+.labelOver{
+	font-size: 12px;
+	display: block;
+	margin: 0;
+	color: #ffffff;
+	background-color: #ffffff;
+	padding: 3px 10px 3px 10px;
+	text-decoration: none;
+	white-space: nowrap;
+	background-position: center right;
+	background-repeat: no-repeat;
+	width: auto;
+	/* mac ie needs a height for labels */
+	height: 15px; 
+}
+.menu {
+	font-family: verdana, arial, helvetica;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #09569C #000033 #000033 #09569C ;
+	position: absolute;
+	top: 24px;
+	background-color: #ffffff;
+	visibility: hidden; 
+	z-index: 1000;
+	padding: 4px 0;
+}
+.menu * {
+	cursor: default;
+}
+.separator{
+	margin:0px 0;
+}

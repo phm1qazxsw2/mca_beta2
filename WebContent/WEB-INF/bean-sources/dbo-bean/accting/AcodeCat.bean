@@ -1,0 +1,7 @@
+package phm.accounting;
+
+=AcodeCat,acode_catgory
+int *#id
+int name1
+int name2
+

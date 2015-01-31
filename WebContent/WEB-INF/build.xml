@@ -1,0 +1,235 @@
+ 
+<project name="phm" default="compile">
+  <property name="src" value="src"/>
+  <property name="classes" value="classes"/>
+  <property name="debug" value="on"/>
+  <tstamp> 
+     <format property="date" pattern="yyyyMMdd" /> 
+  </tstamp>
+  
+    <!--======================================================
+                            compile 
+  =======================================================-->  
+  <target name="compile" >
+    <javac srcdir="${src}"
+           destdir="${classes}"
+           debug="${debug}" 
+           encoding="UTF-8">
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset> 
+         </classpath>           
+    </javac>
+  </target>
+
+  <target name="clean">
+    <delete>
+      <fileset dir="${classes}" includes="**/*.class" excludes="**/Acme/"/>
+    </delete>
+  </target>
+
+  <target name="bean2code">
+    <java classname="util.BeanGenerator">
+        <arg value="bean-sources/Costpay.bean"/>
+         <arg value="${src}/jsf"/>
+         <classpath>
+           <pathelement path="${src}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>              
+    </java>        
+  </target>
+
+  <target name="bean2code2">
+    <java classname="dbo.BeanGenerator">
+        <arg value="bean-sources/dbo-bean/ChargeItemMembr.bean"/>
+         <arg value="${src}/phm/ezcounting"/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>              
+    </java>        
+  </target>
+
+  <target name="bean2code3">
+    <java classname="dbo.BeanGenerator">
+        <arg value="bean-sources/dbo-bean/accting/VchrItemInfo.bean"/>
+         <arg value="${src}/phm/accounting"/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>              
+    </java>        
+  </target>
+
+  <target name="bean2code4">
+    <java classname="dbo.BeanGenerator">
+        <arg value="bean-sources/dbo-bean/mca/McaFee.bean"/>
+         <arg value="${src}/mca"/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>              
+    </java>        
+  </target>
+
+   
+  <target name="balanceFTPATM">
+    <java classname="incoming.FTPATM">   
+    	<arg value="org.gjt.mm.mysql.Driver"/>
+        <arg value="jdbc:mysql://localhost:3306/js_taipei"/>
+        <arg value="root"/>
+        <arg value=""/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>    
+    </java>
+  </target>	
+  
+  <target name="balanceFTPStore">
+    <java classname="incoming.FTPStore">   
+    	<arg value="org.gjt.mm.mysql.Driver"/>
+        <arg value="jdbc:mysql://localhost:3306/js_taipei"/>
+        <arg value="root"/>
+        <arg value=""/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>    
+    </java>
+  </target>	
+ 
+ 	  
+   
+  <target name="dayReport">
+    <java classname="jsf.ReportAdmin">   
+    	<arg value="org.gjt.mm.mysql.Driver"/>
+        <arg value="jdbc:mysql://localhost:3306/jsf2"/>
+        <arg value="root"/>
+        <arg value=""/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>    
+    </java>
+  </target>	
+  
+   <target name="testemail">
+    <java classname="phm.util.EmailTool">    
+        <arg value="msa.hinet.net"/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>    
+    </java>
+  </target>
+
+   <target name="testsms">
+    <java classname="phm.util.SmsTool">    
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>    
+    </java>
+  </target>
+
+  <target name="mca_interest">
+    <java classname="mca.McaInterest">    
+    	<arg value="org.gjt.mm.mysql.Driver"/>
+        <arg value="jdbc:mysql://localhost:3306/phm_db"/>
+        <arg value="root"/>
+        <arg value="admin"/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>    
+    </java>
+  </target>  
+
+    <target name="importstarlight">
+    <java classname="phm.importing.ImportStudent">    
+    	<arg value="data/starlight1.txt"/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>    
+    </java>
+  </target>
+
+  <target name="mcaimport">
+    <java classname="mca.McaImport">   
+    	<arg value="org.gjt.mm.mysql.Driver"/>
+        <arg value="jdbc:mysql://localhost:3306/f_stock_1"/>
+        <arg value="root"/>
+        <arg value="admin"/>
+         <classpath>
+           <pathelement path="${classes}"/>
+            <fileset dir="lib">
+                <include name="**/*.jar"/>
+            </fileset>           
+         </classpath>    
+    </java>
+  </target>	
+  
+
+
+  <target name="package" depends="compile">
+    <jar destfile="lib/ezcounting.jar"
+         basedir="${classes}"
+         includes="**/*.class"/>
+  </target>
+
+  <target name="jsponly">
+    <delete file="../../ezcjsp.zip"/>
+    <zip destfile="../../ezcjsp.zip" basedir=".."
+         includes="**/*.jsp,**/*.js"/>
+  </target>
+
+  <target name="mcadeploy" depends="package,jsponly">
+    <copy file="../../ezcounting.jar" tofile="//10.0.0.31/mca/WEB-INF/lib/ezcounting.jar"/>
+    <copy file="../../ezcjsp.zip" tofile="//10.0.0.31/mca/ezcjsp.zip"/>
+  </target>
+
+  <target name="mcaunzip">
+    <unzip src="../ezcjsp.zip" dest=".." overwrite="yes"/>
+  </target>
+
+  <target name="deploy" depends="package">
+    <delete file="../ezc.war"/>
+    <war destfile="../ezc.war" basedir=".."
+         includes="**/*"
+         excludes="**/*.bak,**/.svn/*,**/*.jar,**/work/,**/tmp/,**/web.xml,**/datasource,**/bean_sources/,**/Thumbs.db,**/src/,**/doc,**/build.xml,**/*.tar,**/*.zip,**/*.war" />
+  </target>
+
+  <target name="srctree">
+    <zip destfile="../../srctree.${date}.zip" basedir=".."
+         includes="**/*"
+         excludes="**/*.bak,**/.svn/*,**/font/*,**/*.jar,**/work/,**/tmp/,**/stuData/,**/Thumbs.db,**/classes/"/>
+  </target>
+
+
+</project>

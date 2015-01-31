@@ -1,0 +1,10 @@
+package jsf;
+
+=Dbbackup
+int id
+Date created
+Date modified
+String dbbackupPs
+int dbbackupUserId
+String dbbackupFilePath
+String dbbackupFileName

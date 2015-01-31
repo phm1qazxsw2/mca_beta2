@@ -1,0 +1,8 @@
+package phm.ezcounting;
+
+=ChargeItem,chargeitem
+int *#id
+int billItemId
+int billRecordId
+int smallItemId
+int chargeAmount

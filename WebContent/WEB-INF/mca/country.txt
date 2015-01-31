@@ -1,0 +1,30 @@
+1001	台灣	Taiwan
+1002	美國	USA
+1003	加拿大	Canada
+1004	中國	China
+1005	菲律賓	Philippines
+1006	泰國	Thailand
+1007	香港	Hong Kong
+1008	澳門	Macau
+1009	蒙古	Mongolia
+9010	南韓	Korea
+9011	馬來西亞	Malaysia
+9012	澳大利亞	Australia
+9013	德國	Germany
+9014	多明尼加	Dominicana
+9015	英國	UK
+9016	紐西蘭	New Zealand
+9017	日本	Japan
+9018	厄瓜多	Ecuador
+9019	法國	France
+9020	印度	India
+9021	哥斯達黎加	Costa Rica
+9022	俄國	RSA
+9023	印尼	Indonesia
+9024	葡萄牙	Portugal
+9025	馬歇爾群島	REP.OF MARSHALL IS.
+9026	荷蘭	Netherlands
+9027	星加坡	Singapore
+9028	南非	South Africa
+9029	捷克	Czech
+

@@ -1,0 +1,10 @@
+package jsf;
+
+=SmallItem
+int id
+Date created
+Date modified
+String acctCode
+String smallItemName
+int smallItemActive
+int smallItemBigItemId

@@ -1,0 +1,11 @@
+package jsf;
+
+=TalentTeacher
+int id
+Date created
+Date modified
+int talentTeacherTalentId
+int talentTeacherTeacherId
+int talentUnitMoney
+int talentTeacherActive
+int talentTeacherLogId

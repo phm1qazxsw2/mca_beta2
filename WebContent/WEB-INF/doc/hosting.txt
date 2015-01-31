@@ -1,0 +1,127 @@
+1. create a webapp, say "abc"
+
+2. cd the newly created webapps
+
+3. svn co svn://10.10.50.99/peter/ezcounting_v2 .
+cd WEB-INF
+cp ../../f_js_taichong_v2/WEB-INF/web.xml web.xml
+cp ../../f_js_taichong_v2/WEB-INF/datasource datasource
+ln -s src/ classes 
+
+3.5
+   copy company specify logos (gif & tif) to images directory
+
+4. modify web.xml and datasource
+
+5. setup db..
+   1) create an empty on windows, use the following command to export it
+
+   mysqldump -B f_mca --no-create-db --no-data --add-drop-table=FALSE  > ~/f_mca.table
+   mysqldump -B f_mca -t -n > ~/f_mca.sql
+   scp f_mca.table f_mca.sql webadm@60.251.12.20:~
+   scp to mysql (scp ezcounting_v2_table.sql ezcounting_v2_data.sql webadm@10.10.50.110:~)
+   ** IMPORTANT **************** 
+   rename dbname to <xyz>, <xyz> is the desired db name in the above 2 files
+   create <xyz> in mysql
+   ** use the following vi command to replace dbname quickly
+   1,$s/f_stock_1/f_bowjinn
+   *****************************
+   import the 2 files to mysql  
+	mysql < ezcounting_v2_table.sql
+	mysql < ezcounting_v2_data.sql
+
+6. cd /opt/resin/webapps 
+   ln -s /home/webadm/hostings/<webapp> <desired webapp name>
+   after finish, check log see if it starts
+
+   tail -f /opt/resin/log/stdout.log
+
+7. run 
+     1. initial.jsp, 
+     2. 認證
+     3. init_account_code.jsp
+
+8. do basic customize
+    1) setup logo, bill logo, bill watermark
+    2) setup a 經營者 account
+
+9. 銀行帳戶
+
+
+10. update doftpbalencer.sh & check_integrity.jsp
+
+================
+mysqldump -uroot -padmin -B ezcounting_v2 --no-create-db --no-data --add-drop-table=FALSE  > d:\tmp\ezcounting_v2.table
+mysqldump -uroot -padmin -B ezcounting_v2 -t -n > d:\tmp\ezcounting_v2.data
+B94DA0F70565CA231CB0E61AF78ACE87 
+
+
+
+
+mysqldump -B mysql --no-create-db --no-data --add-drop-table=FALSE > 20080703.mysql.table
+mysqldump -B mysql -t -n > 20080703.mysql.sql
+
+
+
+Database
+information_schema
+b_assoc
+database
+ezblog
+ezcountingdev
+f_beta_v2
+f_internal
+f_js_changhua
+f_js_daycare
+f_js_taichong
+f_neil
+f_starlight
+f_yoyo_taichong
+js_taipei
+jsf_tutorial
+kid_test
+mysql
+phmcrm
+sms_server
+
+
+
+
+
+
+Michael stuff
+======================
+60.251.12.21  
+ftp
+   /opt/checkbill/incoming
+   /opt/checkbill/sourcedata
+
+restart mysql
+   root: /etc/init.d/mysql restart
+
+reboot machine (tiger)
+   start resin: sudo /opt/resin/bin/httpd start
+   start apache: sudo /opt/httpd/bin/apachectl startssl
+
+mysql backup location
+   10.10.50.110 /.backup/MySQLDump/
+   61.66.231.2  /.phm/MySQLDump.bz (tar -jxvf )
+   60.251.12.20 /.backup/
+
+mysqladmin processlist (看 mysql connections)
+mysql>  show variables;
+
+db from start
+========================
+1. copy&paste all.db
+2. point an ezcounting webapp to it (web.xml, datasource)
+3. run initial.jsp
+4. 認證碼：B94DA0F70565CA231CB0E61AF78ACE87
+5. export db:
+	mysqldump -uroot -padmin -B f_anima --no-create-db --no-data --add-drop-table=FALSE  > 20080709.f_anima.table
+	mysqldump -uroot -padmin -B f_anima -t -n > 20080709.f_anima.data
+6. ftp to 10.10.50.110 (要先 winscp to 60.251.12.20)
+7. make sure db has created with the name
+8. import db
+	mysql < table file
+	mysql < data file

@@ -1,0 +1,10 @@
+package web;
+
+=Websetup
+int id
+Date created 
+Date modified 
+String websetupShareIp
+String websetupWebaddress
+String websetupAuthodCode
+String websetupCompanyname

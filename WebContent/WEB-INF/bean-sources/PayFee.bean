@@ -1,0 +1,23 @@
+package jsf;
+
+=PayFee
+int id
+Date created
+Date modified
+int payFeeFeenumberId
+int payFeeMoneyNumber
+Date payFeeLogDate
+Date payFeeLogPayDate
+int payFeeManPCType
+int payFeeSourceCategory
+int payFeeSourceId
+String payFeeSourceFileName
+int payFeeStatus
+int payFeeLogId
+String payFeeLogPs
+int payFeeVId
+String payFeeVPs
+int payFeeMessageStatus
+int payFeeAccountType
+int payFeeAccountId
+int payFeeVstatus

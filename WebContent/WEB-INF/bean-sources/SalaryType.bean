@@ -1,0 +1,15 @@
+package jsf;
+
+=SalaryType
+int id
+Date created
+Date modified
+int salaryType
+String salaryTypeName
+String salaryTypeFullName
+int salaryTypeActive
+String salaryTypePs
+int salaryTypeContinue
+int salaryTypeContinueActive
+int salaryTypeVerufyNeed
+int salaryTypeFixNumber

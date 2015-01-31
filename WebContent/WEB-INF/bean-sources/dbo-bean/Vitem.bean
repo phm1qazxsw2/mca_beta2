@@ -1,0 +1,72 @@
+package phm.ezcounting;
+
+=Vitem,vitem
+int *#id
+int userId
+Date createTime
+Date recordTime
+String title
+int type
+String acctcode
+int total
+int realized
+int paidstatus
+int attachtype
+int verifystatus
+Date verifyDate
+int verifyUserId
+int costTradeId
+int voucherId
+String note
+int orgtype
+int orgId
+int pending
+int threadId
+int bunitId
+String receiptNo
+String payerName
+String cashAcct
+String checkInfo
+
+=
+
+    public final static int TYPE_SPENDING = 0;
+    public final static int TYPE_INCOME = 1;
+    public final static int TYPE_COST_OF_GOODS = 2;
+
+    public final static int STATUS_NOT_PAID = 0;
+    public final static int STATUS_PARTLY_PAID = 1;
+    public final static int STATUS_FULLY_PAID = 2;
+
+    public final static int VERIFY_NO = 0;
+    public final static int VERIFY_WARN = 1;
+    public final static int VERIFY_YES = 2;
+
+    public final static int ATTACH_NONE = 0;
+    public final static int ATTACH_RECEIPT = 1;
+    public final static int ATTACH_TAXSLIP = 2;
+
+    public final static int ORG_TYPE_INVENTORY = 1;
+
+    public String getAttachTypeName()
+    {
+        switch (attachtype) {
+            case 0: return "無"; 
+	    case 1: return "收據";
+	    case 2: return "發票";
+	}
+	return "";
+    }
+
+    public String getAcctMajorCode()
+    {
+        String c = getAcctcode();
+	if (c!=null&&c.length()>=4)
+	    return c.substring(0,4);
+	return "####";
+    }
+
+    public String getAcctCodeTrim()
+    {
+	return getAcctcode().trim();
+    }

@@ -1,0 +1,585 @@
+
+收據的編號為BR BS BD KR KS KD TR TS TD (B是台北, K是高雄和嘉義, T是台中, R是台幣, S是美金, D是台幣奉獻收據
+
+收學費款的話,收據抬頭那邊寫學生名字 Acct no 為出納可以選,兩個選擇#116201應收學費 或#214101預收學費
+一般收款的話, 收據抬頭讓出納自己打, 會計科目則連結到會計科目的資料庫, 用選的
+Description若是收學費款的話, 就填帳單的title, 不過還是要讓出納有編輯的權限
+般收款的話, 就先帶出會計科目的名稱, 一樣要讓出納有編輯的權限
+
+收據分 一般臺幣、一般美金、捐贈臺幣
+一般臺幣：XR (X：B是台北, K是高雄和嘉義, T是台中)
+          
+
+====================================================================
+Todo:
+美金收款未完成
+Teacher discount裡的公式設定, 請拉掉ELL和Special Needs, 這就是後來Michele上來後我有提到一個我們procedure改變的部分, 你當時沒有聽懂我們在說什麼
+
+   借 應收帳款 NT:Y   貸 捐款收入
+   --------------------------------
+   借 USD:X        貸 應收帳款 NT:Y
+   借 NT:Y         貸 USD:X   (幾月幾號的兌換)
+
+====================================================================
+
+CREATE TABLE mca_student
+(
+    /* ### common ### */
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ExportDate DATETIME,
+    ImportDate DATETIME,
+    modified TIMESTAMP,
+    StudentID INTEGER,
+    Campus VARCHAR(30),
+    StudentFirstName VARCHAR(30),
+    StudentSurname VARCHAR(30),
+    StudentChineseName VARCHAR(12),
+    BirthDate VARCHAR(30),
+    PassportNumber VARCHAR(20),
+    PassportCountry VARCHAR(50),
+    Sex VARCHAR(1),
+    HomePhone  VARCHAR(50),
+    FatherFirstName VARCHAR(30),
+    FatherSurname VARCHAR(30),
+    FatherChineseName VARCHAR(30),
+    FatherPhone VARCHAR(30),
+    FatherCell VARCHAR(30),
+    FatherEmail MEDIUMTEXT,
+    FatherSendEmail VARCHAR(1),
+    MotherFirstName VARCHAR(30),
+    MotherSurname  VARCHAR(30),
+    MotherChineseName VARCHAR(30),
+    MotherPhone VARCHAR(30),
+    MotherCell VARCHAR(30),
+    MotherEmail MEDIUMTEXT,
+    MotherSendEmail VARCHAR(1),
+    CountryID VARCHAR(5),
+    CountyID VARCHAR(5),
+    CityID VARCHAR(5),
+    DistrictID VARCHAR(5),
+    ChineseStreetAddress MEDIUMTEXT,
+    EnglishStreetAddress MEDIUMTEXT,
+    PostalCode VARCHAR(10),
+
+    /* ### for admisssion ### */
+    FreeHandAddress MEDIUMTEXT,
+    SensitiveAddress VARCHAR(1),
+    ApplyForYear VARCHAR(5),
+    ApplyForGrade VARCHAR(5),
+
+    /* ### additional for my program ### */
+    CoopID VARCHAR(8),
+    Parents VARCHAR(70),
+    Grade VARCHAR(5),
+    Category VARCHAR(50),
+    ArcID VARCHAR(20),
+    Dorm VARCHAR(30),
+    Identity TINYINT,
+    TDisc DOUBLE,
+    MDisc DOUBLE,
+    Emergency MEDIUMTEXT,
+    BillTo VARCHAR(50),
+    BillAttention VARCHAR(50),
+    BillCountryID VARCHAR(5),
+    BillCountyID VARCHAR(5),
+    BillCityID VARCHAR(5),
+    BillDistrictID VARCHAR(5),
+    BillChineseStreetAddress MEDIUMTEXT,
+    BillEnglishStreetAddress MEDIUMTEXT,
+    BillPostalCode VARCHAR(10),
+    Fax VARCHAR(30),
+    OfficePhone VARCHAR(30),
+    StudentCommonName VARCHAR(50),
+    
+    // Temporary Stuff
+    TmpEll VARCHAR(10),
+    TmpMilktype VARCHAR(10),
+    TmpMusic VARCHAR(10),
+    TmpInstr VARCHAR(10),
+    TmpMusicRoom VARCHAR(10),
+    TmpDorm VARCHAR(10),
+    TmpDormFood VARCHAR(10),
+    TmpKitchen VARCHAR(10),
+    TmpLunch VARCHAR(10),
+    TmpBus VARCHAR(10),
+
+    membrId INTEGER,
+    studId INTEGER,
+    notes MEDIUMTEXT,
+    INDEX IDX_0 (membrId),
+    INDEX IDX_1 (studId),
+    INDEX IDX_2 (StudentID),
+    INDEX IDX_3 (modified)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE area
+(
+    level TINYINT,
+    code VARCHAR(5),
+    PRIMARY KEY (level, code),
+    cName VARCHAR(30),
+    eName VARCHAR(50),
+    parentCode VARCHAR(5),
+    INDEX IX_0(level),
+    INDEX IX_1(parentCode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE mca_fee
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    status TINYINT DEFAULT 0,
+    title MEDIUMTEXT,
+    month DATETIME,
+    billDate DATETIME,
+    feeType TINYINT,
+    checkFeeId INTEGER,
+    checkFallFeeId INTEGER,
+    regPrepayDeadline DATETIME,
+    regPenalty INTEGER,
+    lateFee INTEGER,
+    RegA INTEGER,
+    RegB INTEGER,
+    RegC INTEGER,
+    RegD INTEGER,
+    TuitionK5A INTEGER,
+    TuitionK5B INTEGER,
+    TuitionK5C INTEGER,
+    TuitionK5D INTEGER,
+    Tuition69A INTEGER,
+    Tuition69B INTEGER,
+    Tuition69C INTEGER,
+    Tuition69D INTEGER,
+    Tuition1012A INTEGER,
+    Tuition1012B INTEGER,
+    Tuition1012C INTEGER,
+    Tuition1012D INTEGER,
+    BuildingA INTEGER,
+    BuildingB INTEGER,
+    BuildingC INTEGER,
+    BuildingD INTEGER,
+    DormProgramA INTEGER,
+    DormProgramB INTEGER,
+    DormProgramC INTEGER,
+    DormProgramD INTEGER,
+    DormFacilityA INTEGER,
+    DormFacilityB INTEGER,
+    DormFacilityC INTEGER,
+    DormFacilityD INTEGER,
+    DormFoodA INTEGER,
+    DormFoodB INTEGER,
+    DormFoodC INTEGER,
+    DormFoodD INTEGER,
+    ELLModerateA INTEGER,
+    ELLModerateB INTEGER,
+    ELLModerateC INTEGER,
+    ELLModerateD INTEGER,
+    ELLSignificantA INTEGER,
+    ELLSignificantB INTEGER,
+    ELLSignificantC INTEGER,
+    ELLSignificantD INTEGER,
+    MusicPrivateA INTEGER,
+    MusicPrivateB INTEGER,
+    MusicPrivateC INTEGER,
+    MusicPrivateD INTEGER,
+    MusicSemiPrivateA INTEGER,
+    MusicSemiPrivateB INTEGER,
+    MusicSemiPrivateC INTEGER,
+    MusicSemiPrivateD INTEGER,
+    MusicSemiGroupA INTEGER,
+    MusicSemiGroupB INTEGER,
+    MusicSemiGroupC INTEGER,
+    MusicSemiGroupD INTEGER,
+    TestingA INTEGER,
+    TestingB INTEGER,
+    TestingC INTEGER,
+    TestingD INTEGER,
+    Milk INTEGER,
+    TchLunch1 INTEGER,
+    TchLunch2 INTEGER,
+    TchLunch3 INTEGER,
+    TchLunch4 INTEGER,
+    TchLunch5 INTEGER,
+    KaoLunch1 INTEGER,
+    KaoLunch2 INTEGER,
+    Instrument INTEGER,
+    MusicRoom INTEGER,
+    FamilyDiscountA INTEGER,
+    FamilyDiscountB INTEGER,
+    Bus INTEGER,
+    /*************/
+    startDay DATETIME,
+    endDay DATETIME,
+    prorateDay DATETIME,
+    excludeDays MEDIUMTEXT,
+    includeDays MEDIUMTEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_record
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    mcaFeeId INTEGER,
+    billRecordId INTEGER
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_deferred
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ticketId VARCHAR(10),
+    type TINYINT, /* standard, monthly */
+    bunitId INTEGER,
+    INDEX IX_BUID(bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_prorate
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    mcaFeeId INTEGER,
+    membrId INTEGER,
+    prorateDate DATETIME,
+    bunitId INTEGER,
+    INDEX IX_BUID(bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_exrate
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    rate DOUBLE,
+    start DATETIME,
+    INDEX IX_1 (start)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_export
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    exportTime DATETIME
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE mca_receipt
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pkey VARCHAR(8),
+    costpayId INTEGER DEFAULT 0,
+    INDEX IX_1 (costpayId),
+    UNIQUE KEY UK1(pkey)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+//################# Taichong Access 沒辦法辨認的行政區 #############
+
+## :Shen, William-> ... 4
+## Kunming, Yunnan Province:Maynard, Taylor->。。。3
+## Liuzhou, Guangxi, PRC:Roberson, Leslie->。。。3
+## 台北縣汐止市水蓮山莊:Conkling, Martyn-> 。。。2
+## TAICHUNG:Chase, Jessica->。。。3
+## Kunming, Yunnan Province:Maynard, Olivia->。。。3
+## TAICHUNG:Law, Christina->。。。3
+## TAICHUNG:Law, Desmond->。。。3
+## South Korea:Lee, Seul A->。。。3
+## 豐原 420:Liao, Antonio->。。。3
+## 中國, 廣西 530023:Pittman, Matthew->。。。3
+## USA:Lee, Brian->。。。3
+## TAIPEI:Husnick, Chelsey->。。。3
+
+
+//################# Taichong Access 沒辦法辨認護照國 #############
+## SOUTH KOREA:Gwon, Justin->。。。3
+## CZECH REPUBLIC:Jones, Joshua->。。。3
+## NEW ZEALND:Wang, Bing->。。。3
+## PHILIPPINE:Capillas, Stephanie->。。。3
+## PHILIPPINOS:Chiang, Anderson->。。。3
+## UNITED KINGDOM:Wang, Esther->。。。3
+## PHILIPPINOS:Ganipan, Chiaramarie->。。。3
+## NZ:Hsiung, Liberty->。。。4
+## NZ:Hsiung, Peter->。。。4
+## NZ:Hsiung, Nicole->。。。4
+## PHILIPPINE:Lai, Tigner->。。。3
+## PHILIPPINE:Lai, Maple->。。。3
+## DOMINICA:Lo, Ariel->。。。3
+## NEWZEALAND:McKinlay, Joel->。。。3
+## Filippino:Ngo, Jed->。。。3
+## PHILIPPINE:Ong, Kimber->。。。3
+## PHILIPPINE:Pera, Angelo->。。。3
+## PHILS:Pera, Isaiah John->。。。3
+## BRITISH:Tsai, Yolanda->。。。3
+## BRITISH:Tsai, Jeffrey->。。。3
+## PHILIPPINE:Zagala, Jeremi->。。。3
+## PHILIPPINE:Zagala, Janeille->。。。3
+## PHILIPPINE:Zagala, Josiah->。。。3
+
+
+// ############# inform John ########
+1010	南韓	Korea
+1011	馬來西亞	Malaysia
+1012	澳大利亞	Australia
+1013	德國	Germany
+1014	多明尼加	Dominicana
+1015	英國	UK
+1016	紐西蘭	New Zealand
+1017	日本	Japan
+1018	厄瓜多	Ecuador
+1019	法國	France
+1020	印度	India
+1021	哥斯達黎加	Costa Rica
+1022	俄國	RSA
+1023	印尼	Indonesia
+1024	葡萄牙	Portugal
+1025	馬歇爾群島	REP.OF MARSHALL IS.
+1026	荷蘭	Netherlands
+1027	星加坡	Singapore
+1028	南非	South Africa
+1029	捷克	Czech
+
+
+==========================================
+CREATE TABLE citemtag
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tagId INTEGER,
+    chargeItemId INTEGER,
+    INDEX IX_1 (tagId, chargeItemId),
+    INDEX IX_2 (chargeItemId, tagId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+alter table tag add status TINYINT DEFAULT 0;
+alter table tag add branchTag INTEGER DEFAULT 0;
+alter table tag add branchTime DATETIME;
+alter table tag add rootTag INTEGER DEFAULT 0;
+CREATE TABLE sch_notifier
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    lastId INTEGER
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+alter table tag add branchVer INTEGER;
+alter table tag add INDEX IX_2 (rootTag);
+alter table tagmembr add bindTime DATETIME;
+alter table student add INDEX IX_20 (modified);
+alter table billpay add note VARCHAR(30);
+
+
+alter table mca_student add TmpEll VARCHAR(10);
+alter table mca_student add TmpMilktype VARCHAR(10);
+alter table mca_student add TmpMusic VARCHAR(10);
+alter table mca_student add TmpInstr VARCHAR(10);
+alter table mca_student add TmpMusicRoom VARCHAR(10);
+alter table mca_student add TmpDorm VARCHAR(10);
+alter table mca_student add TmpDormFood VARCHAR(10);
+alter table mca_student add TmpKitchen VARCHAR(10);
+alter table mca_student add TmpLunch VARCHAR(10);
+alter table mca_student add TmpBus VARCHAR(10);
+
+== 2009/3/11
+alter table mca_fee add status TINYINT DEFAULT 0;
+alter table mca_fee change DormRoomDeposit feeType TINYINT;
+alter table mca_fee add checkFeeId INTEGER;
+== 2009/03/28
+alter table mca_fee add checkFallFeeId INTEGER;
+alter table mca_fee add regPrepayDeadline DATETIME;
+alter table mca_fee add regPenalty INTEGER;
+== 2009/03/29
+alter table mca_fee add startDay DATETIME;
+alter table mca_fee add endDay DATETIME;
+alter table mca_fee add prorateDay DATETIME;
+alter table mca_fee add excludeDays MEDIUMTEXT;
+alter table mca_fee add includeDays MEDIUMTEXT;
+== 2009/04/01
+alter table mca_fee add lateFee INTEGER;
+== 2009/04/09
+alter table mca_exrate add INDEX IX_1 (start);
+
+//delete from mca_student; delete from membr; delete from student; delete from bill; delete from billrecord; delete from charge; delete from chargeitem; delete from billitem; delete from tag; delete from tagtype; delete from tagmembr; delete from membrbillrecord;
+
+// delete from charge; delete from chargeitem; delete from billrecord; delete from membrbillrecord;delete from bill; delete from billitem;delete from mca_record;
+// Reset 時要記得吧 ticketId 的 generator 設回
+
+== 2009/05/27
+alter table mca_student add modified TIMESTAMP;
+alter table mca_student change passportCountry passportCountry VARCHAR(50);
+alter table vitem change acctcode acctcode VARCHAR(20);
+
+
+== 2009/06/10
+alter table costpay add exRateId INTEGER DEFAULT 0;
+
+
+== 2009/06/11
+alter table mca_student add notes MEDIUMTEXT;
+
+== 2009/06/26
+alter table mca_student add sponser VARCHAR(20) DEFAULT '';
+
+== 2009/07/17
+alter table vitem add receiptNo VARCHAR(10) DEFAULT '';
+alter table vitem add payerName VARCHAR(20) DEFAULT '';
+alter table vitem add cashAcct VARCHAR(10) DEFAULT '';
+alter table vitem add checkInfo VARCHAR(20) DEFAULT '';
+alter table vitem add INDEX NX1(receiptNo);
+alter table vitem add INDEX NX2(payerName);
+alter table vitem add INDEX NX3(cashAcct);
+alter table vitem add INDEX NX4(checkInfo);
+
+
+
+== 2009/7/25
+alter table costpay add checkInfo VARCHAR(30) DEFAULT '';
+alter table costpay add receiptNo VARCHAR(10) DEFAULT '';
+alter table costpay add payerName VARCHAR(20) DEFAULT '';
+alter table costpay add INDEX NX1(receiptNo);
+alter table costpay add INDEX NX2(payerName);
+alter table costpay add INDEX NX4(checkInfo);
+
+
+use phm_db;
+drop table acode          ;
+drop table acode_category ;
+drop table additionalfee  ;
+drop table album          ;
+drop table area           ;
+drop table authitem       ;
+drop table authsystem     ;
+drop table authuser       ;
+drop table bankaccount    ;
+drop table banknumber     ;
+drop table bigitem        ;
+drop table bill           ;
+drop table billcomment    ;
+drop table billitem       ;
+drop table billpaid       ;
+drop table billpay        ;
+drop table billrecord     ;
+drop table billsource     ;
+drop table bookmark       ;
+drop table bunit          ;
+drop table bunit_info     ;
+drop table cardcheckdate  ;
+drop table cardmembr      ;
+drop table cfdiscount     ;
+drop table charge         ;
+drop table chargeitem     ;
+drop table cheque         ;
+drop table citemtag       ;
+drop table classes        ;
+drop table classescharge  ;
+drop table classesfee     ;
+drop table classesmoney   ;
+drop table clientaccount  ;
+drop table clientservice  ;
+drop table closecost      ;
+drop table closefee       ;
+drop table closeincome    ;
+drop table closemonth     ;
+drop table closesalary    ;
+drop table clsgroup       ;
+drop table cmxlog         ;
+drop table comodify       ;
+drop table contact        ;
+drop table cost           ;
+drop table costbigitem    ;
+drop table costbook       ;
+drop table costcheck      ;
+drop table costpay        ;
+drop table costtrade      ;
+drop table dbbackup       ;
+drop table degree         ;
+drop table depart         ;
+drop table discount       ;
+drop table discounttype   ;
+drop table dotrade        ;
+drop table entryps        ;
+drop table esystem        ;
+drop table exl            ;
+drop table feedetail      ;
+drop table feenumber      ;
+drop table feeticket      ;
+drop table fixcost        ;
+drop table freeze         ;
+drop table holiday        ;
+drop table income         ;
+drop table incomebigitem  ;
+drop table incomesmallitem;
+drop table inmodify       ;
+drop table insidetrade    ;
+drop table inventory      ;
+drop table itemalias      ;
+drop table leavereason    ;
+drop table leavestudent   ;
+drop table level          ;
+drop table literal        ;
+drop table manhour        ;
+drop table mca_deferred   ;
+drop table mca_exrate     ;
+drop table mca_fee        ;
+drop table mca_prorate    ;
+drop table mca_record     ;
+drop table mca_student    ;
+drop table membr          ;
+drop table membrbillrecord;
+drop table membrmembr     ;
+drop table membruser      ;
+drop table message        ;
+drop table messagebackup  ;
+drop table messagetype    ;
+drop table overtime       ;
+drop table owner          ;
+drop table ownertrade     ;
+drop table payatm         ;
+drop table payfee         ;
+drop table paystore       ;
+drop table paysystem      ;
+drop table picorder       ;
+drop table pitem          ;
+drop table place          ;
+drop table position       ;
+drop table relation       ;
+drop table salarybank     ;
+drop table salarybankauth ;
+drop table salaryfee      ;
+drop table salarynumber   ;
+drop table salaryout      ;
+drop table salaryticket   ;
+drop table salarytype     ;
+drop table sanumber       ;
+drop table sch_notifier   ;
+drop table schdef         ;
+drop table schevent       ;
+drop table schmembr       ;
+drop table schsw          ;
+drop table schswrecord    ;
+drop table session        ;
+drop table smallitem      ;
+drop table student        ;
+drop table studentaccount ;
+drop table stunotice      ;
+drop table tadent         ;
+drop table tag            ;
+drop table tagmembr       ;
+drop table tagtype        ;
+drop table talent         ;
+drop table talentdate     ;
+drop table talentfile     ;
+drop table talentsalary   ;
+drop table talentteacher  ;
+drop table tcontact       ;
+drop table teacher        ;
+drop table tfcontent      ;
+drop table tradeaccount   ;
+drop table user           ;
+drop table userbunit      ;
+drop table userlog        ;
+drop table vchr_holder    ;
+drop table vchr_item      ;
+drop table vchr_thread    ;
+drop table vitem          ;
+drop table vitem_note     ;
+drop table voucher        ;
+drop table vpaid          ;
+drop table websetup       ;
+drop table yearholiday    ;
+drop table yearmembr      ;
+drop table mca_deferred   ;
+drop table mca_prorate    ;
+drop table mca_exrate     ;
+drop table mca_export     ;
+drop table mca_receipt    ;
+

@@ -1,0 +1,72 @@
+package phm.accounting;
+
+=Acode,acode
+int *#id
+String main
+String sub
+int name1
+int name2
+int catId
+int rootId
+int active
+int type
+int bunitId
+
+=
+
+    public static final int TYPE_MANUAL = 0;
+    public static final int TYPE_SYSTEM = 1;
+
+    public static final int ACTIVE_NO  = 0;
+    public static final int ACTIVE_YES = 1;
+
+    public String getAcctcode()
+    {
+        return makeKey(getMain(), getSub());
+    }
+
+    public static String makeKey(String main, String sub)
+    {
+        String key = main;
+        if (sub!=null)
+            key += sub;
+        return key;
+    }
+
+    public static String makeQueryKey(String main, String sub, String space)
+    {
+        String key = "main='" + main + "'";
+	if (sub==null || sub.length()==0)
+            key += " and rootId=0";
+	else
+	    key += " and sub='" + sub + "'";
+	key += " and active=1";
+	if (space!=null)
+	    key = space + " and (" + key + ")";
+        return key;
+    }
+
+    public static String makeSearchKey(String main, String sub, String space)
+    {
+        String key = "main='" + main + "'";
+	if (sub!=null && sub.length()>0)
+	    key += " and sub='" + sub + "'";
+	if (space!=null)
+	    key = space + " and (" + key + ")";
+        return key;
+    }
+
+    public Acode clone()
+    {
+        Acode ret = new Acode();
+        ret.setMain(this.getMain());
+        ret.setSub(this.getSub());
+        ret.setName1(this.getName1());
+        ret.setName2(this.getName2());
+        ret.setCatId(this.getCatId());
+        ret.setRootId(this.getRootId());
+        ret.setActive(1);
+        ret.setType(this.getType());
+	ret.setBunitId(this.getBunitId());
+        return ret;
+    }    

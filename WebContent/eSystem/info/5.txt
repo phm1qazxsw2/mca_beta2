@@ -1,0 +1,4 @@
+1 潛在學生為尚未正式入學的學生,加入後可以在 <font color=blue>學生集合設定</font> 進行編輯. <BR><BR>
+
+2 潛在學生<font color=red>無法開學費帳單</font>,必須將學生入學狀態改為<font color=blue>試讀或入學</font>.
+

@@ -1,0 +1,8 @@
+package jsf;
+
+=Depart
+int id
+Date created 
+Date modified
+String departName 
+int departActive

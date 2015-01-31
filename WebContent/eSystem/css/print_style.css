@@ -1,0 +1,41 @@
+
+.noprint { 
+  display : none; 
+}
+
+P.breakhere {page-break-before: always}
+
+table{
+	border-width: 1px;
+	border-spacing: ;
+	border-style: solid;
+	border-color: gray;
+	border-collapse: collapse;
+	background-color: white;
+}
+table th {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: black;
+	font-weight : bold;
+	font-size : 12pt;
+	background-color: gray;
+	-moz-border-radius: ;
+}
+table td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: inset;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+
+body {
+	width:100%;
+	background:#FFFFFF;
+	border-top: 0;
+	margin: 0;
+	padding: 0; 
+}

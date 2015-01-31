@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=PitemOut,billitem-chargeitem-charge-billrecord-bill,billItemId=billitem.id and chargeItemId=chargeitem.id and chargeitem.billRecordId=billrecord.id and billitem.billId=bill.id and pitemId>0,,pitemId-sum(pitemNum) as q-count(*) as c
+int pitemId
+int quantity<q
+int count<c

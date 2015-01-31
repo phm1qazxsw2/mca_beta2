@@ -1,0 +1,13 @@
+package jsf;
+
+=DoTrade
+int id
+Date created
+Date modified
+Date doTradedDate
+int doTradeClientAccountId
+int doTradeCostpayId
+int doTradeUserId
+int doTradeStatus
+int doTradeFromAccountType
+int doTradeFromAccountId

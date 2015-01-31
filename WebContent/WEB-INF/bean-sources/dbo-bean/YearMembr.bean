@@ -1,0 +1,10 @@
+package phm.ezcounting;
+
+=YearMembr,yearmembr
+int *#id
+Date created
+int membrId
+int yearHolidayId
+int mins
+int overtime
+int userId

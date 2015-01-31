@@ -1,0 +1,36 @@
+package phm.ezcounting;
+
+=FeeDetail,feedetail
+int *#id
+int chargeItemId
+int membrId
+int unitPrice
+int num
+Date feeTime
+String note
+int userId
+int manhourId
+int payrollMembrId
+int payrollFdId
+
+=
+    public String getChargeKey()
+    {
+        return getMembrId()+"#"+getChargeItemId();
+    }
+
+    public FeeDetail clone()
+    {
+        FeeDetail fd = new FeeDetail();
+	fd.setId(this.getId());
+	fd.setChargeItemId(this.getChargeItemId());
+	fd.setMembrId(this.getMembrId());
+	fd.setUnitPrice(this.getUnitPrice());
+	fd.setNum(this.getNum());
+	fd.setFeeTime(this.getFeeTime());
+	fd.setNote(this.getNote());
+	fd.setUserId(this.getUserId());
+	fd.setPayrollMembrId(this.getPayrollMembrId());
+	fd.setPayrollFdId(this.getPayrollFdId());
+	return fd;
+    }

@@ -1,0 +1,10 @@
+package phm.ezcounting;
+
+=StringCell,stringcell
+int colspan
+int rowspan
+String cell
+String htmlCellattibute
+int excelCellattibute
+int excelAlign
+int excelVAlign

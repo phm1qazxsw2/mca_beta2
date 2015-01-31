@@ -1,0 +1,14 @@
+package jsf;
+
+=Userlog
+int id
+Date created
+Date modified
+int UserlogUserId
+Date UserlogDate
+String UserlogIP
+String UserlogHost
+Date UserlogOut
+String UserlogOutPs
+int userConfirm
+int bunitId

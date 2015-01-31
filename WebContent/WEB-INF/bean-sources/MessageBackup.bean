@@ -1,0 +1,14 @@
+package jsf;
+
+=MessageBackup
+int id
+Date created
+Date modified
+Date messageBackupFromDate
+int messageBackupFrom
+int messageBackupFromStatus
+int messageBackupTo
+int messageBackupToStatus
+String messageBackupTitle
+String messageBackupText
+int messageBackupType

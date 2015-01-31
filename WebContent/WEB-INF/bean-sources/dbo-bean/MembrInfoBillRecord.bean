@@ -1,0 +1,48 @@
+package phm.ezcounting;
+
+=MembrInfoBillRecord,membrbillrecord-membr-billrecord-bill,membrbillrecord.membrId=membr.id and membrbillrecord.billRecordId=billrecord.id and billrecord.billId=bill.id,MembrBillRecord,membrId-billRecordId-ticketId-receivable-received-paidStatus-printDate-membrbillrecord.billDate-membr.name-membr.birth-billrecord.billDate-billrecord.month-balanceWay-prettyName-billrecord.name-billId-membr.surrogateId-pending_cheque-billType-bill.name-inheritUnpaid-threadId-bill.payNote-bill.comName-bill.comAddr-bill.regInfo-bill.bunitId-forcemodify
+int -#membrId
+int -#billRecordId
+String -ticketId
+int -receivable
+int -received
+int -paidStatus
+Date -billDate<membrbillrecord.billDate
+long -printDate
+int -pending_cheque
+int -inheritUnpaid
+int -threadId
+Date parentBillDate<billrecord.billDate
+String membrName<membr.name
+Date billMonth<billrecord.month
+Date membrBirth<membr.birth
+int balanceWay
+String billRecordName<billrecord.name
+String billPrettyName<bill.prettyName
+int billId
+int membrSurrogateId<membr.surrogateId
+int billType
+String billName<bill.name
+String comName<bill.comName
+String comAddr<bill.comAddr
+String payNote<bill.payNote
+String regInfo<bill.regInfo
+int bunitId<bill.bunitId
+long forcemodify
+
+=
+
+    public Date getMyBillDate()
+    {
+        return (this.getBillDate()!=null)?this.getBillDate():parentBillDate;
+    }
+
+    public String getMembrBillKey()
+    {
+        return getMembrId()+"#" + getBillId();
+    }
+
+    public int getFinalAmount()
+    {
+        return getReceivable() + getInheritUnpaid();
+    }

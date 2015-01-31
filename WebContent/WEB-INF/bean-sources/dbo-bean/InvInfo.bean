@@ -1,0 +1,8 @@
+package phm.ezcounting;
+
+=InvInfo,inventory,,,sum(quantity) as quantity-sum(totalPrice) as cost-pitemId
+int quantity
+int cost
+int pitemId
+
+

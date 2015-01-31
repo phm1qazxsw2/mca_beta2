@@ -1,0 +1,3870 @@
+create database jsf9 character set utf8;
+
+CREATE TABLE bigItem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    acctCode VARCHAR(8),
+    bigItemName VARCHAR(80),
+    bigItemActive TINYINT DEFAULT 1,
+    PRIMARY KEY(id),
+    INDEX IX_2 (bigItemActive),
+    INDEX IX_1 (acctCode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE smallItem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    acctCode VARCHAR(8),
+    smallItemName VARCHAR(80),
+    smallItemActive INTEGER DEFAULT 1,
+    smallItemBigItemId INTEGER,
+    PRIMARY KEY(id),
+    INDEX IX_2 (smallItemActive),
+    INDEX IX_3 (acctCode),
+    INDEX IX_1 (smallItemBigItemId)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE tradeAccount
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    tradeAccountName VARCHAR(80),
+    tradeAccountActive INTEGER DEFAULT 1,
+    tradeAccountUserId INTEGER DEFAULT 1,
+    tradeAccountAuth INTEGER DEFAULT 1,
+    tradeAccountOrder INTEGER DEFAULT 0,
+    bunitId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_2 (tradeAccountActive),
+    INDEX IX_3 (tradeAccountAuth),
+    INDEX IX_4 (tradeAccountOrder),
+    INDEX IX_1 (tradeAccountUserId),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE costTrade
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    costTradeName VARCHAR(80),
+    costTradeActive INTEGER DEFAULT 1,
+    costTradeContacter VARCHAR(80),
+    costTradeUnitnumber VARCHAR(80),
+    costTradePhone1 VARCHAR(100),
+    costTradePhone2 VARCHAR(100),
+    costTradeMobile VARCHAR(100),
+    costTradeAddress VARCHAR(200),
+    costTradePs text,
+    bunitId,
+    PRIMARY KEY(id),
+    INDEX IX_2 (costTradeName),
+	INDEX IX_3 (costTradeUnitnumber),
+	INDEX IX_4 (costTradeMobile),
+    INDEX IX_1 (costTradeActive),
+    INDEX IX_BUID (bunitId)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE Costcheck
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    CostcheckDate DATETIME,
+    CostcheckTotal INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_2 (CostcheckDate),
+    INDEX IX_1 (CostcheckTotal)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE costbook
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    costbookOutIn INTEGER DEFAULT 1,
+    costbookCostcheckId INTEGER DEFAULT 0,
+    costbookAccountDate DATETIME,
+    costbookCosttradeId INTEGER DEFAULT 0,
+    costbookName VARCHAR (100),
+   	costbookLogId INTEGER DEFAULT 0,
+   	costbookLogPs text,
+   	costbookAttachStatus INTEGER DEFAULT 0,
+   	costbookAttachType INTEGER DEFAULT 0,
+    costbookTotalMoney INTEGER DEFAULT 0,
+    costbookTotalNum INTEGER DEFAULT 0,
+    costbookPaiedMoney INTEGER DEFAULT 0,
+    costbookPaiedStatus INTEGER DEFAULT 0,
+    costbookPaidNum INTEGER DEFAULT 0,   
+    costbookVerifyStatus INTEGER DEFAULT 0,
+    costbookVerifyId INTEGER DEFAULT 0,
+    costbookVerifyDate DATETIME,
+   	costbookVerifyPs text,
+   	costbookActive INTEGER DEFAULT 0,
+    costbookActivePs text,
+    PRIMARY KEY(id),
+    INDEX IX_13 (costbookOutIn),
+    INDEX IX_2 (costbookLogId),
+    INDEX IX_1 (costbookAttachStatus),		
+    INDEX IX_3 (costbookAttachType),
+    INDEX IX_4 (costbookTotalMoney),
+    INDEX IX_5 (costbookTotalNum),
+    INDEX IX_6 (costbookPaiedStatus),
+    INDEX IX_8 (costbookVerifyId),
+    INDEX IX_9 (costbookAccountDate),
+    INDEX IX_10 (costbookCosttradeId),
+    INDEX IX_11 (costbookActive),
+    INDEX IX_12 (costbookCostcheckId),
+    INDEX IX_7 (costbookVerifyStatus)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE costpay
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified TIMESTAMP,
+	costpayDate DATETIME,
+	costpaySide INTEGER DEFAULT 1,
+	costpaySideID INTEGER DEFAULT 0,
+	costpayFeeticketID INTEGER DEFAULT 0,
+	costpayFeePayFeeID INTEGER DEFAULT 0,
+	costpayOwnertradeStatus INTEGER DEFAULT 0,
+	costpayOwnertradeId INTEGER DEFAULT 0,
+	costpaySalaryTicketId INTEGER DEFAULT 0,
+	costpaySalaryBankId INTEGER DEFAULT 0,
+	costpayNumberInOut INTEGER DEFAULT 1,
+	costpayPayway INTEGER DEFAULT 1,
+	costpayAccountType INTEGER DEFAULT 0,
+	costpayAccountId INTEGER DEFAULT 0,
+	costpayCostNumber INTEGER DEFAULT 0,
+	costpayIncomeNumber INTEGER DEFAULT 0,
+	costpayLogWay INTEGER DEFAULT 1,
+	costpayLogDate DATETIME,
+	costpayLogId INTEGER DEFAULT 0,
+	costpayLogPs text,
+	costpayBanklog INTEGER DEFAULT 0, 
+	costpayChequeId INTEGER,
+	costpayCostbookId INTEGER DEFAULT 0,
+	costpayCostCheckId INTEGER DEFAULT 0,
+	costpayVerifyStatus INTEGER DEFAULT 0,
+	costpayVerifyDate DATETIME,
+	costpayVerifyId INTEGER DEFAULT 0,
+	costpayVerifyPs text,
+	costpayStudentAccountId INTEGER DEFAULT 0,
+	threadId INTEGER DEFAULT 0,
+	bunitId INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_2 (costpaySide),
+	INDEX IX_1 (costpayNumberInOut),		
+	INDEX IX_3 (costpayPayway),
+	INDEX IX_4 (costpayAccountType),
+	INDEX IX_5 (costpayAccountId),
+	INDEX IX_6 (costpayCostbookId),
+	INDEX IX_7 (costpayCostNumber),
+	INDEX IX_8 (costpayIncomeNumber),
+	INDEX IX_9 (costpayLogWay),
+	INDEX IX_10 (costpayLogDate),
+	INDEX IX_11 (costpayLogId),
+	INDEX IX_12 (costpayCostbookId),
+	INDEX IX_14 (costpaySideID),
+	INDEX IX_15 (costpayFeeticketID),
+	INDEX IX_16 (costpayFeePayFeeID),
+	INDEX IX_17 (costpayOwnertradeStatus),
+	INDEX IX_18 (costpayOwnertradeId),
+	INDEX IX_19 (costpaySalaryBankId),
+	INDEX IX_13 (costpayCostCheckId),
+	INDEX IX_20 (costpayVerifyStatus),
+	INDEX IX_21 (costpayVerifyDate),
+	INDEX IX_23 (costpayVerifyDate),
+	INDEX IX_24 (costpayStudentAccountId),
+	INDEX IX_22 (costpayVerifyId),
+	INDEX IX_25 (costpayDate),
+	INDEX IX_27 (modified),
+        INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE cost
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    costAccountDate DATETIME,
+    costOutIn INTEGER DEFAULT 1,
+    costName VARCHAR (100),
+    costMoney INTEGER DEFAULT 0,    
+    costLogId INTEGER DEFAULT 0,
+    costBigItem INTEGER,
+    costSmallItem INTEGER,
+    costCostbookId INTEGER DEFAULT 0,    
+    costCostCheckId INTEGER DEFAULT 0,
+    costPs text,
+    PRIMARY KEY(id),
+    INDEX IX_2 (costName),
+    INDEX IX_1 (costMoney),		
+    INDEX IX_3 (costLogId),
+    INDEX IX_4 (costBigItem),
+    INDEX IX_5 (costSmallItem),
+    INDEX IX_6 (costCostbookId),
+    INDEX IX_8 (costAccountDate),
+    INDEX IX_7 (costCostCheckId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE owner
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    ownerName  VARCHAR (100),
+    ownerPs TEXT,
+    ownerStatus INTEGER DEFAULT 0,
+    bunitId INTEGER DEFAULT 0,
+ 	PRIMARY KEY(id),
+    INDEX IX_2 (ownerName),
+    INDEX IX_1 (ownerStatus),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE ownertrade
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    ownertradeOwnerId INTEGER DEFAULT 0,
+    ownertradeInOut INTEGER DEFAULT 0,
+    ownertradeNumber INTEGER DEFAULT 0,  
+    ownertradeWay INTEGER DEFAULT 0,    
+    ownertradeAccountDate DATETIME,
+    ownertradeAccountType INTEGER DEFAULT 0,
+    ownertradeAccountId INTEGER DEFAULT 0,
+	ownertradeLogId INTEGER DEFAULT 0,
+    ownertradeLogPs TEXT,
+    ownertradeCheckLog INTEGER DEFAULT 0,
+    ownertradeCheckUserId INTEGER DEFAULT 0,
+    ownertradeCheckDate DATETIME,
+    ownertradeCheckPs text,
+    bunitId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_2 (ownertradeOwnerId),
+    INDEX IX_1 (ownertradeInOut),		
+    INDEX IX_3 (ownertradeNumber),
+    INDEX IX_4 (ownertradeWay),
+    INDEX IX_5 (ownertradeAccountDate),		
+    INDEX IX_6 (ownertradeLogId),
+    INDEX IX_7 (ownertradeCheckLog),
+    INDEX IX_9 (ownertradeCheckUserId),
+    INDEX IX_11 (ownertradeAccountType),
+    INDEX IX_12(ownertradeAccountId),
+    INDEX IX_10 (ownertradeCheckDate),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE insidetrade
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    insidetradeUserId INTEGER DEFAULT 0,
+    insidetradeUserPs TEXT,
+    insidetradeNumber INTEGER DEFAULT 0,  
+    insidetradeWay INTEGER DEFAULT 0,    
+    insidetradeDate DATETIME,
+    insidetradeFromType INTEGER DEFAULT 0,
+    insidetradeFromId INTEGER DEFAULT 0,
+    insidetradeToType INTEGER DEFAULT 0,
+    insidetradeToId INTEGER DEFAULT 0,
+    insidetradeCheckLog INTEGER DEFAULT 0,
+    insidetradeCheckUserId INTEGER DEFAULT 0,
+    insidetradeCheckDate DATETIME,
+    insidetradeCheckPs text,
+    threadId INTEGER,
+    bunitId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_2 (insidetradeUserId),
+    INDEX IX_1 (insidetradeNumber),		
+    INDEX IX_3 (insidetradeDate),
+    INDEX IX_4 (insidetradeFromType),
+    INDEX IX_5 (insidetradeFromId),		
+    INDEX IX_6 (insidetradeToType),
+    INDEX IX_7 (insidetradeToId),
+    INDEX IX_9 (insidetradeCheckUserId),
+    INDEX IX_10 (insidetradeCheckDate),
+    INDEX IX_8 (insidetradeCheckLog),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE incomeBigItem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    incomeBigItemName VARCHAR(80),
+    incomeBigItemActive INTEGER DEFAULT 1,
+    PRIMARY KEY(id),
+    INDEX IX_2 (incomeBigItemActive)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE incomeSmallItem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    incomeSmallItemName VARCHAR(80),
+    incomeSmallItemActive INTEGER DEFAULT 1,
+    incomeSmallItemIncomeBigItemId INTEGER,
+    PRIMARY KEY(id),
+    INDEX IX_2 (incomeSmallItemActive),
+    INDEX IX_1 (incomeSmallItemIncomeBigItemId)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE income
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    incomeName MEDIUMTEXT,
+    incomeMoney INTEGER DEFAULT 0,
+    incomePayWay INTEGER DEFAULT 1,
+    incomeDate DATETIME,
+    incomeFrom VARCHAR(80),
+    incomeLog INTEGER DEFAULT 0,
+    incomeVerify INTEGER DEFAULT 0,
+    incomeVerifyNameId INTEGER DEFAULT 0,
+    incomeVerifyDate DATETIME,
+    incomeBigItem INTEGER,
+    incomeSmallItem INTEGER,
+    incomeFeenumber INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_2 (incomeMoney),
+    INDEX IX_1 (incomeDate),		
+    INDEX IX_3 (incomePayWay),
+    INDEX IX_4 (incomeVerify),
+    INDEX IX_5 (incomeVerifyNameId),
+    INDEX IX_6 (incomeBigItem),
+    INDEX IX_8 (incomeFeenumber),
+    INDEX IX_7 (incomeSmallItem)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE user
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    userLoginId VARCHAR (50) NOT NULL,
+    userPassword VARCHAR (50) NOT NULL,
+    userFullname VARCHAR (50) ,
+    userEmail VARCHAR (50),
+    userPhone VARCHAR (50),
+    userRole INTEGER DEFAULT 0,
+    userEmailReport INTEGER DEFAULT 0,
+    userActive INTEGER DEFAULT 1,
+    userBunitCard INTEGER DEFAULT 0,
+    userBunitAccounting INTEGER DEFAULT 0,
+    userContentType1 INTEGER DEFAULT 0,
+    userContentType2 INTEGER DEFAULT 0,
+    userContentType3 INTEGER DEFAULT 0,
+    userContentType4 INTEGER DEFAULT 0,
+    userContentType5 INTEGER DEFAULT 0,
+    userContentType6 INTEGER DEFAULT 0,
+    userContentType7 INTEGER DEFAULT 0,
+    userContentType8 INTEGER DEFAULT 0,
+    userContentType9 INTEGER DEFAULT 0,
+    userContentType10 INTEGER DEFAULT 0,
+    userContentType11 INTEGER DEFAULT 0,
+    userConfirmUpdate TINYINT DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (userLoginId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE classes
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    classesName VARCHAR (50) NOT NULL,
+    classesEnglishName VARCHAR (50),
+    classesStatus INTEGER DEFAULT 1,
+    classesXid INTEGER DEFAULT 0,
+	classesAllPeople INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (classesName),
+    INDEX IX_2 (classesStatus)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE student
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    membrId INTEGER,
+    studentName VARCHAR (50),
+    studentShortName VARCHAR (50),    
+    studentNumber VARCHAR (50),
+    studentNickname VARCHAR (50),
+    studentIDNumber VARCHAR (50),
+    studentSex INTEGER,
+    studentBirth DATETIME,
+    studentFather  VARCHAR (50),
+    studentMother  VARCHAR (50),
+    studentFatherMobile  VARCHAR (50),
+    studentFatherMobile2  VARCHAR (50),
+    studentMotherMobile  VARCHAR (50),
+    studentMotherMobile2  VARCHAR (50),
+    studentMobileDefault INTEGER,
+    studentFatherEmail  VARCHAR (100),
+    studentMotherEmail  VARCHAR (100),
+    studentEmailDefault INTEGER,
+    studentPhone VARCHAR (50),
+    studentPhone2 VARCHAR (50),
+    studentPhone3 VARCHAR (50),
+    studentPhoneDefault INTEGER,
+    studentZipCode  VARCHAR (10),
+    studentAddress VARCHAR (200),
+    studentStatus  INTEGER DEFAULT 1,
+    studentDepart INTEGER,
+    studentClassId INTEGER,
+    studentGroupId INTEGER DEFAULT 0, 
+    studentLevel INTEGER,
+    studentBank1 VARCHAR (20),
+    studentAccountNumber1 VARCHAR (100),
+    studentBank2 VARCHAR (20),
+    studentAccountNumber2 VARCHAR (100),
+    studentPs text,
+    studentPicFile VARCHAR (200),
+    studentBrother INTEGER,
+    studentBigSister INTEGER,
+    studentYoungBrother INTEGER,
+    studentYoungSister INTEGER,
+    studentFathJob VARCHAR(20),
+    studebtFatherDegree INTEGER,
+    studentMothJob VARCHAR(20),
+    studentMothDegree INTEGER,
+    studentGohome INTEGER,
+    studentSchool INTEGER,
+    studentSpecial text,
+    studentPhoneTeacher INTEGER DEFAULT 0,
+    studentPhoneDate DATETIME,
+    studentVisitTeacher INTEGER DEFAULT 0,
+    studentVisitDate DATETIME,
+    studentTryDate DATETIME,
+    studentFatherSkype VARCHAR(50),
+    studentMotherSkype VARCHAR(50),
+    studentSkypeDefault INTEGER,
+    studentFixNumber INTEGER DEFAULT 0,
+    studentStuffDate DATETIME,
+    studentStuffUserId INTEGER DEFAULT 0,
+    studentStuff1  VARCHAR(50),
+    studentStuff2  VARCHAR(50),
+    studentStuff3  VARCHAR(50),
+    studentStuff4  VARCHAR(50),
+    studentStuff5  VARCHAR(50),
+    studentStuff6  VARCHAR(50),
+    studentStuffPs text,
+    studentWeb VARCHAR(200),
+    studentFatherOffice VARCHAR(100),
+    studentMotherOffice VARCHAR(100),
+    bunitId INTEGER DEFAULT 0,
+    bloodType VARCHAR(4),
+    fatherBirth DATETIME,
+    motherBirth DATETIME,
+    fatherAddress VARCHAR(250),
+    motherAddress VARCHAR(250),
+    PRIMARY KEY(id),
+    INDEX IX_1 (studentStatus),
+    INDEX IX_2 (studentClassId),
+    INDEX IX_8 (studentLevel),
+    INDEX IX_3 (studentName),
+    INDEX IX_5 (studentBank1),
+    INDEX IX_6 (studentAccountNumber1),	
+    INDEX IX_7 (studentAccountNumber2),
+    INDEX IX_9 (studentBank2),	
+    INDEX IX_10 (studentFatherMobile),	
+    INDEX IX_11 (studentMotherMobile),	
+    INDEX IX_12 (studentFatherEmail),	
+    INDEX IX_13 (studentMotherEmail),
+    INDEX IX_14 (studentBirth),
+    INDEX IX_15 (studentDepart),
+    INDEX IX_16 (studentShortName),
+    INDEX IX_17 (studentNumber),
+    INDEX IX_18 (studentFatherOffice),
+    INDEX IX_19 (studentMotherOffice),
+    INDEX IX_20 (modified),
+    INDEX IX_BUID (bunitId),
+    INDEX IX_21 (membrId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE contact
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    contactStuId INTEGER NOT NULL,
+    contactName VARCHAR (10),
+    contactReleationId  INTEGER,
+    contactPhone1 VARCHAR (30),
+    contactPhone2 VARCHAR (30),
+    contactMobile VARCHAR (30),
+    contactPs text,
+    PRIMARY KEY(id),
+    INDEX IX_9 (contactStuId),
+    INDEX IX_10 (contactReleationId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE relation
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    relationName VARCHAR(30),
+    relationActive INTEGER DEFAULT 1,
+    PRIMARY KEY(id),
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE depart
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    departName VARCHAR(30),
+    departActive INTEGER DEFAULT 1,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE level
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    levelName VARCHAR(30),
+    levelActive INTEGER DEFAULT 1,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE position
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    positionName VARCHAR(30),
+    positionActive INTEGER DEFAULT 1,
+    positionPriority INTEGER DEFAULT 0,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE teacher
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    teacherFirstName VARCHAR (50),
+    teacherLastName VARCHAR (50),
+    teacherSex INTEGER,
+    teacherUserId INTEGER,
+    teacherNickname VARCHAR (50),
+    teacherEmail VARCHAR(100),
+    teacherIdNumber VARCHAR (50),
+    teacherBirth DATETIME,
+    teacherSchool VARCHAR (100),
+    teacherFather  VARCHAR (50),
+    teacherMother  VARCHAR (50),
+    teacherMobile  VARCHAR (50),
+    teacherMobile2  VARCHAR (50),
+    teacherMobile3  VARCHAR (50),
+    teacherPhone VARCHAR (50),
+    teacherPhone2 VARCHAR (50),
+    teacherPhone3 VARCHAR (50),
+    teacherZipCode VARCHAR (10),
+    teacherAddress VARCHAR (200),
+    teacherComeDate DATETIME,
+    teacherStatus  INTEGER,
+    teacherLevel INTEGER,
+    teacherDepart INTEGER,
+    teacherPosition INTEGER,
+    teacherClasses INTEGER,
+    teacherBank1 VARCHAR (20),
+    teacherAccountNumber1 VARCHAR (100),
+    teacherAccountName1 VARCHAR (20),
+    teacherAccountDefaut INTEGER  DEFAULT 1,
+    teacherBank2 VARCHAR (20),
+    teacherAccountNumber2 VARCHAR (100),
+    teacherAccountName2 VARCHAR (20),
+    teacherPs text,
+    teacherActive INTEGER DEFAULT 1,
+    teacherParttime INTEGER DEFAULT 0,
+    teacherAccountPayWay INTEGER DEFAULT 0,
+    teacherHealthType INTEGER DEFAULT 1,
+    teacherHealthMoney INTEGER DEFAULT 0,
+    teacherHealthPeople INTEGER DEFAULT 1,	
+    teacherLaborMoney INTEGER DEFAULT 0,
+    teacherRetireMoney INTEGER DEFAULT 0,
+    teacherRetirePercent INTEGER DEFAULT 0,
+    teacherBunitId INTEGER DEFAULT 0,
+    teacherBankName1 VARCHAR (100),
+    teacherBankName2 VARCHAR (100),
+    bunitId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (teacherFirstName),
+    INDEX IX_2 (teacherLastName),
+    INDEX IX_8 (teacherUserId),
+    INDEX IX_3 (teacherNickname),
+    INDEX IX_4 (teacherIdNumber),
+    INDEX IX_5 (teacherBank1),
+    INDEX IX_6 (teacherAccountNumber1),	
+    INDEX IX_7 (teacherAccountNumber2),
+    INDEX IX_9 (teacherBank2),	
+    INDEX IX_10 (teacherMobile),	
+    INDEX IX_11 (teacherStatus),	
+    INDEX IX_12 (teacherDepart),
+    INDEX IX_13 (teacherPosition),	
+    INDEX IX_14 (teacherActive),
+    INDEX IX_16 (teacherAccountDefaut),	
+    INDEX IX_15 (teacherClasses),
+    INDEX IX_17 (teacherParttime),
+    INDEX IX_18 (teacherAccountPayWay),
+    INDEX IX_19 (teacherBunitId),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE tcontact
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    tcontactStuId INTEGER NOT NULL,
+    tcontactName VARCHAR (10),
+    tcontactReleationId  INTEGER,
+    tcontactPhone1 VARCHAR (30),
+    tcontactPhone2 VARCHAR (30),
+    tcontactMobile VARCHAR (30),
+    tcontactPs text,
+    PRIMARY KEY(id),
+    INDEX IX_9 (tcontactStuId),
+    INDEX IX_10 (tcontactReleationId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE talent
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    talentName VARCHAR(100),
+    talentEnName VARCHAR(100),
+    talentActive INTEGER DEFAULT 1,
+    talentStatus INTEGER DEFAULT 0,
+    talentTeacherId INTEGER DEFAULT 0,
+    talentPs text,
+    talentTimes INTEGER DEFAULT 0,
+    talentActualTimes INTEGER DEFAULT 0,
+    talentNeedPeople INTEGER DEFAULT 0,
+    talentActualPeople INTEGER DEFAULT 0,
+    talentQuality text,
+    talentStartDate DATETIME, 
+    talentEndDate DATETIME,
+    talentFee INTEGER DEFAULT 0,
+    talentFeeExplain text,
+    talentPlace INTEGER DEFAULT 0,
+    talentFinanceType INTEGER DEFAULT 0,
+    talentFinanceBigItem INTEGER DEFAULT 0,
+    talentFinanceSmallItem INTEGER DEFAULT 0,
+	talentSalaryTypeId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (talentName),	
+    INDEX IX_2 (talentActive),	
+    INDEX IX_6 (talentStatus),
+    INDEX IX_4 (talentStartDate),	
+    INDEX IX_5 (talentEndDate),	
+    INDEX IX_3 (talentTeacherId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+
+CREATE TABLE tadent
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    tadentTalentId INTEGER DEFAULT 0,
+    tadentStudentId INTEGER DEFAULT 0,
+    tadentActive INTEGER DEFAULT 1,
+    tadentComeDate DATETIME,
+    tadentPs text,
+    tadentTime INTEGER DEFAULT 0,
+    tadentActualTime INTEGER DEFAULT 0,
+    talentLog INTEGER DEFAULT 0,
+    talentLogId INTEGER DEFAULT 0,
+    talentLogDate DATETIME,
+    PRIMARY KEY(id),
+    INDEX IX_1 (tadentTalentId),	
+    INDEX IX_2 (tadentStudentId),	
+    INDEX IX_3 (tadentActive)  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE classesMoney
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    classesMoneyName VARCHAR(100),
+    classesMoneyFullName VARCHAR(100),
+    classesMoneyActive INTEGER DEFAULT 1,
+    classesMoneyPs text,
+    classesMoneyNumber INTEGER DEFAULT 0,
+    classesMoneyIncomeItem INTEGER DEFAULT 0,
+    classesMoneyContinue INTEGER DEFAULT 0,
+    classesMoneyContinueActive INTEGER DEFAULT 1,
+    classesMoneyContinueDate DATETIME,
+    classesMoneyCategory INTEGER DEFAULT 0,
+    classesMoneyNewFeenumber INTEGER DEFAULT 0,
+    classesMoneyNewFeenumberCMId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (classesMoneyName),	
+    INDEX IX_3 (classesMoneyActive),  
+    INDEX IX_4 (classesMoneyContinue), 
+    INDEX IX_5 (classesMoneyContinueActive), 	
+    INDEX IX_8 (classesMoneyContinueDate), 	
+    INDEX IX_2 (classesMoneyCategory), 	
+    INDEX IX_7 (classesMoneyNewFeenumber), 	
+    INDEX IX_6 (classesMoneyIncomeItem) 	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE cmxLog
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    cmxLogCategory INTEGER DEFAULT 0,
+    cmxLogCMid INTEGER DEFAULT 0,
+    cmxLogXId INTEGER DEFAULT 0,
+    cmxLogYId INTEGER DEFAULT 0,
+    cmxLogActive INTEGER DEFAULT 1,
+    PRIMARY KEY(id),
+    INDEX IX_1 (cmxLogCategory),	
+    INDEX IX_3 (cmxLogCMid),  
+    INDEX IX_2 (cmxLogActive),
+    INDEX IX_4 (cmxLogXId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE classesCharge
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    classesChargeCMId INTEGER DEFAULT 0,
+    classesChargeMonth DATETIME,
+    classesChargeCategory INTEGER DEFAULT 0,
+    classesChargexId INTEGER DEFAULT 0,
+    classesChargeYId INTEGER DEFAULT 1,
+    classesChargeActive INTEGER DEFAULT 1,
+    classesChargeMoneyNumber INTEGER DEFAULT 0,
+    classesChargePs text,
+    PRIMARY KEY(id),
+    INDEX IX_1 (classesChargeCMId),	
+    INDEX IX_2 (classesChargeMonth),	
+    INDEX IX_3 (classesChargexId),
+    INDEX IX_4 (classesChargeActive),
+    INDEX IX_5 (classesChargeCategory)  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE cfDiscount
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    cfDiscountClassesFeeId INTEGER DEFAULT 0,	
+    cfDiscountNumber INTEGER DEFAULT 0,	
+    cfDiscountStudentId INTEGER DEFAULT 0,
+    cfDiscountClassId INTEGER DEFAULT 0,
+    cfDiscountGroupId INTEGER DEFAULT 0,
+    cfDiscountLevelId INTEGER DEFAULT 0,
+    cfDiscountCmId INTEGER DEFAULT 0,
+    cfDiscountMonth DATETIME,
+    cfDiscountFeenumberId INTEGER DEFAULT 0,
+    cfDiscountLogId INTEGER DEFAULT 0,	
+    cfDiscountLogPs text,
+    cfDiscountVerify INTEGER DEFAULT 0,	
+    cfDiscountVLogId INTEGER DEFAULT 0,	
+    cfDiscountVPs text,
+    cfDiscountVDate DATETIME,
+    cfDiscountStuatus INTEGER DEFAULT 0,
+    cfDiscountTypeId INTEGER DEFAULT 0,
+    cfDiscountContinue INTEGER DEFAULT 1,	
+    PRIMARY KEY(id),
+    INDEX IX_1 (cfDiscountClassesFeeId),	
+    INDEX IX_2 (cfDiscountLogId),	
+    INDEX IX_3 (cfDiscountVerify), 
+    INDEX IX_5 (cfDiscountTypeId),  
+    INDEX IX_4 (cfDiscountStuatus),  
+    INDEX IX_6 (cfDiscountStudentId),
+    INDEX IX_7 (cfDiscountClassId),
+    INDEX IX_8 (cfDiscountLevelId),
+    INDEX IX_9 (cfDiscountCmId),
+    INDEX IX_10 (cfDiscountMonth),
+    INDEX IX_12 (cfDiscountContinue),
+    INDEX IX_11 (cfDiscountFeenumberId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE payFee
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    payFeeFeenumberId INTEGER DEFAULT 0,	
+    payFeeMoneyNumber INTEGER DEFAULT 0,
+    payFeeLogDate DATETIME,
+    payFeeLogPayDate DATETIME,
+    payFeeManPCType INTEGER DEFAULT 0,
+    payFeeSourceCategory INTEGER DEFAULT 0,
+    payFeeSourceId INTEGER DEFAULT 0,
+    payFeeSourceFileName VARCHAR(150),
+    payFeeStatus INTEGER DEFAULT 0,
+    payFeeLogId INTEGER DEFAULT 0,	
+    payFeeLogPs text,
+    payFeeVId INTEGER DEFAULT 0,	
+    payFeeVPs text,
+    payFeeMessageStatus INTEGER DEFAULT 0,
+    payFeeAccountType INTEGER DEFAULT 0,
+    payFeeAccountId INTEGER DEFAULT 0,
+    payFeeVstatus INTEGER DEFAULT 0, 
+    PRIMARY KEY(id),
+    INDEX IX_1 (payFeeManPCType),	
+    INDEX IX_2 (payFeeSourceCategory),	
+    INDEX IX_3 (payFeeSourceId),  
+    INDEX IX_4 (payFeeFeenumberId),	
+    INDEX IX_5 (payFeeLogDate),	
+    INDEX IX_6 (payFeeStatus),
+    INDEX IX_8 (payFeeMessageStatus),
+    INDEX IX_9 (payFeeAccountType),
+    INDEX IX_10 (payFeeAccountId),
+    INDEX IX_7 (payFeeLogId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE exl
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    exlFileName  VARCHAR (200),
+    exlTitle  VARCHAR (200),
+    exlType INTEGER default 0,
+    exlPs text,
+    PRIMARY KEY(id),
+    INDEX IX_2 (exlType),
+    INDEX IX_1 (exlFileName)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE esystem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    esystemIncomeVerufy INTEGER,
+    esystemCostVerufy INTEGER,
+    esystemIncomePage INTEGER,
+    esystemCostPage INTEGER,
+    esystemStupage INTEGER,
+    esystemTeapage INTEGER,
+    esystemMySqlfile VARCHAR(250),
+    esystemMysqlName VARCHAR(250),
+    esystemMysqlBinary VARCHAR(250),
+    esystemDBfile VARCHAR(250),
+    esystemShowCash INTEGER DEFAULT 1,
+    esystemDateType TINYINT DEFAULT 0,
+    esystemLogMins INTEGER DEFAULT 10,
+    esystemEmailTitle VARCHAR(250),
+    esystemEmailContent TEXT,
+    esystemEmailType INTEGER DEFAULT 0,
+    uppaidTitle VARCHAR(250), 
+    uppaidContent MEDIUMTEXT,
+    uppaidBottom MEDIUMTEXT, 
+    PRIMARY KEY(id),
+    INDEX IX_1 (esystemDBfile),
+    INDEX IX_2 (esystemIncomeVerufy),
+    INDEX IX_3 (esystemCostVerufy),
+    INDEX IX_4 (esystemStupage),
+    INDEX IX_5 (esystemTeapage)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE dbbackup
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    dbbackupPs text,
+    dbbackupUserId int,
+    dbbackupFilePath VARCHAR(250),
+    dbbackupFileName VARCHAR(250),
+    PRIMARY KEY(id),
+    INDEX IX_1 (dbbackupUserId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE degree
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    degreeName VARCHAR(30),
+    degreeActive INTEGER DEFAULT 1,
+    bunitId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE inModify
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    inModifyIncomeId INTEGER DEFAULT 0,
+    inModifyNotice text,
+    inModifyUser INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (inModifyIncomeId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE coModify
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    coModifyIncomeId INTEGER DEFAULT 0,
+    coModifyNotice text,
+    coModifyUser INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (coModifyIncomeId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE place
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    placeName VARCHAR(30),
+    placeActive INTEGER DEFAULT 1,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE stunotice
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    stunoticeCategory INTEGER DEFAULT 0,
+    stunoticeXid INTEGER DEFAULT 0,
+    stunoticeDate DATETIME,
+    stunoticeStatus INTEGER DEFAULT 0,
+    stunoticeImportant INTEGER DEFAULT 0,	
+    stunoticeStudentId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (stunoticeCategory),
+    INDEX IX_2 (stunoticeDate),
+    INDEX IX_3 (stunoticeStatus),
+    INDEX IX_4 (stunoticeImportant),	    
+    INDEX IX_6 (stunoticeXid),
+    INDEX IX_5 (stunoticeStudentId)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+CREATE TABLE tfContent
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    tfContentTalentFileId INTEGER DEFAULT 0,	
+    tfContentTitle VARCHAR(200),
+    tfContentContnet text,
+    tfContentSendKind INTEGER DEFAULT 0,	
+    tfContentSendId INTEGER DEFAULT 0,	
+    PicFile VARCHAR(200),
+    PRIMARY KEY(id),
+    INDEX IX_1 (tfContentTalentFileId),
+    INDEX IX_2 (tfContentSendKind ),
+    INDEX IX_3 (tfContentSendId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE feenumber
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    feenumberDate DATETIME,
+    feenumberTotal INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (feenumberDate),
+    INDEX IX_2 (feenumberTotal)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE paySystem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    paySystemCompanyName VARCHAR(200),
+    paySystemCompanyAddress  VARCHAR(300),
+    paySystemCompanyPhone VARCHAR(100),
+    paySystemLimitDate INTEGER DEFAULT 0,
+    paySystemCompanyUniteId VARCHAR(100),
+    paySystemBankName VARCHAR(200),
+    paySystemBankId VARCHAR(100),
+    paySystemFirst5 VARCHAR(100),
+    paySystemBankStoreNickName VARCHAR(100),
+    paySystemCompanyStoreNickName VARCHAR(100),
+    paySystemBeforeLimitDate INTEGER DEFAULT 0,
+    paySystemLimitMoney INTEGER DEFAULT 0,
+    paySystemBankAccountId INTEGER DEFAULT 0,
+    paySystemMessageActive INTEGER DEFAULT 0,
+    paySystemMessageTo INTEGER DEFAULT 0,
+    paySystemMessageURL VARCHAR(200),
+    paySystemMessageUser VARCHAR(100),
+    paySystemMessagePass VARCHAR(100),
+    paySystemMessageText text,
+    paySystemATMActive INTEGER DEFAULT 0,
+    paySystemStoreActive  INTEGER DEFAULT 0,
+    paySystemReplaceWord text,
+    paySystemBirthActive INTEGER DEFAULT 0,
+    paySystemBirthWord text,
+    paySystemATMAccountId INTEGER DEFAULT 0,
+	paySystemEmailActive INTEGER DEFAULT 0,
+	paySystemEmailTo INTEGER DEFAULT 0,
+	paySystemEmailText text,
+	paySystemNoticeEmailTo INTEGER DEFAULT 0,
+	paySystemNoticeEmailType INTEGER DEFAULT 0,
+	paySystemNoticeEmailTitle VARCHAR(200),
+	paySystemNoticeEmailText text,
+	paySystemNoticeMessageTo INTEGER DEFAULT 0,
+    paySystemNoticeMessageTest text,
+    paySystemEmailServer VARCHAR(150),
+    paySystemEmailSender VARCHAR(100),
+    paySystemEmailSenderAddress VARCHAR(200),
+    paySystemEmailCode VARCHAR(50),
+    paySystemFixATMAccount VARCHAR(10),
+    paySystemFixATMNum INTEGER DEFAULT 0,
+    paySystemExtendNotpay INTEGER DEFAULT 1,
+    topLogoHtml VARCHAR(500),
+    billLogoPath VARCHAR(80),
+    billWaterMarkPath VARCHAR(80),
+    extraBankInfo VARCHAR(80),
+    useChecksum TINYINT,
+    version TINYINT,
+    customerType TINYINT,
+    dateType TINYINT,
+    website MEDIUMTEXT,
+    banktype TINYINT DEFAULT 1,
+    pagetype TINYINT DEFAULT 0,
+    workflow TINYINT DEFAULT 0,
+    cardread TINYINT DEFAULT 0,
+    cardmachine VARCHAR(80),
+    eventAuto TINYINT DEFAULT 0,
+    membrService TINYINT DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (paySystemCompanyName),	
+    INDEX IX_2 (paySystemLimitDate),	
+    INDEX IX_3 (paySystemCompanyUniteId),	
+    INDEX IX_4 (paySystemBankName),	
+    INDEX IX_5 (paySystemBankId),		
+    INDEX IX_6 (paySystemFirst5),
+    INDEX IX_7 (paySystemBankStoreNickName),
+    INDEX IX_9 (paySystemBankAccountId),
+    INDEX IX_10 (paySystemMessageActive),
+	INDEX IX_11 (paySystemATMActive),
+    INDEX IX_12 (paySystemStoreActive),
+    INDEX IX_13 (paySystemATMAccountId),
+    INDEX IX_14 (eventAuto),
+    INDEX IX_8 (paySystemCompanyStoreNickName)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE payAtm
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	payAtmNumber INTEGER DEFAULT 0,
+	payAtmNumberUnique INTEGER DEFAULT 0,
+	payAtmPayDate DATETIME,
+	payAtmPayMoney INTEGER DEFAULT 0,
+	payAtmMonth DATETIME,
+	payAtmAccountFirst5 VARCHAR(100),
+	payAtmFeeticketId INTEGER DEFAULT 0, 
+	payAtmWay VARCHAR(20),
+	payAtmBankId VARCHAR(20),
+	payAtmSource VARCHAR(400),
+	payAtmStatus INTEGER DEFAULT 0,
+	payAtmPs text,
+	payAtmException text,
+	PRIMARY KEY(id),
+	INDEX IX_1 (payAtmPayDate),	
+	INDEX IX_2 (payAtmPayMoney),	
+	INDEX IX_3 (payAtmFeeticketId),	
+	INDEX IX_4 (payAtmWay),	
+	INDEX IX_5 (payAtmBankId),		
+	INDEX IX_6 (payAtmStatus),
+	INDEX IX_7 (payAtmNumber),	
+	INDEX IX_8 (payAtmNumberUnique),		
+	UNIQUE KEY payATMSource(payAtmNumberUnique,payAtmPayDate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE discountType(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	discountTypeName VARCHAR(200),
+	discountTypeActive INTEGER default 0,
+	discountTypePs text,
+	acctcode VARCHAR(10),
+	bunitId INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (discountTypeName),	
+	INDEX IX_2 (discountTypeActive),
+	INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE classesFee
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    classesFeeCMId INTEGER DEFAULT 0,	
+    classesFeeStudentId INTEGER DEFAULT 0,
+    classesFeeStuClassId INTEGER DEFAULT 0,
+    classesFeeStuGroupId INTEGER DEFAULT 0,
+    classesFeeStuLevelId INTEGER DEFAULT 0,
+    classesFeeMonth DATETIME,
+    classesFeeFeenumberId INTEGER DEFAULT 0,
+    classesFeeShouldNumber INTEGER DEFAULT 0,
+    classesFeeTotalDiscount INTEGER DEFAULT 0,	
+    classesFeeLogId INTEGER DEFAULT 0,	
+    classesFeeLogPs text,
+    classesFeeVNeed INTEGER DEFAULT 0,		
+    classesFeeVUserId INTEGER DEFAULT 0,	
+    classesFeeVDate DATETIME,
+    classesFeeVPs text,
+    classesFeeStatus INTEGER DEFAULT 0,	
+    classesFeeChargeId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (classesFeeCMId),	
+    INDEX IX_2 (classesFeeStudentId),	
+    INDEX IX_3 (classesFeeMonth),  
+    INDEX IX_4 (classesFeeFeenumberId),
+    INDEX IX_5 (classesFeeLogId),
+    INDEX IX_6 (classesFeeStatus),	
+    INDEX IX_8 (classesFeeChargeId),	
+    INDEX IX_9 (classesFeeTotalDiscount),
+    INDEX IX_10 (classesFeeStuClassId),	
+    INDEX IX_11 (classesFeeStuLevelId),
+    INDEX IX_7 (classesFeeVNeed)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE feeticket
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    feeticketMonth DATETIME,
+    feeticketFeenumberId INTEGER DEFAULT 0,
+    feeticketStuId INTEGER DEFAULT 0,
+    feeticketStuClassId INTEGER DEFAULT 0,
+    feeticketStuGroupId INTEGER DEFAULT 0,
+    feeticketStuLevelId INTEGER DEFAULT 0,
+    feeticketSholdMoney INTEGER DEFAULT 0,
+    feeticketDiscountMoney INTEGER DEFAULT 0,
+    feeticketTotalMoney INTEGER DEFAULT 0,
+    feeticketPayMoney INTEGER DEFAULT 0,
+    feeticketPayDate DATETIME,
+    feeticketStatus INTEGER DEFAULT 0,
+    feeticketEndPayDate DATETIME,
+    feeticketPs text,
+    feeticketNewFeenumber INTEGER DEFAULT 0,
+    feeticketNewFeenumberCmId INTEGER DEFAULT 0,
+    feeticketLock INTEGER DEFAULT 0,
+    feeticketPrintUpdate INTEGER DEFAULT 0,
+    billrecordId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (feeticketMonth),	
+    INDEX IX_2 (feeticketFeenumberId),	
+    INDEX IX_3 (feeticketStuId),	
+    INDEX IX_4 (feeticketSholdMoney),	
+    INDEX IX_5 (feeticketDiscountMoney),		
+    INDEX IX_6 (feeticketPayDate),
+    INDEX IX_7 (feeticketStatus),
+    INDEX IX_9 (feeticketNewFeenumber),
+    INDEX IX_10 (feeticketStuClassId),
+    INDEX IX_11 (feeticketStuLevelId),	  
+    INDEX IX_8 (feeticketEndPayDate),
+    INDEX IX_14 (feeticketPrintUpdate),
+    INDEX IX_13 (feeticketLock),
+    INDEX IX_15 (billrecordId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE payStore
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    payStoreUpdateDate DATETIME,
+    payStorePayDate DATETIME,
+    payStoreFeeticketId INTEGER DEFAULT 0, 
+    payStorePayMoney INTEGER DEFAULT 0,
+    payStoreMonth DATETIME,
+    payStoreId VARCHAR(100),
+    payStoreAccountId VARCHAR(100),
+    payStoreSource VARCHAR(100),
+    payStoreStatus INTEGER DEFAULT 0,
+    payStorePs text,
+    payStoreException text,
+    PRIMARY KEY(id),
+    INDEX IX_1 (payStoreUpdateDate),	
+    INDEX IX_2 (payStorePayDate),	
+    INDEX IX_3 (payStoreFeeticketId),	
+    INDEX IX_4 (payStorePayMoney),	
+    INDEX IX_5 (payStoreMonth),		
+    INDEX IX_6 (payStoreAccountId),
+    INDEX IX_8 (payStoreSource),	
+    INDEX IX_7 (payStoreStatus),
+    UNIQUE KEY payStoreSource(payStoreSource)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE authSystem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    authSystemCode VARCHAR(100),
+    authSystemType INTEGER DEFAULT 0,
+    authSystemStatus INTEGER DEFAULT 0,
+    authSystemPs text,
+    PRIMARY KEY(id),
+    INDEX IX_1 (authSystemType),	
+    INDEX IX_2 (authSystemStatus)   
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE message
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    messageFromDate DATETIME,
+    messageFrom INTEGER DEFAULT 0,
+	messageFromStatus INTEGER DEFAULT 0,
+    messageTo INTEGER DEFAULT 0,
+    messageToStatus INTEGER DEFAULT 0,
+    messageTitle  VARCHAR(200),
+    messageText text,
+    messageType INTEGER DEFAULT 0,
+    messageActive INTEGER DEFAULT 0,
+    messagePersonType INTEGER DEFAULT 0,
+    messagePersonId INTEGER DEFAULT 0,
+    messageHandleContent text,
+    messageHandleDate DATETIME,
+    messageEmailStatus INTEGER DEFAULT 0,
+	messageHandleId INTEGER DEFAULT 0,
+    bunitId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (messageFromDate),	
+    INDEX IX_2 (messageFrom),   
+	INDEX IX_3 (messageFromStatus),	
+    INDEX IX_4 (messageTo),
+    INDEX IX_5 (messageToStatus),	
+    INDEX IX_7 (messageActive),
+    INDEX IX_8 (messagePersonType),
+    INDEX IX_9 (messagePersonId),
+    INDEX IX_10 (messageEmailStatus),	
+    INDEX IX_6 (messageType),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE messageBackup
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    messageBackupFromDate DATETIME,
+    messageBackupFrom INTEGER DEFAULT 0,
+	messageBackupFromStatus INTEGER DEFAULT 0,
+    messageBackupTo INTEGER DEFAULT 0,
+    messageBackupToStatus INTEGER DEFAULT 0,
+    messageBackupTitle  VARCHAR(200),
+    messageBackupText text,
+    messageBackupType INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (messageBackupFromDate),	
+    INDEX IX_2 (messageBackupFrom),   
+	INDEX IX_3 (messageBackupFromStatus),	
+    INDEX IX_4 (messageBackupTo),
+    INDEX IX_5 (messageBackupToStatus),	
+    INDEX IX_6 (messageBackupType)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE messageType
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+	messageTypeName VARCHAR(100),
+	messageTypeStatus INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_1 (messageTypeStatus),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE salaryType
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    salaryType INTEGER DEFAULT 0,
+    salaryTypeName VARCHAR(100),
+    salaryTypeFullName VARCHAR(100),
+    salaryTypeActive INTEGER DEFAULT 1,
+    salaryTypePs text,
+    salaryTypeContinue INTEGER DEFAULT 0,
+    salaryTypeContinueActive INTEGER DEFAULT 1,
+    salaryTypeVerufyNeed INTEGER DEFAULT 0,
+    salaryTypeFixNumber INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (salaryType),	
+    INDEX IX_3 (salaryTypeActive),  
+    INDEX IX_4 (salaryTypeContinue), 
+    INDEX IX_2 (salaryTypeVerufyNeed), 
+    INDEX IX_5 (salaryTypeContinueActive)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE salaryNumber
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    salaryNumberTypeId INTEGER DEFAULT 0,
+    salaryNumberTeacherId INTEGER DEFAULT 0,
+    salaryNumberMoneyNumber INTEGER DEFAULT 0,
+    salaryNumberLogId INTEGER DEFAULT 0,
+    salaryNumberLogDate DATETIME,
+    salaryNumberPs text, 
+    PRIMARY KEY(id),
+    INDEX IX_1 (salaryNumberTypeId),	
+    INDEX IX_3 (salaryNumberTeacherId),  
+    INDEX IX_4 (salaryNumberMoneyNumber), 
+    INDEX IX_5 (salaryNumberLogId)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE sanumber
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    sanumberDate DATETIME,
+    sanumberTotal INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (sanumberDate),
+    INDEX IX_2 (sanumberTotal)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE salaryFee
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    salaryFeeSanumberId INTEGER DEFAULT 0,	
+    salaryFeeMonth DATETIME,
+    salaryFeeTeacherId INTEGER DEFAULT 0,
+    salaryFeeDeportId INTEGER DEFAULT 0,	
+    salaryFeePositionId INTEGER DEFAULT 0,	
+    salaryFeeClassesId INTEGER DEFAULT 0,	
+    salaryFeeType INTEGER DEFAULT 0,	
+    salaryFeeTypeId INTEGER DEFAULT 0,	
+    salaryFeeNumber INTEGER DEFAULT 0,	
+    salaryFeePrintNeed INTEGER DEFAULT 0,	
+    salaryFeeLogId INTEGER DEFAULT 0,	
+    salaryFeeLogPs text,
+    salaryFeeVNeed INTEGER DEFAULT 0,		
+    salaryFeeVUserId INTEGER DEFAULT 0,	
+    salaryFeeVDate DATETIME,
+    salaryFeeVPs text,
+    salaryFeeStatus INTEGER DEFAULT 0,	
+    PRIMARY KEY(id),
+    INDEX IX_1 (salaryFeeSanumberId),	
+    INDEX IX_2 (salaryFeeMonth),	
+    INDEX IX_3 (salaryFeeTeacherId),  
+    INDEX IX_4 (salaryFeeDeportId),
+    INDEX IX_5 (salaryFeePositionId),
+    INDEX IX_6 (salaryFeeStatus),	
+    INDEX IX_8 (salaryFeeClassesId),	
+    INDEX IX_9 (salaryFeeType),
+    INDEX IX_10 (salaryFeeNumber),
+    INDEX IX_7 (salaryFeeTypeId)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE salaryTicket
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    salaryTicketMonth DATETIME,
+    salaryTicketSanumberId INTEGER DEFAULT 0,
+    salaryTicketTeacherId INTEGER DEFAULT 0,
+    salaryTicketDepartId INTEGER DEFAULT 0,
+    salaryTicketPositionId INTEGER DEFAULT 0,
+    salaryTicketClassesId INTEGER DEFAULT 0,
+    salaryTicketMoneyType1 INTEGER DEFAULT 0,
+    salaryTicketMoneyType2 INTEGER DEFAULT 0,
+    salaryTicketMoneyType3 INTEGER DEFAULT 0,
+    salaryTicketTotalMoney INTEGER DEFAULT 0,
+    salaryTicketPayMoney INTEGER DEFAULT 0,
+    salaryTicketPayTimes INTEGER DEFAULT 0,
+    salaryTicketPayDate DATETIME,
+    salaryTicketStatus INTEGER DEFAULT 0,
+    salaryFeePrintNeed INTEGER DEFAULT 0,
+    salaryTicketPs text,
+    salaryTicketNewFeenumber INTEGER DEFAULT 0,
+    salaryTicketAcceptStatus INTEGER DEFAULT 0,
+    salaryTicketAcceptPs text,
+    salaryTicketTeacherParttime INTEGER DEFAULT 1,
+    PRIMARY KEY(id),
+    INDEX IX_1 (salaryTicketMonth),	
+    INDEX IX_2 (salaryTicketSanumberId),	
+    INDEX IX_3 (salaryTicketTeacherId),	
+    INDEX IX_4 (salaryTicketDepartId),	
+    INDEX IX_5 (salaryTicketPositionId),		
+    INDEX IX_6 (salaryTicketClassesId),
+    INDEX IX_7 (salaryTicketStatus),
+    INDEX IX_11 (salaryTicketPayTimes),
+    INDEX IX_10 (salaryTicketAcceptStatus),
+    INDEX IX_12 (salaryTicketTeacherParttime),
+    INDEX IX_9 (salaryTicketNewFeenumber)
+	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE banknumber
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    banknumberDate DATETIME,
+    banknumberTotal INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (banknumberDate),
+    INDEX IX_2 (banknumberTotal)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE salaryBank
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    salaryBankMonth DATETIME,
+    salaryBankTeacherId INTEGER DEFAULT 0,
+  	salaryBankSanumber INTEGER DEFAULT 0,
+    salaryBankDeportId INTEGER DEFAULT 0,	
+    salaryBankPositionId INTEGER DEFAULT 0,	
+    salaryBankClassesId INTEGER DEFAULT 0,	
+    salaryBankMoney INTEGER DEFAULT 0,
+    salaryBankBankNumberId INTEGER DEFAULT 0,
+    salaryBankStatus INTEGER DEFAULT 0,
+    salaryBankPayDate DATETIME,
+    salaryBankPayWay INTEGER DEFAULT 0,
+    salaryBankPayAccountType INTEGER DEFAULT 0,
+    salaryBankPayAccountId INTEGER DEFAULT 0,
+    salaryBankToId INTEGER DEFAULT 0,
+    salaryBankToAccount VARCHAR(200),
+    salaryBankLogId INTEGER DEFAULT 0,
+    salaryBankLogPs text,
+    salaryBankVerifyStatus INTEGER DEFAULT 0,
+    salaryBankVerifyId INTEGER DEFAULT 0,
+    salaryBankVerifyDate DATETIME,
+    salaryBankVerifyPs text,
+    PRIMARY KEY(id),
+    INDEX IX_1 (salaryBankMonth),
+    INDEX IX_2 (salaryBankTeacherId),
+    INDEX IX_3 (salaryBankSanumber),
+    INDEX IX_4 (salaryBankDeportId),
+    INDEX IX_5 (salaryBankClassesId),
+    INDEX IX_6 (salaryBankBankNumberId),
+    INDEX IX_8 (salaryBankStatus),
+    INDEX IX_10 (salaryBankPayDate),
+    INDEX IX_11 (salaryBankPayAccountType),
+    INDEX IX_13 (salaryBankLogId),
+    INDEX IX_14 (salaryBankVerifyStatus),
+    INDEX IX_15 (salaryBankVerifyId),
+    INDEX IX_16 (salaryBankVerifyDate),
+    INDEX IX_17 (salaryBankPayWay),
+    INDEX IX_12 (salaryBankPayAccountId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE bankAccount
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    bankAccountName VARCHAR(100),
+    bankAccountId VARCHAR(100),
+    bankAccountAccount VARCHAR(100),
+    bankAccountAccountName VARCHAR(100),
+    bankAccountLogUseId INTEGER DEFAULT 0,
+    bankAccountLogDate DATETIME,
+    bankAccountLogPs text,
+    bankAccountNumber INTEGER DEFAULT 0,
+    bankAccountActive INTEGER DEFAULT 0,
+    bankAccount2client VARCHAR(10),
+    bankAccountPayDate VARCHAR(10),
+    bankAccountWebAddress VARCHAR(200),
+    bankAccountWeb1 VARCHAR(100),
+    bankAccountWeb2 VARCHAR(100),
+    bankAccountWeb3 VARCHAR(100),
+    bankAccountATMActive INTEGER DEFAULT 0,
+    bankAccountRealName VARCHAR(100),
+    bankAccountBranchName VARCHAR(100),
+    bunitId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (bankAccountId),
+    INDEX IX_3 (bankAccountActive),
+    INDEX IX_4 (bankAccountATMActive),
+    INDEX IX_2 (bankAccountNumber),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+create table salarybankAuth
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	salarybankAuthId INTEGER DEFAULT 0,	    	
+	salarybankAuthUserID INTEGER DEFAULT 0,	    	
+	salarybankAuthActive  INTEGER DEFAULT 1,
+	salarybankLoginId  INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (salarybankAuthId),
+	INDEX IX_2 (salarybankAuthUserID),
+	INDEX IX_4 (salarybankLoginId),
+	INDEX IX_3 (salarybankAuthActive)	    	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE salaryOut
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    salaryOutMonth DATETIME,
+    salaryOutBanknumber INTEGER DEFAULT 0,	    	
+    salaryOutBankAccountId INTEGER DEFAULT 0,
+    salaryOutStatus INTEGER DEFAULT 0,	    	
+    salaryOutPs text,
+    salaryOutPayDate DATETIME,
+    salaryOutPayUser INTEGER DEFAULT 0,
+    salaryOutPayPs text,	    		    	
+    PRIMARY KEY(id),
+    INDEX IX_1 (salaryOutMonth),
+    INDEX IX_2 (salaryOutBanknumber),
+    INDEX IX_3 (salaryOutBankAccountId),
+    INDEX IX_4 (salaryOutStatus)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE additionalFee
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    additionalFeeOriginal INTEGER DEFAULT 0,
+    additionalFeeAddition INTEGER DEFAULT 0,	    	
+    additionalFeeActive INTEGER DEFAULT 0,
+    additionalFeePs text,
+    PRIMARY KEY(id),
+    INDEX IX_1 (additionalFeeOriginal),
+    INDEX IX_2 (additionalFeeAddition),
+    INDEX IX_3 (additionalFeeActive)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE album
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    albumName  VARCHAR(100),
+    albumWord text,
+    albumPhotos INTEGER DEFAULT 0,
+    albumStatus INTEGER DEFAULT 0,
+    albumActive INTEGER DEFAULT 0,
+    albumClasstype INTEGER DEFAULT 0,
+    albumClassId INTEGER DEFAULT 0,
+    albumXid INTEGER DEFAULT 0,
+    albumTypeId INTEGER DEFAULT 0,
+    albumCatelogId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    INDEX IX_1 (albumName),
+    INDEX IX_2 (albumStatus),
+    INDEX IX_4 (albumClasstype),
+    INDEX IX_5 (albumClassId),
+    INDEX IX_6 (albumTypeId),
+    INDEX IX_7 (albumCatelogId),
+    INDEX IX_3 (albumActive)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE picorder
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+	picorderClassType INTEGER DEFAULT 0,
+	picorderClassId INTEGER DEFAULT 0,
+	picorderUserId INTEGER DEFAULT 0,
+	picorderAlbumId INTEGER DEFAULT 0,
+	picorderPicname  VARCHAR(100),
+	picorderStatus INTEGER DEFAULT 0,
+	picorderGetway INTEGER DEFAULT 0,
+	picorderName  VARCHAR(200),
+	PRIMARY KEY(id),
+	INDEX IX_1 (picorderClassType),
+	INDEX IX_2 (picorderClassId),
+	INDEX IX_3  (picorderUserId),
+	INDEX IX_4 (picorderAlbumId),
+	INDEX IX_5 (picorderPicname),
+	INDEX IX_7 (picorderGetway),
+	INDEX IX_6 (picorderStatus)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+
+CREATE TABLE websetup
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+	websetupShareIp VARCHAR(100),
+	websetupWebaddress VARCHAR(200),
+	websetupAuthodCode VARCHAR(100),
+	websetupCompanyname VARCHAR(200),
+	PRIMARY KEY(id),
+	INDEX IX_1 (websetupShareIp),
+	INDEX IX_2 (websetupAuthodCode)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE userlog
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	userlogUserId INTEGER DEFAULT 0,
+	userlogDate DATETIME,
+	userlogIP VARCHAR(200),
+	userlogHost VARCHAR(200),
+	userlogOut DATETIME,
+	userlogOutPs text,
+	userConfirm TINYINT DEFAULT 0,
+	bunitId INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (userlogUserId),
+	INDEX IX_2 (userlogDate),
+	INDEX IX_3 (userlogIP),
+	INDEX IX_BUID (bunitId),
+	INDEX IX_4 (userConfirm)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;		
+
+
+CREATE TABLE closemonth
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+	closemonthMonth DATETIME,
+	closemonthStatus INTEGER DEFAULT 0,
+	closemonthUserId INTEGER DEFAULT 0,
+	closemonthPs text,
+	closemonthFeesNum INTEGER DEFAULT 0,
+	closemonthFeesNotNum INTEGER DEFAULT 0,
+	closemonthFeestatus INTEGER DEFAULT 0,
+	closemonthFeeDate DATETIME,
+	closemonthFeeUserId INTEGER DEFAULT 0,
+	closemonthFeePs text,
+	closemonthIncomestatus INTEGER DEFAULT 0,
+	closemonthIncomeNum INTEGER DEFAULT 0,
+	closemonthIncomeNotNum INTEGER DEFAULT 0,
+	closemonthIncomeDate DATETIME,
+	closemonthIncomeUserId INTEGER DEFAULT 0,
+	closemonthIncomePs text,
+	closemonthSalarystatus INTEGER DEFAULT 0,
+	closemonthSalaryNum INTEGER DEFAULT 0,
+	closemonthSalaryNotNum INTEGER DEFAULT 0,
+	closemonthSalaryDate DATETIME,
+	closemonthSalaryUserId INTEGER DEFAULT 0,
+	closemonthSalaryPs text,
+	closemonthCoststatus INTEGER DEFAULT 0,
+	closemonthCostNum INTEGER DEFAULT 0,
+	closemonthCostNotNum INTEGER DEFAULT 0,
+	closemonthCostDate DATETIME,
+	closemonthCostUserId INTEGER DEFAULT 0,
+	closemonthCostPs text,
+	closemonthFeePrepay INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (closemonthMonth),
+	INDEX IX_2 (closemonthStatus),
+	INDEX IX_3  (closemonthFeestatus),
+	INDEX IX_4 (closemonthIncomestatus),
+	INDEX IX_5 (closemonthSalarystatus),
+	INDEX IX_6 (closemonthFeesNum),
+	INDEX IX_8 (closemonthFeesNotNum),
+	INDEX IX_9 (closemonthSalaryNum),
+	INDEX IX_10 (closemonthSalaryNotNum),
+	INDEX IX_11 (closemonthIncomeNum),
+	INDEX IX_12 (closemonthIncomeNotNum),
+	INDEX IX_13 (closemonthCostNum),
+	INDEX IX_14 (closemonthCostNotNum),
+	INDEX IX_7 (closemonthCoststatus)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+CREATE TABLE closeFee
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+	closefeeMonth DATETIME,
+	closefeeType INTEGER DEFAULT 0,
+	closefeeStatus INTEGER DEFAULT 0,
+	closefeeFtId INTEGER DEFAULT 0,
+	closefeeFeenumberId INTEGER DEFAULT 0,
+	closefeeNum INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (closefeeMonth),
+	INDEX IX_2 (closefeeType),
+	INDEX IX_3  (closefeeStatus),
+	INDEX IX_4 (closefeeFtId),
+	INDEX IX_5 (closefeeFeenumberId),
+	INDEX IX_6 (closefeeNum)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+CREATE TABLE closeSalary
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+	closesalaryMonth DATETIME,
+	closesalaryType INTEGER DEFAULT 0,
+	closesalaryStatus INTEGER DEFAULT 0,
+	closesalarySalaryId INTEGER DEFAULT 0,
+	closesalarySalaryNum INTEGER DEFAULT 0,
+	closesalaryNum INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (closesalaryMonth),
+	INDEX IX_2 (closesalaryType),
+	INDEX IX_3  (closesalaryStatus),
+	INDEX IX_4 (closesalarySalaryId),
+	INDEX IX_5 (closesalarySalaryNum),
+	INDEX IX_6 (closesalaryNum)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+
+CREATE TABLE closeCost
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+	closecostMonth DATETIME,
+	closecostType INTEGER DEFAULT 0,
+	closecostStatus INTEGER DEFAULT 0,
+	closecostCbId INTEGER DEFAULT 0,
+	closecostCbCheckId INTEGER DEFAULT 0,
+	closecostNum INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (closecostMonth),
+	INDEX IX_2 (closecostType),
+	INDEX IX_3  (closecostStatus),
+	INDEX IX_4 (closecostCbId),
+	INDEX IX_5 (closecostCbCheckId),
+	INDEX IX_6 (closecostNum)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+CREATE TABLE closeIncome
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+	closeincomeMonth DATETIME,
+	closeincomeType INTEGER DEFAULT 0,
+	closeincomeStatus INTEGER DEFAULT 0,
+	closeincomeCbId INTEGER DEFAULT 0,
+	closeincomeCbCheckId INTEGER DEFAULT 0,
+	closeincomeNum INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (closeincomeMonth),
+	INDEX IX_2 (closeincomeType),
+	INDEX IX_3  (closeincomeStatus),
+	INDEX IX_4 (closeincomeCbId),
+	INDEX IX_5 (closeincomeCbCheckId),
+	INDEX IX_6 (closeincomeNum)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+
+
+
+
+CREATE TABLE clientaccount
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	clientAccountBankOwner VARCHAR(200),
+	clientAccountBankName  VARCHAR(100),
+	clientAccountBankBranchName VARCHAR(100),
+	clientAccountBankNum  VARCHAR(100),
+	clientAccountAccountNum  VARCHAR(200),
+	clientAccountAccountName  VARCHAR(200),
+	clientAccountBankIdPs text,
+	clientAccountActive INTEGER DEFAULT 0,
+	clientAccountCosttrade INTEGER DEFAULT 0,
+        bunitId INTEGER DEFAULT 0,
+
+	PRIMARY KEY(id),
+	INDEX IX_1 (clientAccountActive),
+	INDEX IX_2 (clientAccountCosttrade),
+	INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+CREATE TABLE doTrade
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	doTradedDate DATETIME, 
+	doTradeClientAccountId INTEGER DEFAULT 0, 
+	doTradeCostpayId INTEGER DEFAULT 0, 
+	doTradeUserId INTEGER DEFAULT 0, 
+	doTradeStatus INTEGER DEFAULT 0, 
+	doTradeFromAccountType INTEGER DEFAULT 0, 
+	doTradeFromAccountId INTEGER DEFAULT 0, 
+	PRIMARY KEY(id),
+	INDEX IX_1 (doTradeClientAccountId),
+	INDEX IX_2 (doTradeCostpayId),
+	INDEX IX_3 (doTradeUserId),
+	INDEX IX_4 (doTradeStatus),
+	INDEX IX_5 (doTradeFromAccountType),
+	INDEX IX_6 (doTradeFromAccountId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+CREATE TABLE fixCost
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	fixCostCostId INTEGER DEFAULT 0, 
+	fixCostUserid INTEGER DEFAULT 0, 
+	fixCostActive INTEGER DEFAULT 0, 
+	fixCostLastUserid INTEGER DEFAULT 0, 
+	fixCostLastDate DATETIME,
+	fixCostLastTitle VARCHAR(200),
+	fixCostLastId INTEGER DEFAULT 0, 
+	PRIMARY KEY(id),
+	INDEX IX_1 (fixCostCostId),
+	INDEX IX_2 (fixCostUserid),
+	INDEX IX_3 (fixCostActive)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;	
+
+
+
+
+
+
+CREATE TABLE talentdate
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    talentdateTalentId INTEGER,
+    talentdateStartDate DATETIME,
+    talentdateEndDate DATETIME,
+    talentdatePlan text,
+    talentdatePicFile VARCHAR(100),
+    talentdateStatus INTEGER DEFAULT 0,
+    talentdateNotice INTEGER DEFAULT 0,
+    talentdatePresent INTEGER DEFAULT 0,
+    talentdateUserId INTEGER DEFAULT 0,
+    talentdatePrepare text,
+    PRIMARY KEY(id),
+    INDEX IX_1 (talentdateTalentId),
+    INDEX IX_2 (talentdateStatus),
+    INDEX IX_3 (talentdateStartDate),
+    INDEX IX_4 (talentdateEndDate),	    
+    INDEX IX_6 (talentdatePresent),
+    INDEX IX_7 (talentdateUserId),
+    INDEX IX_5 (talentdateNotice)	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE talentFile
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	talentFileStudentId INTEGER DEFAULT 0,
+	talentFileTalentdateId INTEGER DEFAULT 0,
+	talentFileTalentId INTEGER DEFAULT 0,
+	talentFilePresent INTEGER DEFAULT 0,
+	talentFileContent text,
+	talentFileUserId INTEGER DEFAULT 0,	
+	talentFileSendStatus INTEGER DEFAULT 0,	
+	PRIMARY KEY(id),
+	INDEX IX_1 (talentFileStudentId),
+	INDEX IX_2 (talentFileTalentdateId),
+	INDEX IX_6 (talentFileTalentId),
+	INDEX IX_3 (talentFilePresent),
+	INDEX IX_4 (talentFileUserId),
+	INDEX IX_5 (talentFileSendStatus)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE leaveReason
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    leaveReasonName VARCHAR(100),
+    leaveReasonActive INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_BUID (bunitId)
+    INDEX IX_1 (leaveReasonActive)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE leaveStudent
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    leaveStudentStudentId INTEGER DEFAULT 0,
+    leaveStudentReasonId INTEGER DEFAULT 0,
+    leaveStudentPs text,
+    leaveStudentLogId INTEGER DEFAULT 0,
+    PRIMARY KEY(id),
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_1 (leaveStudentStudentId),
+    INDEX IX_3 (leaveStudentReasonId),
+    INDEX IX_2 (leaveStudentLogId),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE talentTeacher
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	talentTeacherTalentId INTEGER DEFAULT 0,
+	talentTeacherTeacherId INTEGER DEFAULT 0,
+	talentUnitMoney INTEGER DEFAULT 0,
+	talentTeacherActive INTEGER DEFAULT 0,
+	talentTeacherLogId INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (talentTeacherTalentId),
+	INDEX IX_2 (talentTeacherTeacherId),
+	INDEX IX_3 (talentTeacherActive)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE talentSalary
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	created DATETIME,
+	modified DATETIME,
+	talentSalaryMonth DATETIME,
+	talentSalaryAccountdate DATETIME,
+	talentSalaryTalentId INTEGER DEFAULT 0,
+	talentSalaryTeacherId INTEGER DEFAULT 0,
+	talentSalaryCostbookId INTEGER DEFAULT 0,
+	talentSalaryCostId INTEGER DEFAULT 0,
+	talentSalaryMoney INTEGER DEFAULT 0,
+	talentSalaryLogId INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (talentSalaryAccountdate),
+	INDEX IX_2 (talentSalaryTalentId),
+	INDEX IX_3 (talentSalaryCostbookId),
+	INDEX IX_4 (talentSalaryCostId),
+	INDEX IX_5 (talentSalaryLogId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE studentAccount
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    studentAccountStuId INTEGER DEFAULT 0, 
+    studentAccountIncomeType INTEGER DEFAULT 0, 
+    studentAccountMoney INTEGER DEFAULT 0, 
+    studentAccountSourceType INTEGER DEFAULT 0, 
+    studentAccountSourceId INTEGER DEFAULT 0, 
+    studentAccountLogId INTEGER DEFAULT 0, 
+    studentAccountLogDate DATETIME,
+    studentAccountNumber VARCHAR(100),
+    studentAccountPayFeeId INTEGER DEFAULT 0,
+    studentAccountRootSAId INTEGER DEFAULT 0,
+    studentAccountCostpayID INTEGER DEFAULT 0,
+    studentAccountPs text,
+	PRIMARY KEY(id),
+	INDEX IX_1 (studentAccountStuId),
+	INDEX IX_2 (studentAccountIncomeType),
+	INDEX IX_3 (studentAccountSourceType),   
+	INDEX IX_5 (studentAccountLogId),
+	INDEX IX_6 (studentAccountLogDate),   
+	INDEX IX_7 (studentAccountPayFeeId),   
+	INDEX IX_8 (studentAccountCostpayID),   
+	INDEX IX_4 (studentAccountSourceId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;    
+
+
+CREATE TABLE clsgroup
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    classId INTEGER, 
+    name VARCHAR(20),
+    active TINYINT DEFAULT 1,
+	PRIMARY KEY(id),
+    INDEX IX_1 (classId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/* ### */
+CREATE TABLE tag
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    modified DATETIME,    
+    typeId INTEGER,
+    name VARCHAR(20),
+    status TINYINT DEFAULT 0,
+    branchTime DATETIME,
+    branchTag INTEGER DEFAULT 0,
+    branchVer INTEGER,
+    rootTag INTEGER DEFAULT 0,
+    isTagTag TINYINT,
+    bunitId TINYINT DEFAULT 0,
+    INDEX IX_1 (typeId),
+    INDEX IX_2 (rootTag),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE bill
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20),
+    prettyName VARCHAR(20),
+    status TINYINT DEFAULT 1,
+    balanceWay TINYINT,
+    billType TINYINT,  /* 0: 帳單, 1:薪資 */
+    privLevel TINYINT,
+    bunitId INTEGER DEFAULT 0,
+    comName VARCHAR(100),
+    comAddr VARCHAR(200),
+    payNote VARCHAR(200),
+    regInfo VARCHAR(100),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE billrecord
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    billId INTEGER,
+    name VARCHAR(40),
+    confirmed TINYINT,
+    month DATETIME,
+    billDate DATETIME,
+    semesterId INTEGER DEFAULT 0,
+    INDEX IX_1 (billId),
+    INDEX IX_2 (month),
+    INDEX IX_3 (semesterId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE billitem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    billId INTEGER,
+    name VARCHAR(20),
+    aliasId INTEGER,
+    smallItemId INTEGER,
+    pitemId INTEGER,
+    status TINYINT DEFAULT 1,
+    description VARCHAR(80),
+    defaultAmount INTEGER,
+    copyStatus TINYINT DEFAULT 0,
+    mainBillItemId INTEGER DEFAULT 0,
+    pos INTEGER DEFAULT 999999,
+    color VARCHAR(10),
+    templateVchrId INTEGER DEFAULT 0,
+    INDEX IX_1 (billId),
+    INDEX IX_2 (pitemId),
+    INDEX IX_3 (mainBillItemId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE chargeitem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    billItemId INTEGER NOT NULL,
+    billRecordId INTEGER NOT NULL,
+    smallItemId INTEGER NOT NULL,
+    chargeAmount INTEGER,
+    INDEX IX_1 (billRecordId),
+    UNIQUE KEY IX_2(billItemId,billRecordId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE charge
+(
+    chargeItemId INTEGER NOT NULL,
+    membrId INTEGER NOT NULL,
+    amount INTEGER,
+    userId INTEGER NOT NULL,
+    tagId INTEGER,
+    note VARCHAR (100),
+    pitemNum INTEGER,
+    PRIMARY KEY(chargeItemId, membrId),
+    INDEX IX_1 (membrId, chargeItemId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE discount
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    chargeItemId INTEGER NOT NULL,
+    membrId INTEGER NOT NULL,
+    userId INTEGER NOT NULL,
+    type INTEGER NOT NULL,
+    amount INTEGER,
+    note VARCHAR (60),
+    copy TINYINT,
+    INDEX IX_1 (membrId, chargeItemId),
+    INDEX IX_2 (chargeItemId, membrId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE membrbillrecord
+(
+    membrId INTEGER NOT NULL,
+    billRecordId INTEGER NOT NULL,
+    PRIMARY KEY(membrId, billRecordId),
+    ticketId VARCHAR(10),
+    receivable INTEGER,
+    received INTEGER,
+    paidStatus TINYINT DEFAULT 0, /* 0: not pay or under paid, 1: fully paid, -1:obsolete */
+    billDate DATETIME, /* overwrite billrecord's billDate */
+    printDate BIGINT,
+    modifyTime TIMESTAMP,
+    pending_cheque TINYINT,
+    inheritUnpaid INTEGER,
+    forcemodify BIGINT DEFAULT 0，
+    threadId INTEGER DEFAULT 0,
+    INDEX IX_1 (billRecordId, membrId),
+    INDEX IX_2 (modifyTime),
+    UNIQUE KEY (ticketId),
+    INDEX IX_3 (threadId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE billpay
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    via TINYINT, 
+        /* 0: cash, 1: atm, 2:store, 3:check, 4:wire, 5:credit card, 
+	   100: cash salary, 101: wire salary, 102: check salary */
+    recordTime DATETIME,
+    createTime DATETIME,
+    amount INTEGER,
+    remain INTEGER,
+    membrId INTEGER,
+    userId INTEGER,
+    billSourceId INTEGER,
+    chequeId INTEGER,
+    pending TINYINT,    /* not commited yet */
+    refundCostPayId INTEGER,
+    exportDate BIGINT,
+    exportUserId INTEGER,
+    verifyStatus TINYINT,
+    verifyId INTEGER,
+    verifyDate DATETIME,
+    note VARCHAR(30),
+    threadId INTEGER DEFAULT 0,
+    bunitId INTEGER DEFAULT 0,
+
+    INDEX IX_1 (membrId),
+    INDEX IX_2 (recordTime),
+    INDEX IX_3 (remain),
+    INDEX IX_4 (via),
+    INDEX IX_5 (refundCostPayId),
+    INDEX IX_6 (chequeId),
+    INDEX IX_7 (pending),
+    INDEX IX_8 (threadId),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE billpaid
+(
+    billPayId INTEGER NOT NULL,
+    ticketId VARCHAR(10) NOT NULL,
+    PRIMARY KEY (billPayId, ticketId),
+    recordTime DATETIME,
+    amount INTEGER,
+    threadId INTEGER DEFAULT 0,
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_1 (ticketId),
+    INDEX IX_2 (recordTime),
+    INDEX IX_3 (threadId),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE billsource
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    line VARCHAR(125) UNIQUE KEY  /* if via person, use paytime + membrId */
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE billcomment
+(
+    membrId INTEGER NOT NULL,
+    billRecordId INTEGER NOT NULL,
+    PRIMARY KEY (membrId,billRecordId), 
+    comment VARCHAR(100)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE membr
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    active TINYINT,
+    type TINYINT,         /* 1: student, 2: teacher, ... */
+    surrogateId INTEGER,   /* student id or teacher id or...*/
+    birth DATETIME,
+    bunitId INTEGER DEFAULT 0,
+    UNIQUE KEY (type, surrogateId),
+    INDEX IX_1 (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE tagmembr
+(
+    tagId INTEGER NOT NULL,
+    membrId INTEGER NOT NULL,
+    bindTime DATETIME,
+    PRIMARY KEY (tagId, membrId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE feedetail
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    chargeItemId INTEGER,
+    membrId INTEGER,
+    unitPrice INTEGER,
+    num INTEGER,
+    feeTime DATETIME,
+    note VARCHAR(60),
+    userId INTEGER,
+    manhourId INTEGER,
+    payrollMembrId INTEGER,
+    payrollFdId INTEGER,
+    INDEX IX_1 (membrId, chargeItemId),
+    INDEX IX_2 (chargeItemId, membrId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE tagtype
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20),
+    num TINYINT,
+    main TINYINT,
+    bunitId INTEGER DEFAULT 0,
+    INDEX IDX(num),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE session
+(
+    id VARCHAR(24) NOT NULL PRIMARY KEY,
+    bunitId INTEGER DEFAULT 0,
+    semesterId INTEGER DEFAULT 0,
+    subsystemId INTEGER DEFAULT 0,
+    userId INTEGER
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE voucher
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    costbookId VARCHAR(9),
+    INDEX IDX_1(costbookID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE vitem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    userId INTEGER,
+    createTime DATETIME,
+    recordTime DATETIME,
+    modified TIMESTAMP,
+    title VARCHAR(40),
+    type TINYINT, /* 0: 支出, 1: 收入, 2:進貨 */
+    acctcode VARCHAR(7),
+    total INTEGER,
+    realized INTEGER,
+    attachtype TINYINT,
+    paidstatus TINYINT,
+    verifystatus TINYINT,
+    verifyDate DATETIME,
+    verifyUserId INTEGER,
+    costTradeId INTEGER,
+    voucherId INTEGER,
+    note MEDIUMTEXT,
+    orgtype TINYINT,
+    orgId INTEGER,
+    pending TINYINT,
+    threadId INTEGER DEFAULT 0,
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_1 (recordTime),
+    INDEX IX_2 (type),
+    INDEX IX_3 (voucherId),
+    INDEX IX_4 (modified),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE vitem_note
+(
+    vitemId INTEGER,
+    note MEDIUMTEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE vpaid
+(
+    vitemId INTEGER,
+    costpayId INTEGER,
+    amount INTEGER,
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_1 (vitemId),
+    INDEX IX_2 (costpayId),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE bookmark
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    userId INTEGER,
+    name VARCHAR(20),
+    url MEDIUMTEXT,
+    created TIMESTAMP,
+    INDEX IX_1 (userId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE cheque
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    inAmount INTEGER,
+    outAmount INTEGER,
+    chequeId VARCHAR(20),
+    recordTime DATETIME,
+    cashDate DATETIME,
+    type TINYINT, /* income_tuition */
+    cashed DATETIME,
+    title MEDIUMTEXT,
+    billpayId INTEGER,
+    costpayId INTEGER,
+    issueBank VARCHAR(20),
+    threadId INTEGER,
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_1 (cashDate),
+    INDEX IX_2 (cashed),
+    INDEX IX_3 (recordTime),
+    INDEX IX_4 (type),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE costbigitem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    modified DATETIME,
+    costtradeId INTEGER,  
+    bigitemId INTEGER,
+    INDEX IX_1 (costtradeId),
+    INDEX IX_2 (bigitemId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE pitem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(40),
+    safetyLevel INTEGER,
+    salePrice INTEGER,
+    status TINYINT,
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_BUID(bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE inventory
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pitemId INTEGER,
+    orderDate DATETIME,
+    quantity INTEGER,
+    totalPrice INTEGER,
+    traderId INTEGER,
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_BUID(bunitId),
+    INDEX IX_1(orderDate),
+    INDEX IX_2(pitemId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE itemalias
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    status TINYINT,
+    bunitId,
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE authitem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    modified DATETIME,
+    authId INTEGER,
+    number INTEGER,
+    pagename VARCHAR(100),
+    UNIQUE KEY authId(authId),
+    INDEX IX_1(authId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE authuser
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    modified DATETIME,
+    authitemId INTEGER,
+    userId INTEGER,
+    INDEX IX_1(authitemId),
+    INDEX IX_2(userId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* ######### 出勤 stff ########## */
+CREATE TABLE schdef
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    startDate DATETIME,
+    endDate DATETIME,
+    type TINYINT,   /* 1: day of week, 2: day of month, 3: everyday */
+    content MEDIUMTEXT,  /* 2-3-4-5-6,0800-1700,60,10 -> 一～五,8am-5pm, 中間60分鐘休息, 遲到buffer 10分鐘 */
+    note MEDIUMTEXT,
+    color VARCHAR(10),
+    rootId INTEGER,
+    newestId INTEGER,
+    type TINYINT DEFAULT 1,
+    bunitId INTEGER DEFAULT -1,
+    INDEX IX_1 (startDate),
+    INDEX IX_2 (endDate),
+    INDEX IX_3 (rootId),
+    INDEX IX_4 (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE schmembr
+(
+    membrId INTEGER,
+    schdefId INTEGER,
+    PRIMARY KEY (membrId, schdefId),
+    note MEDIUMTEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE schsw
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    recordTime DATETIME,
+    userId INTEGER,
+    note MEDIUMTEXT,
+    reqMembrId INTEGER,
+    verifystatus TINYINT,
+    verifyDate DATETIME,
+    verifyUserId INTEGER,
+    INDEX IX_0 (recordTime),
+    INDEX IX_1 (userId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE schswrecord
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    schswId INTEGER,
+    occurDate DATETIME,
+    membrId INTEGER,
+    schdefId INTEGER,
+    autoRun TINYINT,  /* 1:去掉, 2:新增 */
+    INDEX IX_1 (occurDate),
+    INDEX IX_2 (schswId),
+    INDEX IX_3 (schdefId),
+    INDEX IX_4 (membrId),
+    UNIQUE KEY (occurDate,membrId,schdefId) /*同一天不可同一班又換上又換下*/
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE schevent
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    membrId INTEGER,
+    recordTime DATETIME,
+    modifyTime DATETIME,
+    startTime DATETIME,
+    endTime DATETIME,
+    lastingHours INTEGER,
+    lastingMins TINYINT,
+    userId INTEGER,
+    type TINYINT,
+    note MEDIUMTEXT,
+    status TINYINT DEFAULT 0,
+    schdefId INTEGER,
+    restMins INTEGER DEFAULT 0,
+    holidayId INTEGER,
+    verifystatus TINYINT,
+    verifyPs text,
+    verifyDate DATETIME,
+    verifyUserId INTEGER,
+    INDEX IX_0 (recordTime),
+    INDEX IX_1 (startTime),
+    INDEX IX_2 (userId),
+    INDEX IX_3 (modifyTime),
+    INDEX IX_4 (membrId),
+    INDEX IX_5 (holidayId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE holiday
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    type INTEGER,
+    name VARCHAR(200),
+    startTime DATETIME,
+    endTime DATETIME,
+    userId INTEGER, 
+    INDEX IX_0 (type),
+    INDEX IX_1 (startTime),
+    INDEX IX_2 (userId),
+    INDEX IX_3 (endTime),
+    INDEX IX_4 (userId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE cardcheckdate
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    checkdate DATETIME,
+    checkUser INTEGER DEFAULT 0, 
+    UNIQUE KEY (checkdate),
+    INDEX IX_1 (checkUser)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* ############################## */
+
+
+CREATE TABLE membruser
+(
+    membrId INTEGER PRIMARY KEY,
+    userId INTEGER
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE membrmembr
+(
+    m1Id INTEGER,
+    m2Id INTEGER,
+    PRIMARY KEY (m1Id, m2Id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE manhour
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    clientMembrId INTEGER,
+    executeMembrId INTEGER,
+    recordTime DATETIME,
+    modifyTime DATETIME,
+    occurDate DATETIME,
+    billfdId INTEGER,
+    salaryfdId INTEGER,
+    userId INTEGER,
+    INDEX IX_1 (recordTime),
+    INDEX IX_2 (modifyTime),
+    INDEX IX_3 (occurDate),
+    INDEX IX_4 (billfdId),
+    INDEX IX_5 (salaryfdId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE cardmembr
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    cardId VARCHAR(20),
+    membrId INTEGER,
+    active2 INTEGER DEFAULT 0,
+    INDEX IX_1 (cardId),
+    INDEX IX_2 (membrId),
+    INDEX IX_3 (active2)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE yearholiday
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    name VARCHAR(40),
+    startDate DATETIME,
+    endDate DATETIME,
+    INDEX IX_1 (startDate),
+    INDEX IX_2 (endDate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE yearmembr
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    membrId INTEGER,
+    yearHolidayId INTEGER,
+    mins INTEGER,
+    overtime INTEGER DEFAULT 0,
+    userId INTEGER,
+    INDEX IX_1 (membrId),
+    INDEX IX_2 (yearHolidayId),
+    INDEX IX_4 (userId),
+    INDEX IX_3 (mins)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* ######### 會計 stuff beginning ########## */
+
+CREATE TABLE bunit
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    label VARCHAR(20),
+    status TINYINT DEFAULT 1
+    flag TINYINT DEFAULT 0,
+    buId INTEGER DEFAULT 0,
+    INDEX IX_1 (flag) 
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE vchr_thread
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    srcType TINYINT DEFAULT 0, /* 0:BILL, 1:SALARY, 2:INCOME or SPENDING */
+    srcInfo VARCHAR(20),
+    INDEX IX_3 (srcType)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE vchr_holder
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,   /* 產生時間, 有可能 10/25編, 11/01才入帳 */
+    registerDate DATETIME,  /* 入帳時間 */
+    serial VARCHAR(15) NOT NULL,
+    userId INTEGER DEFAULT 0,
+    type TINYINT DEFAULT 0,     /* 0: TEMPLATE, INSTANCE, OBSOLETE */
+    note INTEGER DEFAULT 0,
+    threadId INTEGER DEFAULT 0,
+    buId INTEGER DEFAULT 0, /* 有別於 vchr_item 的 bunitId, 這個是單位，那個是部門 */
+    INDEX IX_1 (registerDate),
+    INDEX IX_4 (serial),
+    INDEX IX_3 (type),
+    INDEX IX_5 (userId),
+    INDEX IX_6 (created),
+    INDEX IX_7 (buId),
+    INDEX IX_BUSERIAL (buId, serial)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE vchr_item
+(
+    vchrId INTEGER DEFAULT 0,
+    id INTEGER DEFAULT 0,
+    PRIMARY KEY (vchrId, id),
+    flag TINYINT DEFAULT 0, /* 0: Debit, 1:Credit */
+    threadId INTEGER DEFAULT 0,
+    bunitId INTEGER DEFAULT 0, 
+    acodeId INTEGER DEFAULT 0,
+    debit DOUBLE DEFAULT 0,
+    credit DOUBLE DEFAULT 0,
+    note INTEGER DEFAULT 0,
+    INDEX IX_1(vchrId),
+    INDEX IX_2(bunitId),
+    INDEX IX_3(acodeId),
+    INDEX IX_4 (threadId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE acode_category
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name1 INTEGER DEFAULT 0,
+    name2 INTEGER DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE acode
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    main VARCHAR(8),
+    sub VARCHAR(5),
+    name1 INTEGER DEFAULT 0,
+    name2 INTEGER DEFAULT 0,
+    catId INTEGER DEFAULT 0,
+    rootId INTEGER DEFAULT 0,
+    active TINYINT DEFAULT 1, /* 1: active, 0: in-active */
+    type TINYINT DEFAULT 0, /* 0: manual, 1:machine generated */
+    bunitId INTEGER DEFAULT 0,
+    INDEX IX_1(rootId),
+    INDEX IX_3(main,sub),
+    INDEX IX_2(sub),
+    INDEX IX_BUID (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE literal
+(
+    id BIGINT,
+    PRIMARY KEY(id),
+    text MEDIUMTEXT
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* ######### 會計 stuff ending ########## */
+
+/* ######### 客服 stuff ########## */
+
+CREATE TABLE clientservice
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	clientServiceDate DATETIME,
+	modified DATETIME,
+	clientServiceMembrId INTEGER,
+	clientServiceUserId INTEGER,
+	clientServiceStatus INTEGER,
+	clientServiceStar INTEGER,
+	clientServiceProcess INTEGER DEFAULT 0,
+	clientServiceType INTEGER,
+	clientServiceTitle VARCHAR(200),
+	clientServiceContent TEXT,
+	clientServiceLogId INTEGER,
+	clientServiceWarningDate DATETIME,
+	clientServiceWarningStatus INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (clientServiceMembrId),
+	INDEX IX_2 (clientServiceDate),
+	INDEX IX_3  (clientServiceUserId),
+	INDEX IX_6 (clientServiceStar),
+	INDEX IX_4 (clientServiceProcess),
+	INDEX IX_7 (clientServiceType),
+	INDEX IX_8 (clientServiceWarningDate),
+	INDEX IX_9 (clientServiceWarningStatus),
+	INDEX IX_10 (clientServiceLogId)
+);
+
+/* ### 標籤改版完全對應收費項目 ## */
+
+CREATE TABLE citemtag
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tagId INTEGER,
+    chargeItemId INTEGER,
+    INDEX IX_1 (tagId, chargeItemId),
+    INDEX IX_2 (chargeItemId, tagId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/* ############# 補助 ############ */
+CREATE TABLE fund
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30),
+    amount DOUBLE,
+    registerDate DATETIME,
+    acctType TINYINT,   /* 2: bank, 3: check
+    acctId TINYINT,
+    chequeBank VARCHAR(10),
+    chequeNo VARCHAR(10)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE fundmembr
+(
+    fundId INTEGER,
+    membrId INTEGER,
+    PRIMARY KEY (fundId, membrId),
+    amount DOUBLE,
+    used DOUBLE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE sch_notifier
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    lastId INTEGER
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/* ############################### */
+
+/* ############# 關帳 ############ */
+CREATE TABLE freeze
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    freezeTime DATETIME,
+    userId INTEGER,
+    bunitId,
+    INDEX IX_BUID (bunitId),
+    INDEX IX_1 (created)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/* ############################### */
+
+/* ############# 分校架構 ############ */
+CREATE TABLE userbunit
+(    
+    userId INTEGER,
+    bunitId INTEGER,
+    UNIQUE KEY userbunitKey (userId, bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE bunit_info
+(    
+    bunitId INTEGER,
+    /* 代收資訊 */
+    bankId INTEGER DEFAULT 0,
+    virtualId INTEGER DEFAULT 0,  /* 95481, .. */
+    storeID VARCHAR(8),    /* PHM001, JSM..*/
+    serviceID VARCHAR(3),  /* 669 */
+    studentBunitId INTEGER DEFAULT 0,
+    acodeBunitId INTEGER DEFAULT 0,
+    metaBunitId INTEGER DEFAULT 0,
+    unpaidBunitId INTEGER DEFAULT 0,
+    semesterBunitId INTEGER DEFAULT 0,
+    subsystemBunitId INTEGER DEFAULT 0,
+    collectionBankBunitId INTEGER DEFAULT 0;
+    /* 帳單資訊 */
+    fullname MEDIUMTEXT,
+    address MEDIUMTEXT,
+    phone MEDIUMTEXT,
+    web MEDIUMTEXT,
+    billNote MEDIUMTEXT,
+    smsText MEDIUMTEXT,
+    fixBankId INTEGER DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/* ############################### */
+
+
+UPDATE
+---------------------------------------------------------------
+
+alter table talent add talentSalaryTypeId INTEGER DEFAULT 0;
+alter table bankAccount add bankAccountATMActive INTEGER DEFAULT 0;
+alter table payFee add payFeeAccountType INTEGER DEFAULT 0;
+alter table payFee add payFeeAccountId INTEGER DEFAULT 0;
+alter table payFee add payFeeVstatus INTEGER DEFAULT 0;
+alter table paySystem add paySystemATMAccountId INTEGER DEFAULT 0;
+alter table bankAccount add bankAccountRealName VARCHAR(100);
+alter table bankAccount add bankAccountBranchName VARCHAR(100);
+alter table salaryTicket add salaryTicketTeacherParttime INTEGER DEFAULT 1;
+
+
+//stage 2
+alter table position add positionPriority INTEGER DEFAULT 0;
+
+alter table paySystem add paySystemEmailActive INTEGER DEFAULT 0;
+alter table paySystem add paySystemEmailTo INTEGER DEFAULT 0;
+alter table paySystem add paySystemEmailText text;
+alter table paySystem add paySystemNoticeEmailTo INTEGER DEFAULT 0;
+alter table paySystem add paySystemNoticeEmailType INTEGER DEFAULT 0;
+alter table paySystem add paySystemNoticeEmailText text;
+alter table paySystem add paySystemNoticeMessageTo INTEGER DEFAULT 0;
+alter table paySystem add paySystemNoticeMessageTest text;
+alter table paySystem add paySystemEmailServer VARCHAR(150);
+alter table paySystem add paySystemEmailSender VARCHAR(100);
+alter table paySystem add paySystemEmailSenderAddress VARCHAR(200);
+alter table paySystem add paySystemEmailCode VARCHAR(50);
+alter table paySystem add paySystemNoticeEmailTitle VARCHAR(200);
+
+alter table user add userEmailReport INTEGER DEFAULT 0;
+alter table user add userActive INTEGER DEFAULT 1;
+
+alter table user add userContentType1 INTEGER DEFAULT 0;
+alter table user add userContentType2 INTEGER DEFAULT 0;
+alter table user add userContentType3 INTEGER DEFAULT 0;
+alter table user add userContentType4 INTEGER DEFAULT 0;
+alter table user add userContentType5 INTEGER DEFAULT 0;
+alter table user add userContentType6 INTEGER DEFAULT 0;
+alter table user add userContentType7 INTEGER DEFAULT 0;
+alter table user add userContentType8 INTEGER DEFAULT 0;
+alter table user add userContentType9 INTEGER DEFAULT 0;
+alter table user add userContentType10 INTEGER DEFAULT 0;
+alter table user add userContentType11 INTEGER DEFAULT 0;
+
+alter table esystem add esystemShowCash INTEGER DEFAULT 1;
+
+//stage 3
+alter table message add messageActive INTEGER DEFAULT 0;
+alter table message add messagePersonType INTEGER DEFAULT 0;
+alter table message add messagePersonId INTEGER DEFAULT 0;
+alter table message add messageHandleContent text;
+alter table message add messageHandleDate DATETIME;
+alter table message add messageEmailStatus INTEGER DEFAULT 0;
+alter table message add messageHandleId INTEGER DEFAULT 0;
+alter table paySystem add paySystemFixATMAccount VARCHAR(10);
+alter table paySystem add paySystemFixATMNum INTEGER DEFAULT 0;
+alter table student add studentFixNumber INTEGER DEFAULT 0;
+
+
+//stage 4 
+
+alter table costpay add costpayStudentAccountId INTEGER DEFAULT 0;
+alter table paySystem add paySystemExtendNotpay INTEGER DEFAULT 1;
+alter table closemonth add closemonthFeePrepay INTEGER DEFAULT 0;
+
+add table studentAccount
+
+//stage 5
+
+alter table cfDiscount add cfDiscountContinue INTEGER DEFAULT 1;
+alter table cfDiscount add INDEX(cfDiscountContinue);
+
+
+
+// stage 6
+
+delete from cost where id='799';
+delete from cost where id='644';
+
+// stage 7 - peter  ps tp start from here
+
+alter table student add studentGroupId INTEGER DEFAULT 0;
+CREATE TABLE clsgroup
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    classId INTEGER, 
+    name VARCHAR(20),
+    active TINYINT DEFAULT 1,
+    PRIMARY KEY(id),
+    INDEX IX_1 (classId)
+);    
+alter table cmxLog add cmxLogYId INTEGER DEFAULT 0;
+
+// statge 8 - peter
+
+alter table ClassesCharge add classesChargeYId INTEGER DEFAULT 0;
+alter table cfDiscount add cfDiscountGroupId INTEGER DEFAULT 0;
+alter table classesFee add classesFeeStuGroupId INTEGER DEFAULT 0;
+alter table feeticket add feeticketStuGroupId INTEGER DEFAULT 0;
+
+//stage 9  -henry
+
+alter table student add studentStuffDate DATETIME;
+alter table student add studentStuffUserId INTEGER DEFAULT 0;
+alter table student add studentStuff1  VARCHAR(50);
+alter table student add studentStuff2  VARCHAR(50);
+alter table student add studentStuff3  VARCHAR(50);
+alter table student add studentStuff4  VARCHAR(50);
+alter table student add studentStuff5  VARCHAR(50);
+alter table student add studentStuff6  VARCHAR(50);
+alter table student add studentStuffPs text;
+
+
+
+//stage 10 -henry 
+
+alter table user MODIFY userRole INTEGER DEFAULT 3;
+
+//need delete 
+
+
+delete from payfee where id='1190';
+delete from costpay where id='2107';
+delete from studentAccount where id='5';	
+delete from costpay where id='2105';
+
+delete from payfee where id='1192';
+delete from costpay where id='2109';
+delete from studentAccount where id='6';	
+delete from costpay where id='2108';
+
+delete from payfee where id='1194';
+delete from costpay where id='2112';
+
+delete from payfee where id='1196';
+delete from costpay where id='2113';
+
+delete from payfee where id='1200';
+delete from costpay where id='2118';
+
+delete from payfee where id='1186';
+delete from costpay where id='2101';
+delete from studentAccount where id='3';	
+delete from costpay where id='2100';
+
+
+delete from payfee where id='1202';
+delete from costpay where id='2119';
+
+
+delete from payfee where id='1188';
+delete from costpay where id='2104';
+delete from studentAccount where id='4';	
+delete from costpay where id='2103';
+
+
+delete from payfee where id='1198';
+delete from costpay where id='2116';
+
+
+delete from paystore where id='4535';
+delete from paystore where id='4537';
+delete from paystore where id='4539';
+delete from paystore where id='4541';
+delete from paystore where id='4543';
+delete from paystore where id='4545';
+delete from paystore where id='4547';
+delete from paystore where id='4549';
+delete from paystore where id='4551';
+
+
+
+http://localhost:8081/eazycountingOld/updateCode/runX.jsp
+
+http://localhost:8081/eazycountingOld/updateCode/deletePayStorenot90.jsp
+
+alter table payStore modify payStoreSource VARCHAR(100) unique;
+
+alter table payAtm add payAtmNumberUnique INTEGER DEFAULT 0;
+
+http://localhost:8081/eazycountingOld/updateCode/modifyPayATMNumberUnique.jsp
+
+alter table payAtm add UNIQUE KEY payATMSource(payAtmNumberUnique,payAtmPayDate);
+
+
+## by peter, major surgery
+http://localhost:8080/ezcounting/test/test2.jsp  // migrate tag stuff
+alter table feeticket add billrecordId INTEGER DEFAULT 0;
+alter table feeticket add INDEX IDX_IX15(billrecordId);
+alter table classesFee add billItemId INTEGER DEFAULT 0;
+alter table classesFee add INDEX IDX_IX12(billItemId);
+http://localhost:8080/ezcounting/test/test3.jsp  // create 1st bill
+
+
+## by peter, v2
+alter table paysystem add topLogoHtml VARCHAR(500);
+alter table paysystem add billLogoPath VARCHAR(80);
+alter table paysystem add billWaterMarkPath VARCHAR(80);
+alter table paysystem add useChecksum TINYINT;
+
+## by peter v2-1
+alter table membrbillrecord change printNum printDate BIGINT;
+alter table discount add copy TINYINT;
+alter table bill add billType TINYINT;
+alter table bill add privLevel TINYINT;
+alter table membr add UNIQUE KEY (type, surrogateId);
+
+alter table chargeitem change chargeAmount chargeAmount INTEGER;
+alter table charge change amount amount INTEGER;
+alter table discount change amount amount INTEGER;
+alter table membrbillrecord change receivable receivable INTEGER;
+alter table membrbillrecord change received received INTEGER;
+alter table billpay change amount amount INTEGER;
+alter table billpay change remain remain INTEGER;
+alter table billpaid change amount amount INTEGER;
+
+alter table billpay add INDEX IX_3 (remain);
+alter table billpay add INDEX IX_4 (via);
+alter table billpay add accountId INTEGER;
+alter table billpay add futureCommitDate DATETIME;
+alter table billpay add pending TINYINT;
+
+alter table billitem add defaultAmount INTEGER;
+
+alter table membrbillrecord add modifyTime TIMESTAMP;
+alter table membrbillrecord add INDEX IX_2 (modifyTime);
+
+== 2008/06/02
+alter table tag add typeId INTEGER;
+alter table tag add INDEX IX_1 (typeId);
+alter table charge add copy TINYINT;
+
+== 2008/06/04
+alter table paysystem add version TINYINT;
+alter table paysystem add customerType TINYINT;
+
+== 2008/06/10
+alter table billpay add refundCostPayId INTEGER;
+alter table billpay add INDEX IX_5(refundCostPayId);
+
+== 2008/06/12
+alter table costpay add INDEX IX_25(costpayDate);
+alter table charge drop column copy;
+alter table billitem add copyStatus TINYINT DEFAULT 0;
+
+
+== 2008/06/17
+alter table charge add tagId INTEGER;
+
+==2008/06/25
+alter table billpay add exportDate BIGINT;
+alter table billpay add exportUserId INTEGER;
+
+
+
+==2008/06/26
+alter table tagtype add num TINYINT;
+alter table tagtype add INDEX IX1(num);
+
+
+
+
+==2008/06/26 henry
+alter table bankaccount modify bankAccountId VARCHAR(100);
+alter table esystem add esystemDateType TINYINT DEFAULT 0;
+alter table esystem add esystemLogMins INTEGER DEFAULT 10;
+
+
+==2008/07/14 henry 
+
+alter table bigitem add acctCode VARCHAR(8);
+alter table bigitem add INDEX IX1(acctCode);
+alter table smallitem add acctCode VARCHAR(8);
+alter table smallitem add INDEX IX1(acctCode);
+
+
+==2008/07/22 peter
+alter table voucher add costbookId VARCHAR(8);
+alter table voucher add INDEX IDX_1(costbookID);
+alter table vitem add verifyDate DATETIME;
+alter table vitem add verifyUserId INTEGER;
+
+
+
+==2008/07/22 peter
+alter table voucher change costbookId costbookId VARCHAR(9);
+
+==2008/07/24 peter
+alter table vitem add note MEDIUMTEXT;
+
+==2008/07/30
+alter table vitem add modified TIMESTAMP;
+alter table vitem add INDEX IX_4(modified);
+update vitem set modified=createTime where modified is NULL;
+
+==2008/07/31
+alter table tagtype add main TINYINT;
+
+==2008/08/04
+alter table billpay drop accountId;
+alter table billpay drop futureCommitDate;
+alter table billpay add chequeId INTEGER;
+alter table billpay add INDEX IX_6 (chequeId);
+
+==08/02 henry
+	
+alter table clientaccount add clientAccountCosttrade INTEGER DEFAULT 0;
+alter table clientaccount add INDEX IX_2(clientAccountCosttrade);
+
+
+CREATE TABLE costbigitem
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    modified DATETIME,
+    costtradeId INTEGER,  
+    bigitemId INTEGER,
+    INDEX IX_1 (costtradeId),
+    INDEX IX_2 (bigitemId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+== 08/07 peter
+alter table membrbillrecord add pending_cheque TINYINT;
+
+== 08/09 peter
+alter table cheque add recordTime DATETIME;
+alter table cheque add INDEX IX_3 (recordTime);
+alter table cheque drop INDEX IX_2;
+alter table cheque drop cashed;
+alter table cheque add cashed DATETIME;
+alter table cheque add INDEX IX_2(cashed);
+
+== 08/11 peter
+alter table billpaid add INDEX IX_2(recordTime);
+alter table billpay add INDEX IX_7 (pending);
+
+== 08/18 peter
+alter table billpay add verifyStatus TINYINT;
+alter table billpay add verifyId INTEGER;
+alter table billpay add verifyDate DATETIME;
+
+== 08/20 peter
+alter table vitem add orgtype TINYINT;
+alter table vitem add orgId INTEGER;
+
+== 08/24 peter
+alter table billitem change bigItemId aliasId INTEGER;
+alter table billitem add pitemId INTEGER;
+
+
+== 08/25 peter
+alter table paysystem add website MEDIUMTEXT;
+
+== 08/26 peter
+alter table charge add pitemNum INTEGER;
+
+== 08/27 peter
+update costpay set modified=costpayLogDate where modified is NULL;
+alter table costpay change modified modified TIMESTAMP;
+alter table costpay add INDEX IX_27(modified);
+
+
+==09/03 peter
+alter table inventory add INDEX IX_2(pitemId)
+alter table paysystem add banktype TINYINT DEFAULT 1;
+
+
+
+== 9/3 HENRY
+
+
+CREATE TABLE authitem
+(
+	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	created DATETIME,
+	modified DATETIME,
+	authId INTEGER,
+	number INTEGER,
+	pagename VARCHAR(100),
+	UNIQUE KEY authId(authId),
+	INDEX IX_1(authId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE authuser
+(
+	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	created DATETIME,
+	modified DATETIME,
+	authitemId INTEGER,
+	userId INTEGER,
+	INDEX IX_1(authitemId),
+	INDEX IX_2(userId)z
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+=== peter 9/11
+alter table pitem add salePrice INTEGER;
+alter table billitem add INDEX IX_2(pitemId);
+
+=== peter 9/15
+alter table paysystem add pagetype TINYINT DEFAULT 0;
+alter table paysystem add workflow TINYINT DEFAULT 0;
+
+=== peter 9/27
+alter table membrbillrecord add inheritUnpaid INTEGER;
+update vitem set type=2 where orgtype>0;
+
+=== peter 9/28
+alter table vitem add pending TINYINT;
+alter table vpaid drop INDEX IX_1;
+alter table vpaid drop INDEX IX_2;
+alter table vpaid add PRIMARY KEY (vitemId, costpayId);
+update costpay set costpayBankText=0;
+alter table costpay change costpayBankText costpayChequeId INTEGER;
+alter table cheque add billpayId INTEGER;
+alter table cheque add costpayId INTEGER;
+update costpay set costpayLogPs='' where costpayFeePayFeeID in (-10002, -10003, -10006);
+alter table cheque add INDEX IX_4 (type);
+
+
+== henry 9/30
+
+alter table teacher add teacherHealthType INTEGER DEFAULT 1;
+alter table teacher add teacherHealthMoney INTEGER DEFAULT 0;
+alter table teacher add teacherHealthPeople INTEGER DEFAULT 1;	
+alter table teacher add teacherLaborMoney INTEGER DEFAULT 0;
+alter table teacher add teacherRetireMoney INTEGER DEFAULT 0;
+alter table teacher add teacherRetirePercent INTEGER DEFAULT 0;
+
+== peter 10/25
+alter table feedetail add manhourId INTEGER;
+alter table billitem add mainBillItemId INTEGER DEFAULT 0;
+alter table billitem add INDEX IX_3 (mainBillItemId);
+
+
+
+== peter 10/31
+alter table schdef add rootId TINYINT DEFAULT 0;
+alter table schdef add newestId TINYINT DEFAULT 0;
+alter table schdef add INDEX IX_3 (rootId);
+
+
+
+
+==henry 11/03
+
+CREATE TABLE cardmembr
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    cardId VARCHAR(20),
+    membrId INTEGER,
+    INDEX IX_1 (cardId),
+    INDEX IX_2 (membrId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+alter table paysystem add cardread TINYINT DEFAULT 0;
+alter table paysystem add cardmachine VARCHAR(80);
+
+
+==peter 11/05
+alter table cardmembr drop INDEX IX_2;
+alter table cardmembr add UNIQUE KEY (membrId);
+
+
+==henry 11/10
+
+alter table esystem add esystememailTitle VARCHAR(250);
+alter table esystem add esystemEmailContent TEXT;
+alter table esystem add esystemEmailType INTEGER DEFAULT 0;
+
+== peter 11/13
+alter table membrbillrecord add threadId INTEGER DEFAULT 0;
+alter table membrbillrecord add INDEX IX_3 (threadId);
+alter table billitem add templateVchrId INTEGER DEFAULT 0;
+alter table billpay add threadId INTEGER DEFAULT 0;
+alter table billpay add INDEX IX_8 (threadId);
+alter table billpaid add threadId INTEGER DEFAULT 0;
+alter table billpaid add INDEX IX_3 (threadId);
+
+
+
+==henry 11/11
+
+alter table schevent add status TINYINT DEFAULT 0;
+
+CREATE TABLE cardcheckdate
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    checkdate DATETIME,
+    checkUser INTEGER DEFAULT 0, 
+    UNIQUE KEY (checkdate),
+    INDEX IX_1 (checkUser)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+==henry 11/14
+alter table schevent add schdefId INTEGER;
+alter table schevent add restMins INTEGER DEFAULT 0;
+
+
+drop table cardmembr;
+CREATE TABLE cardmembr
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    cardId VARCHAR(20),
+    membrId INTEGER,
+    active2 INTEGER DEFAULT 0,
+    INDEX IX_1 (cardId),
+    INDEX IX_2 (membrId),
+    INDEX IX_3 (active2)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+== henry 11/30
+alter table paysystem add eventAuto TINYINT DEFAULT 0;
+alter table paysystem add INDEX IX_14 (eventAuto);
+
+CREATE TABLE holiday
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    type INTEGER,
+    name VARCHAR(200),
+    startTime DATETIME,
+    endTime DATETIME,
+    userId INTEGER, 
+    INDEX IX_0 (type),
+    INDEX IX_1 (startTime),
+    INDEX IX_2 (userId),
+    INDEX IX_3 (endTime),
+    INDEX IX_4 (userId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+== henry 2008/12/01
+alter table schevent add holidayId INTEGER;
+alter table schevent add INDEX IX_5 (holidayId);
+
+== henry 2008/12/03
+alter table manhour add INDEX IX_4 (billfdId);
+alter table manhour add INDEX IX_5 (salaryfdId);
+
+
+== peter 2008/12/10
+alter table acode add active TINYINT DEFAULT 1;
+alter table acode add type TINYINT DEFAULT 0;
+
+== peter 2008/12/21
+alter table acode add INDEX IX_3(main,sub);
+
+==henry 2008/12/21
+
+alter table student add studentWeb VARCHAR(200);
+
+CREATE TABLE clientservice
+(
+	id INTEGER NOT NULL AUTO_INCREMENT,
+	clientServiceDate DATETIME,
+	modified DATETIME,
+	clientServiceMembrId INTEGER,
+	clientServiceUserId INTEGER,
+	clientServiceStatus INTEGER,
+	clientServiceStar INTEGER,
+	clientServiceProcess INTEGER DEFAULT 0,
+	clientServiceType INTEGER,
+	clientServiceTitle VARCHAR(200),
+	clientServiceContent TEXT,
+	clientServiceLogId INTEGER,
+	clientServiceWarningDate DATETIME,
+	clientServiceWarningStatus INTEGER DEFAULT 0,
+	PRIMARY KEY(id),
+	INDEX IX_1 (clientServiceMembrId),
+	INDEX IX_2 (clientServiceDate),
+	INDEX IX_3  (clientServiceUserId),
+	INDEX IX_6 (clientServiceStar),
+	INDEX IX_4 (clientServiceProcess),
+	INDEX IX_7 (clientServiceType),
+	INDEX IX_8 (clientServiceWarningDate),
+	INDEX IX_9 (clientServiceWarningStatus),
+	INDEX IX_10 (clientServiceLogId)
+);
+
+== peter 2008/12/22
+alter table insidetrade add threadId INTEGER;
+alter table vchr_holder add INDEX IX_4 (serial);
+
+
+== henry 2008/12/25
+alter table paysystem add membrService TINYINT DEFAULT 0;
+alter table schdef add autoRun TINYINT DEFAULT 1;
+
+== henry 2008/12/25 -2
+
+alter table student add studentShortName VARCHAR (50);   
+alter table student add studentNumber VARCHAR (50);
+alter table student add INDEX IX_16 (studentShortName);
+alter table student add INDEX IX_17 (studentNumber);
+
+== peter 2008/12/26
+alter table vitem add threadId INTEGER DEFAULT 0;
+alter table vchr_thread add INDEX IX_4 (srcType, srcInfo);
+alter table costpay add threadId INTEGER DEFAULT 0;
+
+== henry 2008/12/31
+alter table student add studentFatherOffice VARCHAR(100);
+alter table student add studentMotherOffice VARCHAR(100);
+alter table student add INDEX IX_18 (studentFatherOffice);
+alter table student add INDEX IX_19 (studentMotherOffice);
+
+
+== peter 2008/1/6
+alter table bill add comName VARCHAR(100);
+alter table bill add  comAddr VARCHAR(200);
+alter table bill add  payNote VARCHAR(200);
+alter table bill add  regInfo VARCHAR(100);
+
+
+== peter 2008/1/8
+alter table cheque add threadId INTEGER;
+
+
+
+== henry 2008/1/9
+alter table teacher add teacherBunitId INTEGER DEFAULT 0;
+alter table teacher add INDEX IX_19 (teacherBunitId);
+alter table schdef add bunitId INTEGER DEFAULT 0;
+alter table schdef add INDEX IX_4 (bunitId);
+alter table bunit add flag TINYINT DEFAULT 0;
+alter table bunit add INDEX IX_1 (flag);
+alter table membr add bunitId TINYINT DEFAULT 0;
+alter table membr add INDEX IX_1 (bunitId);
+
+== peter 2008/1/10
+alter table cheque add issueBank VARCHAR(20);
+
+== peter 2008/1/16
+alter table vchr_holder add INDEX IX_6(created);
+
+== peter 2008/1/16
+alter table billitem add pos INTEGER DEFAULT 999999; alter table billitem add color VARCHAR(10);
+    
+== peter 2008/1/17
+alter table feedetail add payrollMembrId INTEGER; alter table feedetail add payrollFdId INTEGER;
+
+== peter 2009/2/5
+alter table paysystem add extraBankInfo VARCHAR(80);
+
+== peter 2009/2/8
+alter table discounttype add acctcode VARCHAR(10);
+
+
+== peter 2009/2/10
+CREATE TABLE citemtag
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tagId INTEGER,
+    chargeItemId INTEGER,
+    INDEX IX_1 (tagId, chargeItemId),
+    INDEX IX_2 (chargeItemId, tagId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+alter table tag add status TINYINT DEFAULT 0;
+alter table tag add branchTag INTEGER DEFAULT 0;
+alter table tag add branchTime DATETIME;
+alter table tag add rootTag INTEGER DEFAULT 0;
+
+==henry 2009/2/8
+
+CREATE TABLE yearholiday
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    name VARCHAR(40),
+    startDate DATETIME,
+    endDate DATETIME,
+    INDEX IX_1 (startDate),
+    INDEX IX_2 (endDate)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE yearmembr
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    membrId INTEGER,
+    yearHolidayId INTEGER,
+    mins INTEGER,
+    userId INTEGER,
+    INDEX IX_1 (membrId),
+    INDEX IX_2 (yearHolidayId),
+    INDEX IX_4 (userId),
+    INDEX IX_3 (mins)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+== 2009/2/12
+CREATE TABLE sch_notifier
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    lastId INTEGER
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+== 2009/2/12
+alter table tag add branchVer INTEGER;
+alter table tag add INDEX IX_2 (rootTag);
+
+== 2009/2/15
+alter table tagmembr add bindTime DATETIME;
+alter table student add INDEX IX_20 (modified);
+
+== 2009/2/17
+alter table billpay add note VARCHAR(30);
+
+
+
+== 2009/2/25 henry 
+
+alter table user add userBunitCard INTEGER DEFAULT 0;
+alter table user add userBunitAccounting INTEGER DEFAULT 0;
+
+
+== 2009/3/3 peter for 關帳
+CREATE TABLE freeze
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    freezeTime DATETIME,
+    userId INTEGER
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+==2009/3/4   henry 
+
+CREATE TABLE entryps
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    membrId INTEGER DEFAULT 0, 
+    ps text,	
+    userId INTEGER DEFAULT 0,
+    modifyDate DATETIME,
+    cardAccess TINYINT DEFAULT 0,	
+    INDEX IX_1 (created),
+    INDEX IX_2 (membrId),
+    INDEX IX_3 (userId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+alter table teacher add teacherBankName1 VARCHAR (100);
+alter table teacher add teacherBankName2 VARCHAR (100);
+
+
+
+== 2009/3/4 henry 
+alter table schevent add verifyPs text;
+
+
+
+==2009/3/9  henry
+
+alter table yearmembr add overtime INTEGER DEFAULT 0;
+
+CREATE TABLE overtime
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    created DATETIME,
+    membrId INTEGER,
+    startDate DATETIME,
+    endDate DATETIME,	
+    mins INTEGER,
+    ps text,
+    editUser INTEGER DEFAULT 0, 
+    status TINYINT DEFAULT 0,
+    times TINYINT DEFAULT 0,
+    confirmType TINYINT DEFAULT 0,
+    confirmMins INTEGER DEFAULT 0,
+    confirmPs text,     
+    userId INTEGER,
+    INDEX IX_1 (membrId),
+    INDEX IX_2 (status),
+    INDEX IX_3 (userId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+== 2009/3/18 by peter
+alter table bunit change id id INTEGER AUTO_INCREMENT;
+alter table membr change bunitId bunitId INTEGER DEFAULT 0;
+alter table vchr_item change bunitId bunitId INTEGER DEFAULT 0;
+alter table session add bunitId INTEGER DEFAULT 0;
+alter table bill add bunitId INTEGER DEFAULT 0;
+alter table vchr_holder add buId INTEGER DEFAULT 0;
+alter table billpay add bunitId INTEGER DEFAULT 0;
+CREATE TABLE userbunit
+(    
+    userId INTEGER,
+    bunitId INTEGER,
+    UNIQUE KEY userbunitKey (userId, bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+alter table billpaid add bunitId INTEGER DEFAULT 0;
+alter table insidetrade add bunitId INTEGER DEFAULT 0;
+alter table vitem add bunitId INTEGER DEFAULT 0;
+alter table vpaid add bunitId INTEGER DEFAULT 0;
+alter table costpay add bunitId INTEGER DEFAULT 0;
+alter table cheque add bunitId INTEGER DEFAULT 0;
+alter table owner add bunitId INTEGER DEFAULT 0;
+alter table ownertrade add bunitId INTEGER DEFAULT 0;
+alter table tradeaccount add bunitId INTEGER DEFAULT 0;
+alter table bankaccount add bunitId INTEGER DEFAULT 0;
+alter table acode add bunitId INTEGER DEFAULT 0;
+alter table student add bunitId INTEGER DEFAULT 0;
+alter table teacher add bunitId INTEGER DEFAULT 0;
+alter table userlog add bunitId INTEGER DEFAULT 0;
+alter table discounttype add bunitId INTEGER DEFAULT 0;
+alter table itemalias add bunitId INTEGER DEFAULT 0;
+alter table tagtype add bunitId INTEGER DEFAULT 0;
+alter table tag add bunitId INTEGER DEFAULT 0;
+alter table degree add bunitId INTEGER DEFAULT 0;
+alter table relation add bunitId INTEGER DEFAULT 0;
+alter table leavereason add bunitId INTEGER DEFAULT 0;
+alter table leavestudent add bunitId INTEGER DEFAULT 0;
+alter table message add bunitId INTEGER DEFAULT 0;
+alter table messagetype add bunitId INTEGER DEFAULT 0;
+alter table bunit add buId INTEGER DEFAULT 0;
+alter table freeze add bunitId INTEGER DEFAULT 0;
+alter table pitem add bunitId INTEGER DEFAULT 0;
+alter table inventory add bunitId INTEGER DEFAULT 0;
+alter table costtrade add bunitId INTEGER DEFAULT 0;
+alter table clientaccount add bunitId INTEGER DEFAULT 0;
+
+
+alter table costpay add INDEX IX_BUID (bunitId);
+alter table billpay add INDEX IX_BUID (bunitId);
+alter table billpaid add INDEX IX_BUID (bunitId);
+alter table bill add INDEX IX_BUID (bunitId);
+alter table tradeaccount add INDEX IX_BUID (bunitId);
+alter table bankaccount add INDEX IX_BUID (bunitId);
+alter table owner add INDEX IX_BUID (bunitId);
+alter table ownertrade add INDEX IX_BUID (bunitId);
+alter table insidetrade add INDEX IX_BUID (bunitId);
+alter table vitem add INDEX IX_BUID (bunitId);
+alter table vpaid add INDEX IX_BUID (bunitId);
+alter table cheque add INDEX IX_BUID (bunitId);
+alter table acode add INDEX IX_BUID (bunitId);
+alter table vchr_holder add INDEX IX_BUSERIAL (buId, serial);
+alter table student add INDEX IX_BUID (bunitId);
+alter table teacher add INDEX IX_BUID (bunitId);
+alter table userlog add INDEX IX_BUID (bunitId);
+alter table discounttype add INDEX IX_BUID (bunitId);
+alter table itemalias add INDEX IX_BUID (bunitId);
+alter table tagtype add INDEX IX_BUID (bunitId);
+alter table tag add INDEX IX_BUID (bunitId);
+alter table degree add INDEX IX_BUID (bunitId);
+alter table relation add INDEX IX_BUID (bunitId);
+alter table leavereason add INDEX IX_BUID (bunitId);
+alter table leavestudent add INDEX IX_BUID (bunitId);
+alter table message add INDEX IX_BUID (bunitId);
+alter table messagetype add INDEX IX_BUID (bunitId);
+alter table bunit add INDEX IX_BUID (buId);
+alter table freeze add INDEX IX_BUID (bunitId);
+alter table pitem add INDEX IX_BUID (bunitId);
+alter table inventory add INDEX IX_BUID (bunitId);
+alter table costtrade add INDEX IX_BUID (bunitId);
+alter table clientaccount add INDEX IX_BUID (bunitId);
+
+CREATE TABLE bunit_info
+(    
+    bunitId INTEGER,
+    /* 代收資訊 */
+    bankId INTEGER DEFAULT 0,
+    virtualID VARCHAR(6),  /* 95481, .. */
+    storeID VARCHAR(8),    /* PHM001, JSM..*/
+    serviceID VARCHAR(3),  /* 669 */
+    studentBunitId INTEGER DEFAULT 0,
+    acodeBunitId INTEGER DEFAULT 0,
+    metaBunitId INTEGER DEFAULT 0,
+    unpaidBunitId INTEGER DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/* alter table bunit_info add unpaidBunitId INTEGER DEFAULT 0; */
+
+== 2009/3/26
+alter table bunit_info add fullname MEDIUMTEXT;
+alter table bunit_info add address MEDIUMTEXT;
+alter table bunit_info add phone MEDIUMTEXT;
+alter table bunit_info add web MEDIUMTEXT;
+alter table bunit_info add billNote MEDIUMTEXT;
+alter table bunit_info add smsText MEDIUMTEXT;
+
+==2009/4/12
+alter table student add bloodType VARCHAR(4);
+
+== 2009/4/16
+alter table freeze add INDEX IX_1 (created);
+
+
+==2009/4/21  henry 
+
+alter table userlog add userConfirm TINYINT DEFAULT 0;
+alter table userlog add INDEX IX_4 (userConfirm);
+
+==2009/4/21  henry 
+
+alter table user add userConfirmUpdate TINYINT DEFAULT 0;
+
+
+
+
+==2009/5/4    henry
+alter table entryps add cardAccess TINYINT DEFAULT 0;
+
+
+
+==2009/5/16  HENRY
+alter table esystem add uppaidTitle VARCHAR(250);
+alter table esystem add uppaidContent MEDIUMTEXT;
+alter table esystem add uppaidBottom MEDIUMTEXT; 
+
+
+== 2009/5/19 Peter
+alter table session add semesterId INTEGER DEFAULT 0;
+alter table session add subsystemId INTEGER DEFAULT 0;
+alter table bunit_info add semesterBunitId INTEGER DEFAULT 0;
+alter table bunit_info add subsystemBunitId INTEGER DEFAULT 0;
+CREATE TABLE semester
+(    
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30),
+    bunitId INTEGER,
+    INDEX IX_BU (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE subsystem
+(    
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30),
+    file VARCHAR(40),
+    toc VARCHAR(40),
+    bgcolor VARCHAR(10),
+    bunitId INTEGER,
+    INDEX IX_BU (bunitId)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+== 2009/5/20 by peter
+alter table bunit_info add fixBankId INTEGER DEFAULT 0;
+
+== 2009/5/25 by peter
+alter table bunit_info add collectionBankBunitId INTEGER DEFAULT 0;
+
+2009/6/2 by henry
+
+alter table student add fatherBirth DATETIME;
+alter table student add motherBirth DATETIME;
+alter table student add fatherAddress VARCHAR(250);
+alter table student add motherAddress VARCHAR(250);>>>>>>> .r2851
+
+== 2009/06/06 by peter
+alter table membrbillrecord add forcemodify BIGINT DEFAULT 0;
+
+== 2009/06/16 by peter
+alter table costpay add orgAmount DECIMAL(10,2) DEFAULT 0;
+
+==2010/03/26
+alter table mca_fee add EntranceA INTEGER;
+alter table mca_fee add EntranceB INTEGER;
+alter table mca_fee add EntranceC INTEGER;
+alter table mca_fee add EntranceD INTEGER;
+

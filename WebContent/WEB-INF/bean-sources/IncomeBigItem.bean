@@ -1,0 +1,8 @@
+package jsf;
+
+=IncomeBigItem
+int id
+Date created
+Date modified
+String incomeBigItemName
+int incomeBigItemActive

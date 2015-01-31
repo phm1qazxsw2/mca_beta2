@@ -1,0 +1,4 @@
+package phm.ezcounting;
+
+=PaidSum,billpaid-membrbillrecord-billrecord-bill,billpaid.ticketId=membrbillrecord.ticketId and billRecordId=billrecord.id and billId=bill.id,,SUM(billpaid.amount) as s1
+int sum<s1

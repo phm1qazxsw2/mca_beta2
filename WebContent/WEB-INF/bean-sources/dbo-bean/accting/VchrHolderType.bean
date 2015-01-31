@@ -1,0 +1,14 @@
+package phm.accounting;
+
+=VchrHolderType,vchr_holder-vchr_thread,threadId=vchr_thread.id,VchrHolder
+int -id
+Date -created
+Date -registerDate
+String -serial
+int -userId
+int -type
+int -threadId
+int -note
+int -buId
+int srcType
+

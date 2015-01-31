@@ -1,0 +1,9 @@
+package jsf;
+
+=IncomeSmallItem
+int id
+Date created
+Date modified
+String incomeSmallItemName
+int incomeSmallItemActive
+int incomeSmallItemIncomeBigItemId

@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=ChargeMembr,charge-membr,charge.membrId=membr.id,,membrId-chargeItemId-membr.name
+int membrId
+int chargeItemId
+String membrName<membr.name

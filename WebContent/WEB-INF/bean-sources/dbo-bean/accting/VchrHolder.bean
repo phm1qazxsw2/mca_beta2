@@ -1,0 +1,38 @@
+package phm.accounting;
+
+=VchrHolder,vchr_holder
+int *#id
+Date created
+Date registerDate
+String serial
+int userId
+int type
+int threadId
+int note
+int buId
+
+=
+
+    public static final int TYPE_OBSOLETE = -1;
+    public static final int TYPE_TEMPLATE = 1;
+    public static final int TYPE_INSTANCE = 2;
+    public static final int TYPE_EXPORT   = 3;
+
+
+    public static final String BILLITEM_DEFAULT	    = "_b_default";
+    public static final String BILLITEM_TEMPRECEIPT = "_b_tmprecp";
+    public static final String SALARY_BILLITEM_DEFAULT = "_b_salary";
+
+    private static java.text.SimpleDateFormat _sdf = new java.text.SimpleDateFormat("yyyy/MM/dd");
+    public String getRegisterDateAsDateStr()
+    {
+        return _sdf.format(this.registerDate);
+    }
+  
+    public void setRegisterDateCheck(Date r, String space)
+        throws Exception
+    {
+        if (phm.ezcounting.EzCountingService.getInstance().isFreezed(r, space))
+	    throw new Exception("已關帳不可修改 [2]");
+        this.setRegisterDate(r);
+    }

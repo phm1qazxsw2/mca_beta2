@@ -1,0 +1,11 @@
+package jsf;
+
+=Classes
+int id
+Date created 
+Date modified 
+String classesName 
+String classesEnglishName
+int classesStatus
+int classesXid
+int classesAllPeople

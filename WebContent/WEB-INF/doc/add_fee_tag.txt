@@ -1,0 +1,25 @@
+(search 3-5 Daily, PROG_LUNCH_TCH_4 看出现在那些档案)
+
+1. modify mca_fee_content.jsp
+      getTchLunch6() -> 要改 mca_fee 的 db
+
+2. 
+alter table mca_fee add TchLunch6 INTEGER;
+alter table mca_fee add TchLunch7 INTEGER;
+
+3. McaFee bean (bean2code4)
+
+4. McaService.java
+     
+5. create tags 
+   a. mysql front copy 类似的过来改
+        tag
+	   select * from tag where progId in (53,54) and status=0;
+	   copy&paste 后要改 branchTime, rootTag, branchVer, progId
+	   
+        citemtags
+           select * from citemtag where tagId in (5392,5393);  <-- 要 copy
+
+
+
+

@@ -1,0 +1,19 @@
+package jsf;
+
+=PayAtm
+int id
+Date created
+Date modified
+int payAtmNumber
+int payAtmNumberUnique
+Date payAtmPayDate
+int payAtmPayMoney
+Date payAtmMonth
+String payAtmAccountFirst5
+int payAtmFeeticketId
+String payAtmWay
+String payAtmBankId
+String payAtmSource
+int payAtmStatus
+String payAtmPs
+String payAtmException

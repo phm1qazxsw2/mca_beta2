@@ -1,0 +1,24 @@
+package jsf;
+
+=CfDiscount
+int id
+Date created 
+Date modified 
+int cfDiscountClassesFeeId
+int cfDiscountNumber
+int cfDiscountStudentId
+int cfDiscountClassId
+int cfDiscountGroupId
+int cfDiscountLevelId
+int cfDiscountCmId
+Date cfDiscountMonth
+int cfDiscountFeenumberId
+int cfDiscountLogId
+String cfDiscountLogPs
+int cfDiscountVerify
+int cfDiscountVLogId
+String cfDiscountVPs
+Date cfDiscountVDate
+int cfDiscountStuatus
+int cfDiscountTypeId
+int cfDiscountContinue

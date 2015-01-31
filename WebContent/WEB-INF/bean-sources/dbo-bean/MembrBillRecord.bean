@@ -1,0 +1,37 @@
+package phm.ezcounting;
+
+=MembrBillRecord,membrbillrecord
+int #membrId
+int #billRecordId
+String ticketId
+int receivable
+int received
+int paidStatus
+Date billDate
+long printDate
+long forcemodify
+int pending_cheque
+int inheritUnpaid
+int threadId
+
+=
+
+    // paidStatus
+    //   0 : not paid or under paid
+    //  -1 : obsolete
+    //   1 : partly paid
+    //   2 : fully paid
+    public static final int STATUS_NOT_PAID = 0;
+    public static final int STATUS_PARTLY_PAID = 1;
+    public static final int STATUS_FULLY_PAID = 2;
+    public static final int STATUS_OBSOLETE = -1;
+
+   public String getBillKey()
+   {
+        return getMembrId()+"#"+getBillRecordId();
+   }
+
+   public String getTicketIdAsString()
+   {
+       return "'" + this.getTicketId() + "'";
+   }

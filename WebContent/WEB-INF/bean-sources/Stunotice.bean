@@ -1,0 +1,12 @@
+package jsf;
+
+=Stunotice
+int id
+Date created
+Date modified
+int stunoticeCategory
+int stunoticeXid
+Date stunoticeDate
+int stunoticeStatus
+int stunoticeImportant
+int stunoticeStudentId

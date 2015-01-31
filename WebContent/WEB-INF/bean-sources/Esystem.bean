@@ -1,0 +1,22 @@
+package jsf;
+
+=Esystem
+int id
+Date created
+Date modified
+int esystemIncomeVerufy
+int esystemCostVerufy
+int esystemIncomePage
+int esystemCostPage
+int esystemStupage
+int esystemTeapage
+String esystemMySqlfile
+String esystemMysqlName
+String esystemMysqlBinary
+String esystemDBfile
+int esystemShowCash
+int esystemDateType
+int esystemLogMins
+String esystememailTitle
+String esystemEmailContent
+int esystemEmailType

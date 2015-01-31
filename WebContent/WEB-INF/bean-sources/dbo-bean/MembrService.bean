@@ -1,0 +1,17 @@
+package phm.ezcounting;
+
+=MembrService,clientservice
+int *#id
+Date clientServiceDate
+Date modified
+int clientServiceMembrId
+int clientServiceUserId
+int clientServiceStatus
+int clientServiceStar
+int clientServiceProcess
+int clientServiceType
+String clientServiceTitle
+String clientServiceContent
+int clientServiceLogId
+Date clientServiceWarningDate
+int clientServiceWarningStatus

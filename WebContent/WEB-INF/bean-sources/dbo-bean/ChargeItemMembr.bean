@@ -1,0 +1,85 @@
+package phm.ezcounting;
+
+=ChargeItemMembr,chargeitem-charge-membr,charge.chargeItemId=chargeitem.id and charge.membrId=membr.id,,membr.id-chargeItemId-chargeitem.billRecordId-billItemId-chargeAmount-charge.amount-billitem.name-userLoginId-charge.note-membr.name-paidStatus-printDate-ticketId-chargeitem.smallItemId-tagId-tag.name-billType-pitemNum-pitemId-aliasId-templateVchrId-userId-receivable-received-copyStatus
+@membrbillrecord,chargeitem.billRecordId=membrbillrecord.billRecordId and membr.id=membrbillrecord.membrId
+@user,charge.userId=user.id
+@tag,tagId=tag.id
+@billitem,chargeitem.billItemId=billitem.id
+@bill,bill.id=billitem.billId
+int membrId<membr.id
+int chargeItemId
+int billRecordId
+int billItemId
+int chargeAmount
+int amount<charge.amount
+String chargeName_<billitem.name
+String userLoginId
+String note<charge.note
+String membrName<membr.name
+int paidStatus
+long printDate
+String ticketId
+int smallItemId
+int tagId
+String tagName<tag.name
+int billType
+int pitemNum
+int pitemId
+int aliasId
+int templateVchrId
+int userId
+int receivable
+int received
+int copyStatus
+
+=
+
+    public final static int ZERO = -99999999;
+    public int getMyAmount()
+    {
+        if (getAmount()==ZERO)
+            return 0;
+	else if (getAmount()!=(int)0)
+	    return getAmount();
+        return getChargeAmount();
+    }
+
+    public static int getMyAmount(Charge c, ChargeItem ci)
+    {
+        if (c.getAmount()==ZERO)
+	    return 0;
+	else if (c.getAmount()!=0)
+	    return c.getAmount();
+	return ci.getChargeAmount();
+    }
+
+    public String getChargeKey()
+    {
+        return getMembrId()+"#"+getChargeItemId();
+    }
+
+    public String getMembrSmallItemIdKey()
+    {
+	return getMembrId()+"#"+getSmallItemId();	
+    }
+
+    public String getTagChargeKey()
+    {
+        return getTagId()+"#" + getChargeItemId();
+    }
+
+    public String getTagMembrKey()
+    {
+        return getTagId()+"#" + getMembrId();
+    }
+
+    public String getChargeName()
+	throws Exception
+    {
+        return BillItem.getItemName(this.getAliasId(), this.getChargeName_(), this.getPitemNum());
+    }
+
+    public String getTicketIdAsString()
+    {
+        return "'" + getTicketId() + "'";
+    }

@@ -1,0 +1,5 @@
+package literalstore;
+
+=Literal,###
+long #id
+String text

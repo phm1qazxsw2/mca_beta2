@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="Big5"?>
+<library>
+   <book sales="Y">
+      <code>F6476</code>
+      <title>ASP.NET 2.0網頁製作徹底研究</title>
+      <author>陳會安</author>
+      <price>660</price>
+   </book>
+   <book sales="N">
+      <code>F5474</code>
+      <title>XML網頁製作徹底研究-第三版</title>
+      <author>陳會安</author>
+      <price>650</price>
+   </book>
+   <book sales="N">
+      <code>F8538A</code>
+      <title>JavaScript網頁製作徹底研究-第二版</title>
+      <author>陳會安</author>
+      <price>580</price>
+   </book>
+   <book sales="Y">
+      <code>F6752</code>
+      <title>Visual Basic 2005程式設計範例教本</title>
+      <author>陳會安</author>
+      <price>560</price>
+   </book>
+</library>
+

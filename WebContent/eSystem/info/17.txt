@@ -1,0 +1,10 @@
+﻿1 以收費的週期,設定延續的區間.如沒有固定的週期,可選擇 "<font color=red>無</font>".
+<BR>
+2 例如: 月費的區間為:<font color=blue>每一個月</font> 註冊費的區間為: <font color=blue>每半年</font>.
+<BR>
+3 設定延續區間在第一次資料建檔後,使用<font color=blue>開單管理</font> -><font color=blue>自動產生延續帳單</font>可快速準確的產生下個月的帳單.
+
+
+
+
+

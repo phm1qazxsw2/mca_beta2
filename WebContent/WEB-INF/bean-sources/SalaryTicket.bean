@@ -1,0 +1,26 @@
+package jsf;
+
+=SalaryTicket
+int id
+Date created
+Date modified
+Date salaryTicketMonth
+int salaryTicketSanumberId
+int salaryTicketTeacherId
+int salaryTicketDepartId
+int salaryTicketPositionId
+int salaryTicketClassesId
+int salaryTicketMoneyType1
+int salaryTicketMoneyType2
+int salaryTicketMoneyType3
+int salaryTicketTotalMoney
+int salaryTicketPayMoney
+int salaryTicketPayTimes
+Date salaryTicketPayDate
+int salaryTicketStatus
+int salaryFeePrintNeed
+String salaryTicketPs
+int salaryTicketNewFeenumber
+int salaryTicketAcceptStatus
+String salaryTicketAcceptPs
+int salaryTicketTeacherParttime

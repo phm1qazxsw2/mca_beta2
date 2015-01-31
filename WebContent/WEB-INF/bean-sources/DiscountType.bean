@@ -1,0 +1,11 @@
+package jsf;
+
+=DiscountType
+int id
+Date created
+Date modified
+String discountTypeName
+int discountTypeActive
+String discountTypePs
+String acctcode
+int bunitId

@@ -1,0 +1,21 @@
+package jsf;
+
+=Insidetrade
+int id
+Date created 
+Date modified 
+int insidetradeUserId
+String insidetradeUserPs
+int insidetradeNumber
+int insidetradeWay
+Date insidetradeDate
+int insidetradeFromType
+int insidetradeFromId
+int insidetradeToType
+int insidetradeToId
+int insidetradeCheckLog
+int insidetradeCheckUserId
+Date insidetradeCheckDate
+String insidetradeCheckPs
+int threadId
+int bunitId

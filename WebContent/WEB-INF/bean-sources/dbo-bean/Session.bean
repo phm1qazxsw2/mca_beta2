@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=Session,session
+String #id
+int bunitId
+int userId

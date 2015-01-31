@@ -1,0 +1,18 @@
+package jsf;
+
+=Income
+int id
+Date created 
+Date modified 
+String incomeName 
+int incomeMoney 
+int incomePayWay 
+Date incomeDate
+String incomeFrom 
+int incomeLog
+int incomeVerify 
+int incomeVerifyNameId
+Date incomeVerifyDate
+int incomeBigItem
+int incomeSmallItem
+int incomeFeenumber

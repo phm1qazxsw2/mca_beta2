@@ -1,0 +1,10 @@
+package jsf;
+
+=Owner
+int id
+Date created
+Date modified
+String ownerName
+String ownerPs
+int ownerStatus
+int bunitId

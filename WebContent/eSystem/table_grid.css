@@ -1,0 +1,31 @@
+.type1 {
+  background-color: #FFFFFF;
+  border: 0px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+  font-size:16px;
+}
+.type2 {
+  background-color: #FFFFFF;
+  border: 0px solid #000;
+  border-right: 1px solid #000;
+  font-size:16px;
+}
+.type3 {
+  background-color: #FFFFFF;
+  border: 0px solid #000;
+  border-bottom: 1px solid #000;
+  font-size:16px;
+}
+.type4 {
+  background-color: #FFFFFF;
+  border: 0px solid #000;
+  font-size:16px;
+}
+.type5 {
+  background-color: #FFFFFF;
+  border: 0px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  font-size:16px;
+}

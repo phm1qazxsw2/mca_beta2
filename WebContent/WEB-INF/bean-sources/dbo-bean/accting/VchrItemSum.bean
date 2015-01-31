@@ -1,0 +1,18 @@
+package phm.accounting;
+
+=VchrItemSum,vchr_item-vchr_holder-acode-vchr_thread,vchr_item.vchrId=vchr_holder.id and acodeId=acode.id and vchr_item.threadId=vchr_thread.id,,sum(debit) as debit-sum(credit) as credit-concat(acode.main-acode.sub) as fullkey-acodeId-main-sub-name1-name2
+double debit
+double credit
+int acodeId
+String main
+String sub
+int name1
+int name2
+
+=
+
+    public String getFirstDigit()
+    {
+        return main.substring(0,1);
+    }
+

@@ -1,0 +1,13 @@
+package mca;
+
+=McaDeferred,mca_deferred
+int *#id
+String ticketId
+int type
+int bunitId
+
+=
+
+    public static final int TYPE_NONE     = 0;
+    public static final int TYPE_STANDARD = 1;
+    public static final int TYPE_MONTHLY  = 2;

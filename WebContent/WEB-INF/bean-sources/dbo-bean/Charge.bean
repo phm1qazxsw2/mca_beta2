@@ -1,0 +1,17 @@
+package phm.ezcounting;
+
+=Charge,charge
+int #chargeItemId
+int #membrId
+int amount
+String note
+int userId
+int tagId
+int pitemNum
+
+=
+
+    public String getChargeKey()
+    {
+        return getMembrId()+"#"+getChargeItemId();
+    }

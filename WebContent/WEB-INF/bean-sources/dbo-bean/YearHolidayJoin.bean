@@ -1,0 +1,13 @@
+package phm.ezcounting;
+
+=YearHolidayJoin,yearholiday-yearmembr,yearholiday.id=yearmembr.yearHolidayId
+int *#id<yearholiday.id
+Date created
+String name
+Date startDate
+Date endDate
+int membrId
+int yearHolidayId
+int mins
+int overtime
+int userId

@@ -1,0 +1,10 @@
+package jsf;
+
+=AdditionalFee
+int id
+Date created
+Date modified
+int additionalFeeOriginal
+int additionalFeeAddition
+int additionalFeeActive
+String additionalFeePs

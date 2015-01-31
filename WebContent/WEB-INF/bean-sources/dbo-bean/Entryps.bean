@@ -1,0 +1,23 @@
+package phm.ezcounting;
+
+=Entryps,entryps
+int *#id
+Date created
+int membrId
+String ps
+int userId
+Date modifyDate
+
+=
+
+    java.text.SimpleDateFormat sdf=new java.text.SimpleDateFormat("yyyyMMdd");
+    
+    public String getCreatedString()
+    {
+        return sdf.format(this.created);
+    }
+
+    public String getDateMembr()
+    {
+        return sdf.format(this.created)+"#"+String.valueOf(membrId);
+    }

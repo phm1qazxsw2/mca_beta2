@@ -1,0 +1,5 @@
+package phm.ezcounting;
+
+=BillSource,billsource
+int *#id
+String line

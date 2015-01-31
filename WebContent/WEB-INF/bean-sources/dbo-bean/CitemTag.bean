@@ -1,0 +1,7 @@
+package phm.ezcounting;
+
+=CitemTag,citemtag
+int *#id
+int tagId
+int chargeItemId
+

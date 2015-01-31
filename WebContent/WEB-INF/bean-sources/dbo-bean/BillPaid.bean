@@ -1,0 +1,16 @@
+package phm.ezcounting;
+
+=BillPaid,billpaid
+int #billPayId
+String #ticketId
+Date recordTime
+int amount
+int threadId
+int bunitId
+
+=
+
+    public String getTicketIdAsString()
+    {
+        return "'" + getTicketId() + "'";
+    }

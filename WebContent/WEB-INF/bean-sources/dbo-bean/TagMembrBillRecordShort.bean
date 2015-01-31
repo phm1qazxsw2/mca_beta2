@@ -1,0 +1,15 @@
+package phm.ezcounting;
+
+=TagMembrBillRecordShort,membr,,MembrBillRecord,tag.id-membr.id-membr.name-billRecordId-receivable-received-membrbillrecord.paidStatus-billType-privLevel
+@membrbillrecord,membr.id=membrbillrecord.membrId
+@tag-tagmembr,tagmembr.tagId=tag.id and tagmembr.membrId=membr.id
+@bill-billrecord,membrbillrecord.billRecordId=billrecord.id and billrecord.billId=bill.id
+int tagId<tag.id
+int -billRecordId
+int -membrId<membr.id
+String membrName<membr.name
+int -receivable
+int -received
+int -paidStatus
+int billType
+int privLevel

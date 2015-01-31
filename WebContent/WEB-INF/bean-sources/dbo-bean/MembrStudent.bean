@@ -1,0 +1,8 @@
+package phm.ezcounting;
+
+=MembrStudent,membr-student,membr.type=1 and membr.surrogateId=student.id
+int membrId<membr.id
+int studentId<student.id
+String name<membr.name
+int status<student.studentStatus
+String studentNumber

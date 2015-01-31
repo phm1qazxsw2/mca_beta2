@@ -1,0 +1,20 @@
+package jsf;
+
+=Ownertrade
+int id
+Date created
+Date modified
+int ownertradeOwnerId
+int ownertradeInOut
+int ownertradeNumber
+int ownertradeWay
+Date ownertradeAccountDate
+int ownertradeAccountType
+int ownertradeAccountId
+int ownertradeLogId
+String ownertradeLogPs
+int ownertradeCheckLog
+int ownertradeCheckUserId
+Date ownertradeCheckDate
+String ownertradeCheckPs
+int bunitId

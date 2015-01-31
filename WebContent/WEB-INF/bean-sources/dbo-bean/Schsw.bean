@@ -1,0 +1,11 @@
+package phm.ezcounting;
+
+=Schsw,schsw
+int *#id
+Date recordTime
+int userId
+String note
+int reqMembrId
+int verifystatus
+Date verifyDate
+int verifyUserId

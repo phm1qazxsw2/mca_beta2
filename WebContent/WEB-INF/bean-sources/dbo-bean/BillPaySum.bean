@@ -1,0 +1,5 @@
+package phm.ezcounting;
+
+=BillPaySum,billpay,,,SUM(amount) as s1-SUM(remain) as s2
+int amount<s1
+int remain<s2

@@ -1,0 +1,12 @@
+package jsf;
+
+=TfContent
+int id
+Date created
+Date modified
+int tfContentTalentFileId
+String tfContentTitle
+String tfContentContnet
+int tfContentSendKind
+int tfContentSendId
+String PicFile

@@ -1,0 +1,21 @@
+package phm.ezcounting;
+
+=Discount,discount
+int *#id
+int chargeItemId
+int membrId
+int userId
+int amount
+int type
+String note
+int copy
+
+=
+
+    public static final int COPY_YES = 0;
+    public static final int COPY_NO = 1;
+
+    public String getChargeKey()
+    {
+        return getMembrId()+"#"+getChargeItemId();
+    }

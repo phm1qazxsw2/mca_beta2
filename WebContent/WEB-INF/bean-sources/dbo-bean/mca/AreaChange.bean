@@ -1,0 +1,18 @@
+package mca;
+
+=AreaChange,area_change
+int level
+String code
+String cName
+String eName
+String parentCode
+int orgLevel
+String orgCode
+String orgParent
+
+=
+
+    public String getMyKey()
+    {
+        return getLevel() + "#" + getCode();
+    }

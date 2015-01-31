@@ -1,0 +1,26 @@
+package jsf;
+
+=Costbook
+int id
+Date created
+Date modified
+int costbookOutIn
+int costbookCostcheckId
+Date costbookAccountDate
+int costbookCosttradeId
+String costbookName
+int costbookLogId
+String costbookLogPs
+int costbookAttachStatus
+int costbookAttachType
+int costbookTotalMoney
+int costbookTotalNum
+int costbookPaiedMoney
+int costbookPaiedStatus
+int costbookPaidNum
+int costbookVerifyStatus
+int costbookVerifyId
+Date costbookVerifyDate
+String costbookVerifyPs
+int costbookActive
+String costbookActivePs

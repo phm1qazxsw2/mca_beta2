@@ -1,0 +1,6 @@
+package phm.ezcounting;
+
+=SchMembr,schmembr
+int #membrId
+int #schdefId
+String note

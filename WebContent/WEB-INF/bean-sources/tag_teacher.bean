@@ -1,0 +1,8 @@
+package jsf;
+
+=tag_teacher
+int id
+Date created
+Date modified
+int tagId
+int teacherId

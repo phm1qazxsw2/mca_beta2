@@ -1,0 +1,16 @@
+package jsf;
+
+=ClientAccount
+int id
+Date created
+Date modified
+String clientAccountBankOwner
+String clientAccountBankName
+String clientAccountBankBranchName
+String clientAccountBankNum
+String clientAccountAccountNum
+String clientAccountAccountName
+String clientAccountBankIdPs
+int clientAccountActive
+int clientAccountCosttrade
+int bunitId

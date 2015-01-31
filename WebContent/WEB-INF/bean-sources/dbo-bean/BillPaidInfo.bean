@@ -1,0 +1,25 @@
+package phm.ezcounting;
+
+// 2008-12-3 by peter, add billpaid.amount>0 因為為了傳票 有可能該 billpaid 被刪了的時候只是將 amount 改成 0
+=BillPaidInfo,billpaid-billpay,billPayId=billpay.id and billpaid.amount>0
+@user,userId=user.id
+@membrbillrecord-membr,billpaid.ticketId=membrbillrecord.ticketId and membrbillrecord.membrId=membr.id
+@bill-billrecord,membrbillrecord.billRecordId=billrecord.id and billrecord.billId = bill.id
+int billPayId
+String ticketId
+int paidAmount<billpaid.amount
+int via
+Date paidTime<billpay.recordTime
+Date createTime
+int payAmount<billpay.amount
+int remain
+int userId
+int billSourceId
+String userLoginId
+int pending
+String membrName<membr.name
+int membrId<membr.id
+int billRecordId
+int chequeId
+String billPrettyName<bill.prettyName
+Date billMonth<billrecord.month

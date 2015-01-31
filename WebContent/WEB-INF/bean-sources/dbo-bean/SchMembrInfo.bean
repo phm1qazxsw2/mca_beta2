@@ -1,0 +1,14 @@
+package phm.ezcounting;
+
+=SchMembrInfo,schmembr-schdef,schdefId=schdef.id
+int #membrId
+int #schdefId
+String note
+String name
+Date startDate
+Date endDate
+int type
+String content
+String color
+int rootId
+int newestId

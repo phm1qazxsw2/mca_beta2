@@ -1,0 +1,11 @@
+package phm.ezcounting;
+
+=MembrUserData,membruser-user,userId=user.id,MembrUser
+@membr,membrId=membr.id
+int #membrId
+int userId
+String userLoginId
+String userPassword
+int userActive
+String name<membr.name
+

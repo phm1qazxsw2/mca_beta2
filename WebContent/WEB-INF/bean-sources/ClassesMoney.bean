@@ -1,0 +1,18 @@
+package jsf;
+
+=ClassesMoney
+int id
+Date created
+Date modified
+String classesMoneyName
+String classesMoneyFullName
+int classesMoneyActive
+String classesMoneyPs
+int classesMoneyNumber
+int classesMoneyIncomeItem
+int classesMoneyContinue
+int classesMoneyContinueActive
+Date classesMoneyContinueDate
+int classesMoneyCategory
+int classesMoneyNewFeenumber
+int classesMoneyNewFeenumberCMId

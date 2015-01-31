@@ -1,0 +1,8 @@
+package mca;
+
+=McaProrate,mca_prorate
+int #*id
+int mcaFeeId
+int membrId
+Date prorateDate
+int bunitId

@@ -1,0 +1,8 @@
+package phm.ezcounting;
+
+=VPaidItem,vpaid-vitem,vitemId=vitem.id
+String title
+int #vitemId
+int #costpayId
+int amount
+Date recordTime

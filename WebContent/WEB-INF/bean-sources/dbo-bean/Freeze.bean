@@ -1,0 +1,8 @@
+package phm.ezcounting;
+
+=Freeze,freeze
+int *#id
+Date created
+Date freezeTime
+int userId
+int bunitId

@@ -1,0 +1,24 @@
+package jsf;
+
+=Feeticket
+int id
+Date created
+Date modified
+Date feeticketMonth
+int feeticketFeenumberId
+int feeticketStuId
+int feeticketStuClassId
+int feeticketStuGroupId
+int feeticketStuLevelId
+int feeticketSholdMoney
+int feeticketDiscountMoney
+int feeticketTotalMoney
+int feeticketPayMoney
+Date feeticketPayDate
+int feeticketStatus
+Date feeticketEndPayDate
+String feeticketPs
+int feeticketNewFeenumber
+int feeticketNewFeenumberCmId
+int feeticketLock
+int feeticketPrintUpdate

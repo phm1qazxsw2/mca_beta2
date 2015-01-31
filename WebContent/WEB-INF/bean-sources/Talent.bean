@@ -1,0 +1,26 @@
+package jsf;
+
+=Talent
+int id
+Date created
+Date modified
+String talentName
+String talentEnName
+int talentActive
+int talentStatus
+int talentTeacherId
+String talentPs
+int talentTimes
+int talentActualTimes
+int talentNeedPeople
+int talentActualPeople
+String talentQuality
+Date talentStartDate
+Date talentEndDate
+int talentFee
+String talentFeeExplain
+int talentPlace
+int talentFinanceType
+int talentFinanceBigItem
+int talentFinanceSmallItem
+int talentSalaryTypeId

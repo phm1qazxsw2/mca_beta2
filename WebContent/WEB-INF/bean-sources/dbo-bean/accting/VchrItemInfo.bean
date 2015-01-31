@@ -1,0 +1,21 @@
+package phm.accounting;
+
+=VchrItemInfo,vchr_item-vchr_holder-acode-vchr_thread,vchr_item.vchrId=vchr_holder.id and acodeId=acode.id and vchr_holder.threadId=vchr_thread.id,VchrItem
+int -vchrId
+int -id
+int -flag
+int -bunitId
+int -acodeId
+double -debit
+double -credit
+int -note<vchr_item.note
+int -threadId
+Date registerDate
+Date created
+String main
+String sub
+int name1
+int name2
+int vnote<vchr_holder.note
+String serial
+int userId

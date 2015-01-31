@@ -1,0 +1,28 @@
+package jsf;
+
+=User
+int id
+Date created
+Date modified
+String userLoginId
+String userPassword
+String userFullname
+String userEmail
+String userPhone
+int userRole
+int userEmailReport
+int userActive
+int userBunitCard
+int userBunitAccounting
+int userContentType1
+int userContentType2
+int userContentType3
+int userContentType4
+int userContentType5
+int userContentType6
+int userContentType7
+int userContentType8
+int userContentType9
+int userContentType10
+int userContentType11
+int userConfirmUpdate

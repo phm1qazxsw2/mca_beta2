@@ -1,0 +1,15 @@
+package phm.ezcounting;
+
+=BillRecordInfo,billrecord-bill,billrecord.billId=bill.id,BillRecord
+int -id
+int -billId
+String -name
+int -confirmed
+Date -month
+Date -billDate
+int billType
+int privLevel
+int status
+String billName<bill.name
+
+

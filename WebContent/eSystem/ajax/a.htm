@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>取得XML文件內容-XML DOM</title>
+</head>
+<body>
+<table border="1">
+<script language="JavaScript">
+var httpRequest=new XMLHttpRequest();
+
+httpRequest.open("GET", "d.jsp");
+document.write(httpRequest.readyState + "<br>");
+httpRequest.send(); // 送出請求
+document.write(httpRequest.readyState + "<br>");
+// 取得回應的XML DOM
+xmlDom = httpRequest.responseXML;
+var objNode = xmlDom.documentElement.childNodes;
+// 顯示所有XML節點
+for ( i=0; i < objNode.length; i++ ) {
+   document.write("<tr><td>");
+   document.write(objNode.item(i).nodeName + "</td><td>");
+   document.write(objNode.item(i).text + "</td></tr>");
+}
+  
+</script>
+</table>
+</body>
+</html>
+

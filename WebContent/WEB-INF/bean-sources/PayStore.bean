@@ -1,0 +1,17 @@
+package jsf;
+
+=PayStore
+int id
+Date created
+Date modified
+Date payStoreUpdateDate
+Date payStorePayDate
+int payStoreFeeticketId
+int payStorePayMoney
+Date payStoreMonth
+String payStoreId
+String payStoreAccountId
+String payStoreSource
+int payStoreStatus
+String payStorePs
+String payStoreException

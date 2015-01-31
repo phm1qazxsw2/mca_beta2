@@ -1,0 +1,16 @@
+package phm.ezcounting;
+
+=FeeDetailInfo,feedetail-chargeitem-membrbillrecord,feedetail.chargeItemId=chargeitem.id and feedetail.membrId=membrbillrecord.membrId and chargeitem.billRecordId=membrbillrecord.billRecordId,FeeDetail
+int -id
+int -chargeItemId
+int -membrId
+int -unitPrice
+int -num
+Date -feeTime
+String -note
+int -userId
+int -manhourId
+int -payrollMembrId
+int -payrollFdId
+int billRecordId<membrbillrecord.billRecordId
+int billItemId

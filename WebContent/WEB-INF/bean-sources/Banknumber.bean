@@ -1,0 +1,8 @@
+package jsf;
+
+=Banknumber
+int id
+Date created
+Date modified
+Date banknumberDate
+int banknumberTotal

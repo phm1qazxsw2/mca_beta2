@@ -1,0 +1,85 @@
+package phm.ezcounting;
+
+=PaySystem2,paysystem
+int *#id
+Date created
+Date modified
+String paySystemCompanyName
+String paySystemCompanyAddress
+String paySystemCompanyPhone
+int paySystemLimitDate
+String paySystemCompanyUniteId
+String paySystemBankName
+String paySystemBankId
+String paySystemFirst5
+String paySystemBankStoreNickName
+String paySystemCompanyStoreNickName
+int paySystemBeforeLimitDate
+int paySystemLimitMoney
+int paySystemBankAccountId
+int paySystemMessageActive
+int paySystemMessageTo
+String paySystemMessageURL
+String paySystemMessageUser
+String paySystemMessagePass
+String paySystemMessageText
+int paySystemATMActive
+int paySystemStoreActive
+String paySystemReplaceWord
+int paySystemBirthActive
+String paySystemBirthWord
+int paySystemATMAccountId
+int paySystemEmailActive
+int paySystemEmailTo
+String paySystemEmailText
+int paySystemNoticeEmailTo
+int paySystemNoticeEmailType
+String paySystemNoticeEmailTitle
+String paySystemNoticeEmailText
+int paySystemNoticeMessageTo
+String paySystemNoticeMessageTest
+String paySystemEmailServer
+String paySystemEmailSender
+String paySystemEmailSenderAddress
+String paySystemEmailCode
+String paySystemFixATMAccount
+int paySystemFixATMNum
+int paySystemExtendNotpay
+String topLogoHtml
+String billLogoPath
+String billWaterMarkPath
+int useChecksum
+int version
+int customerType
+String website
+int banktype
+int pagetype
+int workflow
+int cardread
+String cardmachine
+int eventAuto
+int membrService
+String extraBankInfo
+
+=
+	
+    public static final int SMS_TARGET_DEFAULT = 0;
+    public static final int SMS_TARGET_BOTH = 1;
+
+    public static final int VERSION_STANDARD = 0;
+    public static final int VERSION_PROFESSIONAL = 1;
+
+    public static final int CUSTOMER_TYPE_SCHOOL = 0;
+    public static final int CUSTOMER_TYPE_COMPANY = 1;
+
+    public static final int WORKFLOW_NONE = 0;
+    public static final int WORKFLOW_KJF  = 1;
+    public static final int WORKFLOW_NEIL = 2;
+
+
+    public boolean storePayEnabled()
+    {
+        if(getPaySystemStoreActive()==0 || getPaySystemStoreActive()==9)
+            return false;
+        return true;
+    }

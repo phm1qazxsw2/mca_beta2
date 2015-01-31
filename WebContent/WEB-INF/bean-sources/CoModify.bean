@@ -1,0 +1,9 @@
+package jsf;
+
+=CoModify
+int id
+Date created
+Date modified
+int coModifyIncomeId
+String coModifyNotice
+int coModifyUser

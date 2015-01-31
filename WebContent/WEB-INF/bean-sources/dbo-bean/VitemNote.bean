@@ -1,0 +1,5 @@
+package phm.ezcounting;
+
+=VitemNote,vitem_note
+int #vitemId
+String note
