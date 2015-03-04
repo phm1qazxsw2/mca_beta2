@@ -458,6 +458,23 @@ function setup_prorate() {
             </tr>
             <tr class=es02 bgcolor=ffffff>
                 <td nowrap>
+                    　　　Deposit
+                </td>
+                <td>
+                    <input type=text size=7 name="DormDepositA" value="<%=fee.getDormDepositA()%>"  style="text-align:right">
+                </td>
+                <td>
+                    <input type=text size=7 name="DormDepositB" value="<%=fee.getDormDepositB()%>"  style="text-align:right">
+                </td>
+                <td>
+                    <input type=text size=7 name="DormDepositC" value="<%=fee.getDormDepositC()%>"  style="text-align:right">
+                </td>
+                <td>
+                    <input type=text size=7 name="DormDepositD" value="<%=fee.getDormDepositD()%>"  style="text-align:right">
+                </td>
+            </tr>
+            <tr class=es02 bgcolor=ffffff>
+                <td nowrap>
                     　　　Facility
                 </td>
                 <td>

@@ -7,10 +7,11 @@
 </form>
 </center>
 <%
+    exception.printStackTrace();
     for (int i=0; i<100; i++)
         out.println("     ");
     String host = request.getServerName();
-    String qstr = request.getQueryString(); 
+    String qstr = request.getQueryString();
     String uri = request.getRequestURI();
     String errstr = "##error##  " + host + uri + "?" + qstr + "  :" + exception.getMessage();
     System.out.println(errstr);
@@ -35,7 +36,6 @@
         pr.close();
         phm.util.URLConnector.getContent(urlstr, 1000, "UTF-8");
     }
-    catch (Exception e) 
+    catch (Exception e)
     {}
 %>
-

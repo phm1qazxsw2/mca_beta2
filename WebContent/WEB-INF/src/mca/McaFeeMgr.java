@@ -163,6 +163,14 @@ public class McaFeeMgr extends dbo.Manager<McaFee>
             item.setDormProgramC(DormProgramC);
             int	DormProgramD		 = rs.getInt("DormProgramD");
             item.setDormProgramD(DormProgramD);
+            int	DormDepositA		 = rs.getInt("DormDepositA");
+            item.setDormDepositA(DormDepositA);
+            int	DormDepositB		 = rs.getInt("DormDepositB");
+            item.setDormDepositB(DormDepositB);
+            int	DormDepositC		 = rs.getInt("DormDepositC");
+            item.setDormDepositC(DormDepositC);
+            int	DormDepositD		 = rs.getInt("DormDepositD");
+            item.setDormDepositD(DormDepositD);
             int	DormFacilityA		 = rs.getInt("DormFacilityA");
             item.setDormFacilityA(DormFacilityA);
             int	DormFacilityB		 = rs.getInt("DormFacilityB");
@@ -347,6 +355,10 @@ public class McaFeeMgr extends dbo.Manager<McaFee>
             + ",DormProgramB=" + item.getDormProgramB()
             + ",DormProgramC=" + item.getDormProgramC()
             + ",DormProgramD=" + item.getDormProgramD()
+            + ",DormDepositA=" + item.getDormDepositA()
+            + ",DormDepositB=" + item.getDormDepositB()
+            + ",DormDepositC=" + item.getDormDepositC()
+            + ",DormDepositD=" + item.getDormDepositD()
             + ",DormFacilityA=" + item.getDormFacilityA()
             + ",DormFacilityB=" + item.getDormFacilityB()
             + ",DormFacilityC=" + item.getDormFacilityC()
@@ -410,7 +422,7 @@ public class McaFeeMgr extends dbo.Manager<McaFee>
 
     protected String getInsertString()
     {
-         return  "status,title,month,billDate,feeType,checkFeeId,checkFallFeeId,regPrepayDeadline,regPenalty,lateFee,RegA,RegB,RegC,RegD,TuitionK5A,TuitionK5B,TuitionK5C,TuitionK5D,Tuition69A,Tuition69B,Tuition69C,Tuition69D,Tuition1012A,Tuition1012B,Tuition1012C,Tuition1012D,TP_TuitionK5A,TP_TuitionK5B,TP_TuitionK5C,TP_TuitionK5D,TP_Tuition69A,TP_Tuition69B,TP_Tuition69C,TP_Tuition69D,TP_Tuition1012A,TP_Tuition1012B,TP_Tuition1012C,TP_Tuition1012D,K_TuitionK5A,K_TuitionK5B,K_TuitionK5C,K_TuitionK5D,K_Tuition69A,K_Tuition69B,K_Tuition69C,K_Tuition69D,K_Tuition1012A,K_Tuition1012B,K_Tuition1012C,K_Tuition1012D,BuildingA,BuildingB,BuildingC,BuildingD,DormProgramA,DormProgramB,DormProgramC,DormProgramD,DormFacilityA,DormFacilityB,DormFacilityC,DormFacilityD,DormFoodA,DormFoodB,DormFoodC,DormFoodD,ELLModerateA,ELLModerateB,ELLModerateC,ELLModerateD,ELLSignificantA,ELLSignificantB,ELLSignificantC,ELLSignificantD,MusicPrivateA,MusicPrivateB,MusicPrivateC,MusicPrivateD,MusicSemiPrivateA,MusicSemiPrivateB,MusicSemiPrivateC,MusicSemiPrivateD,MusicSemiGroupA,MusicSemiGroupB,MusicSemiGroupC,MusicSemiGroupD,TestingA,TestingB,TestingC,TestingD,Milk,TchLunch1,TchLunch2,TchLunch3,TchLunch4,TchLunch5,TchLunch6,TchLunch7,KaoLunch1,KaoLunch2,Instrument,MusicRoom,FamilyDiscountA,FamilyDiscountB,Bus,startDay,endDay,prorateDay,excludeDays,includeDays,EntranceA,EntranceB,EntranceC,EntranceD";
+         return  "status,title,month,billDate,feeType,checkFeeId,checkFallFeeId,regPrepayDeadline,regPenalty,lateFee,RegA,RegB,RegC,RegD,TuitionK5A,TuitionK5B,TuitionK5C,TuitionK5D,Tuition69A,Tuition69B,Tuition69C,Tuition69D,Tuition1012A,Tuition1012B,Tuition1012C,Tuition1012D,TP_TuitionK5A,TP_TuitionK5B,TP_TuitionK5C,TP_TuitionK5D,TP_Tuition69A,TP_Tuition69B,TP_Tuition69C,TP_Tuition69D,TP_Tuition1012A,TP_Tuition1012B,TP_Tuition1012C,TP_Tuition1012D,K_TuitionK5A,K_TuitionK5B,K_TuitionK5C,K_TuitionK5D,K_Tuition69A,K_Tuition69B,K_Tuition69C,K_Tuition69D,K_Tuition1012A,K_Tuition1012B,K_Tuition1012C,K_Tuition1012D,BuildingA,BuildingB,BuildingC,BuildingD,DormProgramA,DormProgramB,DormProgramC,DormProgramD,DormDepositA,DormDepositB,DormDepositC,DormDepositD,DormFacilityA,DormFacilityB,DormFacilityC,DormFacilityD,DormFoodA,DormFoodB,DormFoodC,DormFoodD,ELLModerateA,ELLModerateB,ELLModerateC,ELLModerateD,ELLSignificantA,ELLSignificantB,ELLSignificantC,ELLSignificantD,MusicPrivateA,MusicPrivateB,MusicPrivateC,MusicPrivateD,MusicSemiPrivateA,MusicSemiPrivateB,MusicSemiPrivateC,MusicSemiPrivateD,MusicSemiGroupA,MusicSemiGroupB,MusicSemiGroupC,MusicSemiGroupD,TestingA,TestingB,TestingC,TestingD,Milk,TchLunch1,TchLunch2,TchLunch3,TchLunch4,TchLunch5,TchLunch6,TchLunch7,KaoLunch1,KaoLunch2,Instrument,MusicRoom,FamilyDiscountA,FamilyDiscountB,Bus,startDay,endDay,prorateDay,excludeDays,includeDays,EntranceA,EntranceB,EntranceC,EntranceD";
     }
 
     protected String getCreateString(Object obj)
@@ -478,6 +490,10 @@ public class McaFeeMgr extends dbo.Manager<McaFee>
             + "," + item.getDormProgramB()
             + "," + item.getDormProgramC()
             + "," + item.getDormProgramD()
+            + "," + item.getDormDepositA()
+            + "," + item.getDormDepositB()
+            + "," + item.getDormDepositC()
+            + "," + item.getDormDepositD()
             + "," + item.getDormFacilityA()
             + "," + item.getDormFacilityB()
             + "," + item.getDormFacilityC()

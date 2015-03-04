@@ -22,12 +22,12 @@
 
         <init-param>
             <param-name>jdbcUser</param-name>
-            <param-value>phmuser</param-value>
+            <param-value>root</param-value>
         </init-param>
 
         <init-param>
             <param-name>jdbcPwd</param-name>
-            <param-value>123456</param-value>
+            <param-value></param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

@@ -1,0 +1,1000 @@
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:748)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:486)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:411)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:338)
+	at org.tuckey.web.filters.urlrewrite.NormalRewrittenUrl.doRewrite(NormalRewrittenUrl.java:213)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:171)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:381)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:695)
+SELECT * FROM peter_user_channel WHERE user_id=1 and channel_id=1 
+java.sql.SQLException: Column 'role_id' not found.
+	at com.mysql.jdbc.ResultSet.findColumn(ResultSet.java:2324)
+	at com.mysql.jdbc.ResultSet.getInt(ResultSet.java:1298)
+	at com.phm.smart.UserChannelMgr.fillBean(UserChannelMgr.java:54)
+	at dbo.Manager.retrieveList(Manager.java:435)
+	at dbo.Manager.retrieveList(Manager.java:374)
+	at dbo.Manager.find(Manager.java:350)
+	at org.apache.jsp.WEB_002dINF.smart.api_005fuser_005fupdate_jsp._jspService(api_005fuser_005fupdate_jsp.java:153)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:748)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:486)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:411)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:338)
+	at org.tuckey.web.filters.urlrewrite.NormalRewrittenUrl.doRewrite(NormalRewrittenUrl.java:213)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:171)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:381)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:695)
+** INSERT INTO peter_user (`key`,`phone`,`jpush_id`,`uuid`,`utime`,`name`,`icon`,`install_time`,`uninstall_time`) VALUES ('987628987','+886987628987','','','2015-02-25 10:52:54','Henry Kung','','2015-02-25 10:52:54',NULL)
+java.sql.SQLException: null,  message from server: "Duplicate entry '' for key 'UX1'"
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:1905)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1109)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1203)
+	at com.mysql.jdbc.MysqlIO.sqlQuery(MysqlIO.java:1164)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2087)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2037)
+	at com.mysql.jdbc.Statement.execute(Statement.java:900)
+	at dbo.Manager.create(Manager.java:734)
+	at org.apache.jsp.WEB_002dINF.smart.api_005fuser_005fupdate_jsp._jspService(api_005fuser_005fupdate_jsp.java:125)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:748)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:486)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:411)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:338)
+	at org.tuckey.web.filters.urlrewrite.NormalRewrittenUrl.doRewrite(NormalRewrittenUrl.java:213)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:171)
+	at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+	at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:381)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:695)
+2015/2/25 下午 12:59:40 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 12:59:40 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 12:59:40 org.apache.catalina.core.StandardService stopInternal
+資訊: Stopping service Catalina
+cms stopping...
+[2015-02-25 12:59:40] ** releasing db connections
+shuting datasource [db152]
+## jdbc connection pool closed 3
+shuting datasource [main]
+## jdbc connection pool closed 3
+2015/2/25 下午 12:59:40 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+嚴重的: The web application [/wct_cms] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2015/2/25 下午 12:59:40 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+嚴重的: The web application [/wct_cms] appears to have started a thread named [Thread-6] but has failed to stop it. This is very likely to create a memory leak.
+2015/2/25 下午 12:59:40 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 12:59:40 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 12:59:40 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 12:59:40 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server version:        Apache Tomcat/7.0.57
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server built:          Nov 3 2014 08:39:16 UTC
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server number:         7.0.57.0
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Name:               Mac OS X
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Version:            10.9.5
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Architecture:          x86_64
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JAVA_HOME:             /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Version:           1.6.0_65-b14-462-11M4609
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Vendor:            Apple Inc.
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_BASE:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_HOME:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.config.file=/Users/peterlin/apache-tomcat-7.0.57/conf/logging.properties
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.endorsed.dirs=/Users/peterlin/apache-tomcat-7.0.57/endorsed
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.base=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.home=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.io.tmpdir=/Users/peterlin/apache-tomcat-7.0.57/temp
+2015/2/25 下午 04:25:18 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+資訊: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: .:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+2015/2/25 下午 04:25:18 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:25:18 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:25:18 org.apache.catalina.startup.Catalina load
+資訊: Initialization processed in 754 ms
+2015/2/25 下午 04:25:19 org.apache.catalina.core.StandardService startInternal
+資訊: Starting service Catalina
+2015/2/25 下午 04:25:19 org.apache.catalina.core.StandardEngine startInternal
+資訊: Starting Servlet Engine: Apache Tomcat/7.0.57
+2015/2/25 下午 04:25:19 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs
+2015/2/25 下午 04:25:19 org.apache.tomcat.websocket.server.WsSci onStartup
+資訊: JSR 356 WebSocket (Java WebSocket 1.1) support is not available when running on Java 6. To suppress this message, run Tomcat on Java 7, remove the WebSocket JARs from $CATALINA_HOME/lib or add the WebSocket JARs to the tomcat.util.scan.DefaultJarScanner.jarsToSkip property in $CATALINA_BASE/conf/catalina.properties. Note that the deprecated Tomcat 7 WebSocket API will be available. 
+2015/2/25 下午 04:25:19 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs has finished in 479 ms
+2015/2/25 下午 04:25:19 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples
+2015/2/25 下午 04:25:19 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples has finished in 407 ms
+2015/2/25 下午 04:25:19 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager
+2015/2/25 下午 04:25:20 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager has finished in 64 ms
+2015/2/25 下午 04:25:20 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager
+2015/2/25 下午 04:25:20 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager has finished in 57 ms
+2015/2/25 下午 04:25:20 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2
+2015/2/25 下午 04:25:20 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2/WEB-INF/lib/j2ee.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+2015/2/25 下午 04:25:21 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2 has finished in 1,530 ms
+2015/2/25 下午 04:25:21 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT
+2015/2/25 下午 04:25:21 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT has finished in 26 ms
+2015/2/25 下午 04:25:21 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms
+2015/2/25 下午 04:25:21 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms/WEB-INF/lib/peter_servlet.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+## jdbc connection pool size 3
+ds=main
+## jdbc connection pool size 3
+ds=db152
+# cms started..
+2015/2/25 下午 04:25:23 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms has finished in 1,659 ms
+2015/2/25 下午 04:25:23 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:25:23 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:25:23 org.apache.catalina.startup.Catalina start
+資訊: Server startup in 4325 ms
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.UnsupportedClassVersionError: phm/ezcounting/SchEvent : Unsupported major.minor version 52.0 (unable to load class phm.ezcounting.SchEvent)
+2015/2/25 下午 04:35:19 org.apache.catalina.core.StandardServer await
+資訊: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+2015/2/25 下午 04:35:19 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:35:19 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:35:19 org.apache.catalina.core.StandardService stopInternal
+資訊: Stopping service Catalina
+cms stopping...
+[2015-02-25 16:35:19] ** releasing db connections
+shuting datasource [db152]
+## jdbc connection pool closed 3
+shuting datasource [main]
+## jdbc connection pool closed 3
+2015/2/25 下午 04:35:19 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+嚴重的: The web application [/wct_cms] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2015/2/25 下午 04:35:19 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+嚴重的: The web application [/wct_cms] appears to have started a thread named [Thread-7] but has failed to stop it. This is very likely to create a memory leak.
+2015/2/25 下午 04:35:19 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:35:19 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:35:19 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:35:19 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server version:        Apache Tomcat/7.0.57
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server built:          Nov 3 2014 08:39:16 UTC
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server number:         7.0.57.0
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Name:               Mac OS X
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Version:            10.9.5
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Architecture:          x86_64
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JAVA_HOME:             /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Version:           1.6.0_65-b14-462-11M4609
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Vendor:            Apple Inc.
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_BASE:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_HOME:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.config.file=/Users/peterlin/apache-tomcat-7.0.57/conf/logging.properties
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.endorsed.dirs=/Users/peterlin/apache-tomcat-7.0.57/endorsed
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.base=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.home=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.io.tmpdir=/Users/peterlin/apache-tomcat-7.0.57/temp
+2015/2/25 下午 04:37:11 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+資訊: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: .:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+2015/2/25 下午 04:37:11 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:37:11 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.Catalina load
+資訊: Initialization processed in 694 ms
+2015/2/25 下午 04:37:11 org.apache.catalina.core.StandardService startInternal
+資訊: Starting service Catalina
+2015/2/25 下午 04:37:11 org.apache.catalina.core.StandardEngine startInternal
+資訊: Starting Servlet Engine: Apache Tomcat/7.0.57
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs
+2015/2/25 下午 04:37:11 org.apache.tomcat.websocket.server.WsSci onStartup
+資訊: JSR 356 WebSocket (Java WebSocket 1.1) support is not available when running on Java 6. To suppress this message, run Tomcat on Java 7, remove the WebSocket JARs from $CATALINA_HOME/lib or add the WebSocket JARs to the tomcat.util.scan.DefaultJarScanner.jarsToSkip property in $CATALINA_BASE/conf/catalina.properties. Note that the deprecated Tomcat 7 WebSocket API will be available. 
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs has finished in 478 ms
+2015/2/25 下午 04:37:11 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples
+2015/2/25 下午 04:37:12 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples has finished in 381 ms
+2015/2/25 下午 04:37:12 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager
+2015/2/25 下午 04:37:12 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager has finished in 58 ms
+2015/2/25 下午 04:37:12 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager
+2015/2/25 下午 04:37:12 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager has finished in 54 ms
+2015/2/25 下午 04:37:12 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2
+2015/2/25 下午 04:37:12 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2/WEB-INF/lib/j2ee.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+2015/2/25 下午 04:37:13 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2 has finished in 1,612 ms
+2015/2/25 下午 04:37:13 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT
+2015/2/25 下午 04:37:14 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT has finished in 39 ms
+2015/2/25 下午 04:37:14 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms
+2015/2/25 下午 04:37:14 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms/WEB-INF/lib/peter_servlet.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+## jdbc connection pool size 3
+ds=main
+## jdbc connection pool size 3
+ds=db152
+# cms started..
+2015/2/25 下午 04:37:15 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms has finished in 1,512 ms
+2015/2/25 下午 04:37:15 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:37:15 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:37:15 org.apache.catalina.startup.Catalina start
+資訊: Server startup in 4201 ms
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.UnsupportedClassVersionError: phm/ezcounting/Cheque : Unsupported major.minor version 52.0 (unable to load class phm.ezcounting.Cheque)
+2015/2/25 下午 04:40:15 org.apache.catalina.core.StandardServer await
+資訊: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+2015/2/25 下午 04:40:15 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:40:15 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:40:15 org.apache.catalina.core.StandardService stopInternal
+資訊: Stopping service Catalina
+cms stopping...
+[2015-02-25 16:40:15] ** releasing db connections
+shuting datasource [db152]
+## jdbc connection pool closed 3
+shuting datasource [main]
+## jdbc connection pool closed 3
+2015/2/25 下午 04:40:15 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+嚴重的: The web application [/wct_cms] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2015/2/25 下午 04:40:15 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+嚴重的: The web application [/wct_cms] appears to have started a thread named [Thread-6] but has failed to stop it. This is very likely to create a memory leak.
+2015/2/25 下午 04:40:15 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:40:15 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:40:15 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:40:15 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server version:        Apache Tomcat/7.0.57
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server built:          Nov 3 2014 08:39:16 UTC
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server number:         7.0.57.0
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Name:               Mac OS X
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Version:            10.9.5
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Architecture:          x86_64
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JAVA_HOME:             /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Version:           1.6.0_65-b14-462-11M4609
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Vendor:            Apple Inc.
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_BASE:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_HOME:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.config.file=/Users/peterlin/apache-tomcat-7.0.57/conf/logging.properties
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.endorsed.dirs=/Users/peterlin/apache-tomcat-7.0.57/endorsed
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.base=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.home=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.io.tmpdir=/Users/peterlin/apache-tomcat-7.0.57/temp
+2015/2/25 下午 04:40:25 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+資訊: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: .:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+2015/2/25 下午 04:40:25 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:40:25 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.Catalina load
+資訊: Initialization processed in 645 ms
+2015/2/25 下午 04:40:25 org.apache.catalina.core.StandardService startInternal
+資訊: Starting service Catalina
+2015/2/25 下午 04:40:25 org.apache.catalina.core.StandardEngine startInternal
+資訊: Starting Servlet Engine: Apache Tomcat/7.0.57
+2015/2/25 下午 04:40:25 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs
+2015/2/25 下午 04:40:26 org.apache.tomcat.websocket.server.WsSci onStartup
+資訊: JSR 356 WebSocket (Java WebSocket 1.1) support is not available when running on Java 6. To suppress this message, run Tomcat on Java 7, remove the WebSocket JARs from $CATALINA_HOME/lib or add the WebSocket JARs to the tomcat.util.scan.DefaultJarScanner.jarsToSkip property in $CATALINA_BASE/conf/catalina.properties. Note that the deprecated Tomcat 7 WebSocket API will be available. 
+2015/2/25 下午 04:40:26 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs has finished in 517 ms
+2015/2/25 下午 04:40:26 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples
+2015/2/25 下午 04:40:26 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples has finished in 376 ms
+2015/2/25 下午 04:40:26 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager
+2015/2/25 下午 04:40:26 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager has finished in 76 ms
+2015/2/25 下午 04:40:26 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager
+2015/2/25 下午 04:40:26 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager has finished in 53 ms
+2015/2/25 下午 04:40:26 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2
+2015/2/25 下午 04:40:26 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2/WEB-INF/lib/j2ee.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+2015/2/25 下午 04:40:28 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2 has finished in 1,581 ms
+2015/2/25 下午 04:40:28 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT
+2015/2/25 下午 04:40:28 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT has finished in 83 ms
+2015/2/25 下午 04:40:28 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms
+2015/2/25 下午 04:40:28 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms/WEB-INF/lib/peter_servlet.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+## jdbc connection pool size 3
+ds=main
+## jdbc connection pool size 3
+ds=db152
+# cms started..
+2015/2/25 下午 04:40:30 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms has finished in 1,790 ms
+2015/2/25 下午 04:40:30 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:40:30 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:40:30 org.apache.catalina.startup.Catalina start
+資訊: Server startup in 4541 ms
+SELECT * FROM user WHERE userLoginId='' and userActive='1' 
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.RuntimeException: java.lang.NullPointerException
+SELECT * FROM user WHERE userLoginId='' and userActive='1' 
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.RuntimeException: java.lang.NullPointerException
+URLConnector: java.net.ConnectException: Operation timed out
+URLConnector: java.net.ConnectException: Operation timed out
+SELECT * FROM user WHERE userLoginId='' and userActive='1' 
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.RuntimeException: java.lang.NullPointerException
+URLConnector: java.net.ConnectException: Operation timed out
+SELECT * FROM user WHERE userLoginId='' and userActive='1' 
+org.apache.jasper.JasperException: java.lang.RuntimeException: java.lang.NullPointerException
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:549)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:470)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException
+	at com.axiom.mgr.Manager.retrieve(Manager.java:264)
+	at jsf.UserMgr.findLoginId(UserMgr.java:165)
+	at jsf.WebSecurity.doAuthenticate(WebSecurity.java:216)
+	at org.apache.jsp.eSystem.index_jsp._jspService(index_jsp.java:356)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at com.axiom.util.DbPool.getDbConnection(DbPool.java:27)
+	at com.axiom.mgr.Manager._get_conn(Manager.java:139)
+	at com.axiom.mgr.Manager.retrieve(Manager.java:246)
+	... 26 more
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.RuntimeException: java.lang.NullPointerException
+URLConnector: java.net.ConnectException: Operation timed out
+2015/2/25 下午 04:53:32 org.apache.catalina.core.StandardServer await
+資訊: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+2015/2/25 下午 04:53:32 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:53:32 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:53:32 org.apache.catalina.core.StandardService stopInternal
+資訊: Stopping service Catalina
+cms stopping...
+[2015-02-25 16:53:32] ** releasing db connections
+shuting datasource [db152]
+## jdbc connection pool closed 3
+shuting datasource [main]
+## jdbc connection pool closed 3
+2015/2/25 下午 04:53:32 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+嚴重的: The web application [/wct_cms] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2015/2/25 下午 04:53:32 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+嚴重的: The web application [/wct_cms] appears to have started a thread named [Thread-8] but has failed to stop it. This is very likely to create a memory leak.
+2015/2/25 下午 04:53:32 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:53:32 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:53:32 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:53:32 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server version:        Apache Tomcat/7.0.57
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server built:          Nov 3 2014 08:39:16 UTC
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server number:         7.0.57.0
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Name:               Mac OS X
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Version:            10.9.5
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Architecture:          x86_64
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JAVA_HOME:             /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Version:           1.6.0_65-b14-462-11M4609
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Vendor:            Apple Inc.
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_BASE:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_HOME:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.config.file=/Users/peterlin/apache-tomcat-7.0.57/conf/logging.properties
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.endorsed.dirs=/Users/peterlin/apache-tomcat-7.0.57/endorsed
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.base=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.home=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.io.tmpdir=/Users/peterlin/apache-tomcat-7.0.57/temp
+2015/2/25 下午 04:53:42 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+資訊: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: .:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+2015/2/25 下午 04:53:42 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:53:42 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.Catalina load
+資訊: Initialization processed in 640 ms
+2015/2/25 下午 04:53:42 org.apache.catalina.core.StandardService startInternal
+資訊: Starting service Catalina
+2015/2/25 下午 04:53:42 org.apache.catalina.core.StandardEngine startInternal
+資訊: Starting Servlet Engine: Apache Tomcat/7.0.57
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs
+2015/2/25 下午 04:53:42 org.apache.tomcat.websocket.server.WsSci onStartup
+資訊: JSR 356 WebSocket (Java WebSocket 1.1) support is not available when running on Java 6. To suppress this message, run Tomcat on Java 7, remove the WebSocket JARs from $CATALINA_HOME/lib or add the WebSocket JARs to the tomcat.util.scan.DefaultJarScanner.jarsToSkip property in $CATALINA_BASE/conf/catalina.properties. Note that the deprecated Tomcat 7 WebSocket API will be available. 
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs has finished in 404 ms
+2015/2/25 下午 04:53:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples
+2015/2/25 下午 04:53:43 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples has finished in 348 ms
+2015/2/25 下午 04:53:43 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager
+2015/2/25 下午 04:53:43 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager has finished in 82 ms
+2015/2/25 下午 04:53:43 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager
+2015/2/25 下午 04:53:43 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager has finished in 55 ms
+2015/2/25 下午 04:53:43 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2
+2015/2/25 下午 04:53:43 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2/WEB-INF/lib/j2ee.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+2015/2/25 下午 04:53:44 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2 has finished in 1,302 ms
+2015/2/25 下午 04:53:44 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT
+2015/2/25 下午 04:53:44 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT has finished in 26 ms
+2015/2/25 下午 04:53:44 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms
+2015/2/25 下午 04:53:44 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms/WEB-INF/lib/peter_servlet.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+## jdbc connection pool size 3
+ds=main
+## jdbc connection pool size 3
+ds=db152
+# cms started..
+2015/2/25 下午 04:53:45 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms has finished in 1,118 ms
+2015/2/25 下午 04:53:45 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 04:53:45 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 04:53:45 org.apache.catalina.startup.Catalina start
+資訊: Server startup in 3400 ms
+LoginId=null
+SELECT * FROM user WHERE userLoginId='' and userActive='1' 
+org.apache.jasper.JasperException: java.lang.RuntimeException: java.lang.NullPointerException
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:549)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:470)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException
+	at com.axiom.mgr.Manager.retrieve(Manager.java:264)
+	at jsf.UserMgr.findLoginId(UserMgr.java:165)
+	at jsf.WebSecurity.doAuthenticate(WebSecurity.java:217)
+	at org.apache.jsp.eSystem.index_jsp._jspService(index_jsp.java:356)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at com.axiom.util.DbPool.getDbConnection(DbPool.java:27)
+	at com.axiom.mgr.Manager._get_conn(Manager.java:139)
+	at com.axiom.mgr.Manager.retrieve(Manager.java:246)
+	... 26 more
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.RuntimeException: java.lang.NullPointerException
+URLConnector: java.net.ConnectException: Operation timed out
+LoginId=null
+SELECT * FROM user WHERE userLoginId='' and userActive='1' 
+org.apache.jasper.JasperException: java.lang.RuntimeException: java.lang.NullPointerException
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:549)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:470)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException
+	at com.axiom.mgr.Manager.retrieve(Manager.java:264)
+	at jsf.UserMgr.findLoginId(UserMgr.java:165)
+	at jsf.WebSecurity.doAuthenticate(WebSecurity.java:217)
+	at org.apache.jsp.eSystem.index_jsp._jspService(index_jsp.java:356)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at com.axiom.util.DbPool.getDbConnection(DbPool.java:27)
+	at com.axiom.mgr.Manager._get_conn(Manager.java:139)
+	at com.axiom.mgr.Manager.retrieve(Manager.java:246)
+	... 26 more
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.RuntimeException: java.lang.NullPointerException
+2015/2/25 下午 05:02:33 org.apache.catalina.core.StandardServer await
+資訊: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+2015/2/25 下午 05:02:33 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:02:33 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:02:33 org.apache.catalina.core.StandardService stopInternal
+資訊: Stopping service Catalina
+cms stopping...
+[2015-02-25 17:02:33] ** releasing db connections
+shuting datasource [db152]
+## jdbc connection pool closed 3
+shuting datasource [main]
+## jdbc connection pool closed 3
+2015/2/25 下午 05:02:33 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+嚴重的: The web application [/wct_cms] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2015/2/25 下午 05:02:33 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+嚴重的: The web application [/wct_cms] appears to have started a thread named [Thread-6] but has failed to stop it. This is very likely to create a memory leak.
+2015/2/25 下午 05:02:33 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+嚴重的: The web application [/mca_beta2] appears to have started a thread named [Thread-179] but has failed to stop it. This is very likely to create a memory leak.
+2015/2/25 下午 05:02:33 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:02:33 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:02:33 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:02:33 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server version:        Apache Tomcat/7.0.57
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server built:          Nov 3 2014 08:39:16 UTC
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server number:         7.0.57.0
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Name:               Mac OS X
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Version:            10.9.5
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Architecture:          x86_64
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JAVA_HOME:             /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Version:           1.6.0_65-b14-462-11M4609
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Vendor:            Apple Inc.
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_BASE:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_HOME:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.config.file=/Users/peterlin/apache-tomcat-7.0.57/conf/logging.properties
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.endorsed.dirs=/Users/peterlin/apache-tomcat-7.0.57/endorsed
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.base=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.home=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.io.tmpdir=/Users/peterlin/apache-tomcat-7.0.57/temp
+2015/2/25 下午 05:02:41 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+資訊: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: .:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+2015/2/25 下午 05:02:41 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:02:41 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.Catalina load
+資訊: Initialization processed in 640 ms
+2015/2/25 下午 05:02:41 org.apache.catalina.core.StandardService startInternal
+資訊: Starting service Catalina
+2015/2/25 下午 05:02:41 org.apache.catalina.core.StandardEngine startInternal
+資訊: Starting Servlet Engine: Apache Tomcat/7.0.57
+2015/2/25 下午 05:02:41 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs
+2015/2/25 下午 05:02:42 org.apache.tomcat.websocket.server.WsSci onStartup
+資訊: JSR 356 WebSocket (Java WebSocket 1.1) support is not available when running on Java 6. To suppress this message, run Tomcat on Java 7, remove the WebSocket JARs from $CATALINA_HOME/lib or add the WebSocket JARs to the tomcat.util.scan.DefaultJarScanner.jarsToSkip property in $CATALINA_BASE/conf/catalina.properties. Note that the deprecated Tomcat 7 WebSocket API will be available. 
+2015/2/25 下午 05:02:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs has finished in 536 ms
+2015/2/25 下午 05:02:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples
+2015/2/25 下午 05:02:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples has finished in 327 ms
+2015/2/25 下午 05:02:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager
+2015/2/25 下午 05:02:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager has finished in 86 ms
+2015/2/25 下午 05:02:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager
+2015/2/25 下午 05:02:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager has finished in 64 ms
+2015/2/25 下午 05:02:42 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2
+2015/2/25 下午 05:02:42 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2/WEB-INF/lib/j2ee.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+2015/2/25 下午 05:02:44 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2 has finished in 1,336 ms
+2015/2/25 下午 05:02:44 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT
+2015/2/25 下午 05:02:44 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT has finished in 30 ms
+2015/2/25 下午 05:02:44 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms
+2015/2/25 下午 05:02:44 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms/WEB-INF/lib/peter_servlet.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+## jdbc connection pool size 3
+ds=main
+## jdbc connection pool size 3
+ds=db152
+# cms started..
+2015/2/25 下午 05:02:45 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms has finished in 1,070 ms
+2015/2/25 下午 05:02:45 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:02:45 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:02:45 org.apache.catalina.startup.Catalina start
+資訊: Server startup in 3514 ms
+SELECT * FROM user WHERE userLoginId='' and userActive='1' 
+org.apache.jasper.JasperException: java.lang.RuntimeException: java.lang.NullPointerException
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:549)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:470)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException
+	at com.axiom.mgr.Manager.retrieve(Manager.java:264)
+	at jsf.UserMgr.findLoginId(UserMgr.java:165)
+	at jsf.WebSecurity.doAuthenticate(WebSecurity.java:218)
+	at org.apache.jsp.eSystem.index_jsp._jspService(index_jsp.java:356)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:432)
+	... 20 more
+Caused by: java.lang.NullPointerException
+	at com.axiom.util.DbPool.getDbConnection(DbPool.java:27)
+	at com.axiom.mgr.Manager._get_conn(Manager.java:139)
+	at com.axiom.mgr.Manager.retrieve(Manager.java:246)
+	... 26 more
+##error##  localhost/mca_beta2/oops.jsp?null  :java.lang.RuntimeException: java.lang.NullPointerException
+URLConnector: java.net.ConnectException: Operation timed out
+2015/2/25 下午 05:04:45 org.apache.catalina.startup.HostConfig reload
+資訊: Reloading context [/mca_beta2]
+2015/2/25 下午 05:04:45 org.apache.catalina.core.StandardContext reload
+資訊: Reloading Context with name [/mca_beta2] has started
+2015/2/25 下午 05:04:45 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2/WEB-INF/lib/j2ee.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+2015/2/25 下午 05:04:46 org.apache.catalina.core.StandardContext reload
+資訊: Reloading Context with name [/mca_beta2] is completed
+2015/2/25 下午 05:05:02 org.apache.catalina.core.StandardServer await
+資訊: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+2015/2/25 下午 05:05:02 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:05:02 org.apache.coyote.AbstractProtocol pause
+資訊: Pausing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:05:02 org.apache.catalina.core.StandardService stopInternal
+資訊: Stopping service Catalina
+cms stopping...
+[2015-02-25 17:05:02] ** releasing db connections
+shuting datasource [db152]
+## jdbc connection pool closed 3
+shuting datasource [main]
+## jdbc connection pool closed 3
+2015/2/25 下午 05:05:02 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+嚴重的: The web application [/wct_cms] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+2015/2/25 下午 05:05:02 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+嚴重的: The web application [/wct_cms] appears to have started a thread named [Thread-6] but has failed to stop it. This is very likely to create a memory leak.
+2015/2/25 下午 05:05:02 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:05:02 org.apache.coyote.AbstractProtocol stop
+資訊: Stopping ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:05:02 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:05:02 org.apache.coyote.AbstractProtocol destroy
+資訊: Destroying ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server version:        Apache Tomcat/7.0.57
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server built:          Nov 3 2014 08:39:16 UTC
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Server number:         7.0.57.0
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Name:               Mac OS X
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: OS Version:            10.9.5
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Architecture:          x86_64
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JAVA_HOME:             /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Version:           1.6.0_65-b14-462-11M4609
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: JVM Vendor:            Apple Inc.
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_BASE:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: CATALINA_HOME:         /Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.config.file=/Users/peterlin/apache-tomcat-7.0.57/conf/logging.properties
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.endorsed.dirs=/Users/peterlin/apache-tomcat-7.0.57/endorsed
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.base=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Dcatalina.home=/Users/peterlin/apache-tomcat-7.0.57
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.VersionLoggerListener log
+資訊: Command line argument: -Djava.io.tmpdir=/Users/peterlin/apache-tomcat-7.0.57/temp
+2015/2/25 下午 05:05:09 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+資訊: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: .:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+2015/2/25 下午 05:05:09 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:05:09 org.apache.coyote.AbstractProtocol init
+資訊: Initializing ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.Catalina load
+資訊: Initialization processed in 643 ms
+2015/2/25 下午 05:05:09 org.apache.catalina.core.StandardService startInternal
+資訊: Starting service Catalina
+2015/2/25 下午 05:05:09 org.apache.catalina.core.StandardEngine startInternal
+資訊: Starting Servlet Engine: Apache Tomcat/7.0.57
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs
+2015/2/25 下午 05:05:09 org.apache.tomcat.websocket.server.WsSci onStartup
+資訊: JSR 356 WebSocket (Java WebSocket 1.1) support is not available when running on Java 6. To suppress this message, run Tomcat on Java 7, remove the WebSocket JARs from $CATALINA_HOME/lib or add the WebSocket JARs to the tomcat.util.scan.DefaultJarScanner.jarsToSkip property in $CATALINA_BASE/conf/catalina.properties. Note that the deprecated Tomcat 7 WebSocket API will be available. 
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/docs has finished in 516 ms
+2015/2/25 下午 05:05:09 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples
+2015/2/25 下午 05:05:10 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/examples has finished in 356 ms
+2015/2/25 下午 05:05:10 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager
+2015/2/25 下午 05:05:10 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/host-manager has finished in 75 ms
+2015/2/25 下午 05:05:10 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager
+2015/2/25 下午 05:05:10 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/manager has finished in 70 ms
+2015/2/25 下午 05:05:10 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2
+2015/2/25 下午 05:05:10 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2/WEB-INF/lib/j2ee.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+2015/2/25 下午 05:05:11 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/mca_beta2 has finished in 1,315 ms
+2015/2/25 下午 05:05:11 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT
+2015/2/25 下午 05:05:11 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/ROOT has finished in 35 ms
+2015/2/25 下午 05:05:11 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deploying web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms
+2015/2/25 下午 05:05:11 org.apache.catalina.loader.WebappClassLoader validateJarFile
+資訊: validateJarFile(/Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms/WEB-INF/lib/peter_servlet.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+## jdbc connection pool size 3
+ds=main
+## jdbc connection pool size 3
+ds=db152
+# cms started..
+2015/2/25 下午 05:05:13 org.apache.catalina.startup.HostConfig deployDirectory
+資訊: Deployment of web application directory /Users/peterlin/apache-tomcat-7.0.57/webapps/wct_cms has finished in 1,257 ms
+2015/2/25 下午 05:05:13 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["http-bio-8080"]
+2015/2/25 下午 05:05:13 org.apache.coyote.AbstractProtocol start
+資訊: Starting ProtocolHandler ["ajp-bio-8009"]
+2015/2/25 下午 05:05:13 org.apache.catalina.startup.Catalina start
+資訊: Server startup in 3677 ms

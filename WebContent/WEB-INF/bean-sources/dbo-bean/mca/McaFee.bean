@@ -60,6 +60,10 @@ int DormProgramA
 int DormProgramB
 int DormProgramC
 int DormProgramD
+int DormDepositA
+int DormDepositB
+int DormDepositC
+int DormDepositD
 int DormFacilityA
 int DormFacilityB
 int DormFacilityC

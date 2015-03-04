@@ -1167,7 +1167,11 @@ if (membrId==2816) {
                 c.setChargeItemId(citem.getId());
                 c.setMembrId(mid);
                 StringBuffer reason = new StringBuffer();
-                c.setAmount(getTuitionAmount(fee, mid, reason, progId));
+                int amount = getTuitionAmount(fee, mid, reason, progId);
+                if (fee.getId()>=84 && amount==0) { // 2015-02-26 之後改
+                	continue;
+                }
+                c.setAmount(amount);
                 c.setNote(reason.toString());
                 // cmgr.create(c);
                 charges.add(c);
@@ -1266,7 +1270,10 @@ if (membrId==2816) {
                 c.setChargeItemId(citem.getId());
                 c.setMembrId(mid);
                 StringBuffer reason = new StringBuffer();
-                c.setAmount(getBuildingFeeAmount(fee, mid, reason));
+                int amount = getBuildingFeeAmount(fee, mid, reason);
+                if (fee.getId()>=84 && amount==0) // 2015-02-26 之後改
+                	continue;
+                c.setAmount(amount);
                 c.setNote(reason.toString());
                 //cmgr.create(c);
                 charges.add(c);
@@ -1934,7 +1941,19 @@ if (membrId==2816) {
     {
         Map<Integer, ArrayList<TagMembrInfo>> myProgMap = tagmembrMap.get(membrId);
         
-        if (myProgMap.get(PROG_DORM_PROGRAM)!=null) {
+        // 2015-02-26 Chiahou 要求 DormDeposit 也分成 A,B,C,D 四种
+        if (fee.getId()>=84 && (myProgMap.get(PROG_DORM_PROGRAM)!=null)) {
+        	if (isM1(membrId) || myProgMap.get(PROG_IDENTITY_M2)!=null)
+        		return fee.getDormDepositD();
+            else if (myProgMap.get(PROG_IDENTITY_CW)!=null)
+            	return fee.getDormDepositC();
+            else if (myProgMap.get(PROG_IDENTITY_M0)!=null)
+            	return fee.getDormDepositB();
+            else
+                return fee.getDormDepositA();
+        }
+        // 之前的还是旧的算法
+        else if (myProgMap.get(PROG_DORM_PROGRAM)!=null) {
             if (isM1(membrId) || myProgMap.get(PROG_IDENTITY_M2)!=null)
                 return 0;
             else if (myProgMap.get(PROG_IDENTITY_CW)!=null)
@@ -2005,12 +2024,19 @@ if (membrId==2816) {
             for (int j=0; j<tms.size(); j++) {
                 int mid = tms.get(j).getMembrId();
                 int deposit = 0;
-                if (fee.getFeeType()==McaFee.FALL) {
-                    deposit = getDormDepositAmount(fee, mid);
-                } 
-                else if (fee.getFeeType()==McaFee.SPRING) {
-                    deposit = getFallFeeDeposit(fee, mid);
-                    deposit = 0 - deposit;
+                // 2015-02-26 Chiahou 要求 DormDeposit 分成 A,B,C,D 四种, 
+                // 還有 DormRoomReturn 直接讀新增的 DormDeposit 欄位，不要分 Fall/Spring 了
+                if (fee.getId()>=84) {
+                	deposit = getDormDepositAmount(fee, mid);                	
+                }
+                else {
+	                if (fee.getFeeType()==McaFee.FALL) {
+	                    deposit = getDormDepositAmount(fee, mid);
+	                } 
+	                else if (fee.getFeeType()==McaFee.SPRING) {
+	                    deposit = getFallFeeDeposit(fee, mid);
+	                    deposit = 0 - deposit;
+	                }
                 }
                 if (deposit==0)
                     continue;
@@ -2450,7 +2476,7 @@ System.out.println("## 4");
         //  ### 刮號的數字是在 BILL_ITEMS 的順位
         
         int amount = 0;
-        for (int i=0; i<mycharges.size(); i++) {
+        for (int i=0; mycharges!=null && i<mycharges.size(); i++) {
             Charge c = mycharges.get(i);
             ChargeItem ci = __chargeitemMap.get(c.getChargeItemId());
             BillItem bi = __billitemMap.get(ci.getBillItemId());

@@ -68,6 +68,10 @@ public class McaFee
     private int   	DormProgramB;
     private int   	DormProgramC;
     private int   	DormProgramD;
+    private int   	DormDepositA;
+    private int   	DormDepositB;
+    private int   	DormDepositC;
+    private int   	DormDepositD;
     private int   	DormFacilityA;
     private int   	DormFacilityB;
     private int   	DormFacilityC;
@@ -188,6 +192,10 @@ public class McaFee
     public int   	getDormProgramB   	() { return DormProgramB; }
     public int   	getDormProgramC   	() { return DormProgramC; }
     public int   	getDormProgramD   	() { return DormProgramD; }
+    public int   	getDormDepositA   	() { return DormDepositA; }
+    public int   	getDormDepositB   	() { return DormDepositB; }
+    public int   	getDormDepositC   	() { return DormDepositC; }
+    public int   	getDormDepositD   	() { return DormDepositD; }
     public int   	getDormFacilityA   	() { return DormFacilityA; }
     public int   	getDormFacilityB   	() { return DormFacilityB; }
     public int   	getDormFacilityC   	() { return DormFacilityC; }
@@ -305,6 +313,10 @@ public class McaFee
     public void 	setDormProgramB   	(int DormProgramB) { this.DormProgramB = DormProgramB; }
     public void 	setDormProgramC   	(int DormProgramC) { this.DormProgramC = DormProgramC; }
     public void 	setDormProgramD   	(int DormProgramD) { this.DormProgramD = DormProgramD; }
+    public void 	setDormDepositA   	(int DormDepositA) { this.DormDepositA = DormDepositA; }
+    public void 	setDormDepositB   	(int DormDepositB) { this.DormDepositB = DormDepositB; }
+    public void 	setDormDepositC   	(int DormDepositC) { this.DormDepositC = DormDepositC; }
+    public void 	setDormDepositD   	(int DormDepositD) { this.DormDepositD = DormDepositD; }
     public void 	setDormFacilityA   	(int DormFacilityA) { this.DormFacilityA = DormFacilityA; }
     public void 	setDormFacilityB   	(int DormFacilityB) { this.DormFacilityB = DormFacilityB; }
     public void 	setDormFacilityC   	(int DormFacilityC) { this.DormFacilityC = DormFacilityC; }

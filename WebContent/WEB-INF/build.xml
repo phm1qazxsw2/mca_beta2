@@ -1,26 +1,26 @@
- 
+
 <project name="phm" default="compile">
   <property name="src" value="src"/>
   <property name="classes" value="classes"/>
   <property name="debug" value="on"/>
-  <tstamp> 
-     <format property="date" pattern="yyyyMMdd" /> 
+  <tstamp>
+     <format property="date" pattern="yyyyMMdd" />
   </tstamp>
-  
+
     <!--======================================================
-                            compile 
-  =======================================================-->  
+                            compile
+  =======================================================-->
   <target name="compile" >
     <javac srcdir="${src}"
            destdir="${classes}"
-           debug="${debug}" 
+           debug="${debug}"
            encoding="UTF-8">
          <classpath>
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset> 
-         </classpath>           
+            </fileset>
+         </classpath>
     </javac>
   </target>
 
@@ -38,9 +38,9 @@
            <pathelement path="${src}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>              
-    </java>        
+            </fileset>
+         </classpath>
+    </java>
   </target>
 
   <target name="bean2code2">
@@ -51,9 +51,9 @@
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>              
-    </java>        
+            </fileset>
+         </classpath>
+    </java>
   </target>
 
   <target name="bean2code3">
@@ -64,9 +64,9 @@
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>              
-    </java>        
+            </fileset>
+         </classpath>
+    </java>
   </target>
 
   <target name="bean2code4">
@@ -77,14 +77,14 @@
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>              
-    </java>        
+            </fileset>
+         </classpath>
+    </java>
   </target>
 
-   
+
   <target name="balanceFTPATM">
-    <java classname="incoming.FTPATM">   
+    <java classname="incoming.FTPATM">
     	<arg value="org.gjt.mm.mysql.Driver"/>
         <arg value="jdbc:mysql://localhost:3306/js_taipei"/>
         <arg value="root"/>
@@ -93,13 +93,13 @@
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>    
+            </fileset>
+         </classpath>
     </java>
-  </target>	
-  
+  </target>
+
   <target name="balanceFTPStore">
-    <java classname="incoming.FTPStore">   
+    <java classname="incoming.FTPStore">
     	<arg value="org.gjt.mm.mysql.Driver"/>
         <arg value="jdbc:mysql://localhost:3306/js_taipei"/>
         <arg value="root"/>
@@ -108,15 +108,15 @@
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>    
+            </fileset>
+         </classpath>
     </java>
-  </target>	
- 
- 	  
-   
+  </target>
+
+
+
   <target name="dayReport">
-    <java classname="jsf.ReportAdmin">   
+    <java classname="jsf.ReportAdmin">
     	<arg value="org.gjt.mm.mysql.Driver"/>
         <arg value="jdbc:mysql://localhost:3306/jsf2"/>
         <arg value="root"/>
@@ -125,36 +125,36 @@
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>    
+            </fileset>
+         </classpath>
     </java>
-  </target>	
-  
+  </target>
+
    <target name="testemail">
-    <java classname="phm.util.EmailTool">    
+    <java classname="phm.util.EmailTool">
         <arg value="msa.hinet.net"/>
          <classpath>
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>    
+            </fileset>
+         </classpath>
     </java>
   </target>
 
    <target name="testsms">
-    <java classname="phm.util.SmsTool">    
+    <java classname="phm.util.SmsTool">
          <classpath>
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>    
+            </fileset>
+         </classpath>
     </java>
   </target>
 
   <target name="mca_interest">
-    <java classname="mca.McaInterest">    
+    <java classname="mca.McaInterest">
     	<arg value="org.gjt.mm.mysql.Driver"/>
         <arg value="jdbc:mysql://localhost:3306/phm_db"/>
         <arg value="root"/>
@@ -163,25 +163,25 @@
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>    
+            </fileset>
+         </classpath>
     </java>
-  </target>  
+  </target>
 
     <target name="importstarlight">
-    <java classname="phm.importing.ImportStudent">    
+    <java classname="phm.importing.ImportStudent">
     	<arg value="data/starlight1.txt"/>
          <classpath>
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>    
+            </fileset>
+         </classpath>
     </java>
   </target>
 
   <target name="mcaimport">
-    <java classname="mca.McaImport">   
+    <java classname="mca.McaImport">
     	<arg value="org.gjt.mm.mysql.Driver"/>
         <arg value="jdbc:mysql://localhost:3306/f_stock_1"/>
         <arg value="root"/>
@@ -190,11 +190,11 @@
            <pathelement path="${classes}"/>
             <fileset dir="lib">
                 <include name="**/*.jar"/>
-            </fileset>           
-         </classpath>    
+            </fileset>
+         </classpath>
     </java>
-  </target>	
-  
+  </target>
+
 
 
   <target name="package" depends="compile">
